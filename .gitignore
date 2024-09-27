@@ -1,0 +1,6 @@
+# Ignore sensitive config files in the core folder
+/server/core/config.php
+/server/core/pdo.php
+
+# Ignore any environment files
+.env

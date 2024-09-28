@@ -19,6 +19,7 @@
                 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
                 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
                 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
+                $myIcon = $_POST['myChosenIcon'];
 
                 $validateController = new NewUserInputController();
 
@@ -28,11 +29,12 @@
         
                 if($validateUsername && $validateEmail && $validatePassword) {
                     $hash = password_hash($password, PASSWORD_DEFAULT);
-                    $newUser = new NewUserModel($username, $email, $hash, $this->pdo);
+                    $newUser = new NewUserModel($username, $email, $hash, $myIcon, $this->pdo);
 
                     try {
                         $newUser->setNewUser();
                         echo json_encode(['success' => true]);
+                        
                     } catch(Exception) {
                         echo json_encode(['success' => false, 'message' => $_SESSION["error"]]);
                     }

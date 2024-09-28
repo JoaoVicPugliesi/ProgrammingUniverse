@@ -4,12 +4,14 @@
          private $username;
          private $email;
          private $password;
+         private $myIcon;
          private $pdo;
 
-         public function __construct($username, $email, $password, $pdo) {
+         public function __construct($username, $email, $password, $myIcon, $pdo) {
             $this->username = $username;
             $this->email = $email;
             $this->password = $password;
+            $this->myIcon = $myIcon;
             $this->pdo = $pdo;
         }
 
@@ -37,12 +39,13 @@
             }
 
 
-            $sql = 'INSERT INTO User(username, email, password) VALUES (:username, :email, :pass)';
+            $sql = 'INSERT INTO User(username, email, password, user_icon) VALUES (:username, :email, :pass, :userIcon)';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
                 ':username' => $this->username,
                 ':email' => $this->email,
                 ':pass' => $this->password,
+                ':userIcon' => $this->myIcon
             ]);
             
         }

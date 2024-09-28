@@ -31,22 +31,35 @@ myForm.addEventListener('submit', function(e) {
 
         if (data.success) {
             myFlashMessage.textContent = 'User registered successfully!';
-            myFlashMessage.className = 'flash-message success show'; 
+            myFlashMessage.className = 'myFlashMessage success show'; 
+            window.location.replace("index.html"); 
         } else {
             myFlashMessage.textContent = 'Error: ' + data.message;
-            myFlashMessage.className = 'flash-message error show'; 
+            myFlashMessage.className = 'myFlashMessage error show'; 
         }
 
         setTimeout(() => {
             myFlashMessage.classList.add('fade-out'); 
             setTimeout(() => {
                 myFlashMessage.classList.remove('show', 'fade-out'); 
-                myFlashMessage.className = 'flash-message'; 
+                myFlashMessage.className = 'myFlashMessage'; 
             }, 500); 
         }, 3000); 
     }) 
     .catch(error => console.error('Error', error));
 })
+
+// Here i'm retriving the myChosenIcon from the local storage
+
+window.onload = function () {
+    const myChosenIcon = localStorage.getItem('myChosenIcon');
+    if(myChosenIcon) {
+        document.getElementById('myIcon').src = myChosenIcon;
+        document.getElementsByTagName('myChosenIcon').value = myChosenIcon;
+
+        localStorage.removeItem('myChosenIcon');
+    }
+}
 
 // Here i'm changing the TogglePasswordVisibility
 
@@ -63,4 +76,6 @@ myView.onclick = function() {
         myView.src = '../client/assets/images/hide.png';
     }
 }
+
+
 

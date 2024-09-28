@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../client/assets/images/windowsBlue.png" type="image/x-icon">
     <link rel="stylesheet" href="../client/assets/css/newUser.css">
+    <link rel="stylesheet" href="../client/assets/css/myHeaderLink.css">
     <title>Windows Universe</title>
 </head>
 <body class="flex">
     
-    <div id="myFlashMessage" class="flash-message"></div>
+    <div id="myFlashMessage" class="myFlashMessage"></div>
     <div id="myNewUser" class="flex">
         <div id="myHeader">
             <a href="index.html"><div class="flex" id="myHeaderLink">
@@ -21,7 +22,7 @@
             <div id="myUsernameAndIconChoice" class="flex">
                 <div class="myIconContainer">
                 <div id="myIconShadow"></div>
-                <img id="myIcon" src="../client/assets/images/user.png" alt="user">
+                <img id="myIcon" src="../client/assets/images/user.jpg" alt="user">
                 <a href="logo.html"><img id="myEditIcon" src="../client/assets/images/edit.png" alt="edit"></a>
                 </div>
                 
@@ -35,6 +36,7 @@
                     <input type="password" name="password" id="myPassword" required placeholder="password" autocomplete="off" maxlength="25">
                     <img id="myView" src="../client/assets/images/view.png" alt="view">
                 </div>
+                <input type="hidden" name="myChosenIcon" id="myChosenIcon" value="../client/assets/images/user.jpg">
                 <button type="submit" id="myBtn">Enter</button>
             </div>
         </form>

@@ -3,14 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../client/assets/images/windowsBlue.png" type="image/x-icon">
     <link rel="stylesheet" href="../client/assets/css/logo.css">
+    <link rel="stylesheet" href="../client/assets/css/myHeaderLink.css">
     <title>Windows Universe</title>
 </head>
-<body>
+<body class="flex">
 
-    <form id="myForm">
-        
+    <div id="myFlashMessage" class="myFlashMessage">Test</div>
+    <div id="myHeader">
+        <a href="index.html"><div class="flex" id="myHeaderLink">
+            <img id="myLogoWindows" src="../client/assets/images/windowsBlue.png" alt="windowsBlue">
+            <h3 id="myWindowsName">Windows Universe</h3>
+        </div></a>
+    </div>
+    <div id="myIconDecisionDiv">
+        <h3 id="myIconDecision">Choose the logo based on what defines you as a programmer</h3>
+    </div>
+    <form id="myForm" class="flex">
+        <div id="myFlex" class="flex">
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/michael.jpg" id="myRadio1" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/michael.jpg);" for="myRadio1" id="myRadio1" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Michael Jordan</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"I Believe I Can Fly".</p>
+                </div>   
+            </label>
+        </div>
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/hamilton.jpg" id="myRadio2" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/hamilton.jpg);" for="myRadio2" id="myRadio2" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Lewis Hamilton</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"Faces the limits of time".</p>
+                </div>   
+            </label>
+        </div> 
 
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/cristiano.jpg" id="myRadio3" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/cristiano.jpg);" for="myRadio3" id="myRadio3" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Cristiano Ronaldo</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"Loves to make hard decisions."</p>
+                </div>   
+            </label>
+        </div> 
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/ironman.jpg" id="myRadio4" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/ironman.jpg);" for="myRadio4" id="myRadio4" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Tony Stark</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"Genius, Billionaire, Playboy, Philanthropist".</p>
+                </div>   
+            </label>
+        </div> 
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/woody.jpg" id="myRadio5" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/woody.jpg);" for="myRadio5" id="myRadio5" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Woody</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"Teamwork and Friendship".</p>
+                </div>   
+            </label>
+        </div> 
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/batman.jpg" id="myRadio6" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/batman.jpg);" for="myRadio6" id="myRadio6" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Batman</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"A night creature".</p>
+                </div>   
+            </label>
+        </div> 
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/tomcruise.jpg" id="myRadio7" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/tomcruise.jpg);" for="myRadio7" id="myRadio7" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Tom Cruise</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"Ready to take unimaginable stunts".</p>
+                </div>   
+            </label>
+        </div> 
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/cateblanchett.jpg" id="myRadio8" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/cateblanchett.jpg);" for="myRadio8" id="myRadio8" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Cate Blanchett</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"Immensely sophisticated".</p>
+                </div>   
+            </label>
+        </div> 
+        <div id="myContainer" class="flex">
+            <input type="radio" name="icon" value="/client/assets/images/icon_images/leo.jpg" id="myRadio9" hidden>
+            <label style="background-image: url(/client/assets/images/icon_images/leo.jpg);" for="myRadio9" id="myRadio9" class="flex">
+                <div id="myRow" class="flex">
+                    <h3 id="myName">Leonardo DiCaprio</h3>
+                    <div id="myLine"></div>
+                    <p id="myPhrase">"Brave. Loves job done no matter what".</p>
+                </div>   
+            </label>
+        </div> 
+        </div>
+        <div id="myBtnDiv"></div>
+            <button id="myBtn">Ready</button>
+        </div>
     </form>
+    <script src="./assets/js/logo.js"></script>
 </body>
 </html>

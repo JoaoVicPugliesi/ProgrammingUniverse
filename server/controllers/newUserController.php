@@ -4,7 +4,7 @@
     header('Access-Control-Allow-Headers: Content-Type, Authorization');
     session_start();
     require_once '../core/pdo.php';
-    require_once '../modules/newUserModule.php';
+    require_once '../models/newUserModel.php';
     require_once 'newUserInputController.php';
 
     class NewUserController {
@@ -14,7 +14,7 @@
             $this->pdo = $pdo;
         }
 
-        public function getNewUsername() {
+        public function getNewUser() {
             if($_SERVER["REQUEST_METHOD"] === "POST") {
                 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
                 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -49,4 +49,4 @@
 
 
     $newUserController = new NewUserController($pdo);
-    $newUserController->getNewUsername();
+    $newUserController->getNewUser();

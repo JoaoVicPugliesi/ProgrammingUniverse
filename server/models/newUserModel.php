@@ -4,14 +4,14 @@
          private $username;
          private $email;
          private $password;
-         private $myIcon;
+         private $usericon;
          private $pdo;
 
-         public function __construct($username, $email, $password, $myIcon, $pdo) {
+         public function __construct($username, $email, $password, $usericon, $pdo) {
             $this->username = $username;
             $this->email = $email;
             $this->password = $password;
-            $this->myIcon = $myIcon;
+            $this->usericon = $usericon;
             $this->pdo = $pdo;
         }
 
@@ -34,18 +34,17 @@
                 if($user['email'] == $this->email) {
                     $_SESSION['error'] = "The email is already Taken";
                 }
-
                 throw new PDOException($_SESSION['error']);
             }
 
 
-            $sql = 'INSERT INTO User(username, email, password, user_icon) VALUES (:username, :email, :pass, :userIcon)';
+            $sql = 'INSERT INTO User(username, email, password, user_icon) VALUES (:username, :email, :pass, :usericon)';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
                 ':username' => $this->username,
                 ':email' => $this->email,
                 ':pass' => $this->password,
-                ':userIcon' => $this->myIcon
+                ':usericon' => $this->usericon
             ]);
             
         }

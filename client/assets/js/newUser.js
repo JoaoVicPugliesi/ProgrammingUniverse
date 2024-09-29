@@ -30,8 +30,10 @@ myForm.addEventListener('submit', function(e) {
         const myFlashMessage = document.getElementById('myFlashMessage');
 
         if (data.success) {
-            myFlashMessage.textContent = 'User registered successfully!';
-            myFlashMessage.className = 'myFlashMessage success show'; 
+            const success = 'User registered successfully!';
+            const display = 'myFlashMessage success show'; 
+            localStorage.setItem('success', success);
+            localStorage.setItem('success', display);
             window.location.replace("index.html"); 
         } else {
             myFlashMessage.textContent = 'Error: ' + data.message;
@@ -70,12 +72,50 @@ myView.onclick = function() {
 
     if(myPassword.type === 'password') {
         myPassword.type = 'text';
-        myView.src = '../client/assets/images/view.png';
+        myView.src = '../client/assets/images/hide.png';
     } else  {
         myPassword.type = 'password';
-        myView.src = '../client/assets/images/hide.png';
+        myView.src = '../client/assets/images/view.png';
     }
 }
 
+// Here i'm saving the user's input progress
+
+window.addEventListener('load', function() {
+    
+    const mySaveFromEdit = sessionStorage.getItem('mySaveFromEdit');
+
+    if (mySaveFromEdit === 'true') {
+        if (sessionStorage.getItem('username')) {
+            document.querySelector('.myUsername').value = sessionStorage.getItem('username');
+        }
+        if (sessionStorage.getItem('email')) {
+            document.querySelector('.myEmail').value = sessionStorage.getItem('email');
+        }
+        if (sessionStorage.getItem('password')) {
+            document.querySelector('.myPassword').value = sessionStorage.getItem('password');
+        }
+    } else {
+        sessionStorage.removeItem('username');
+        sessionStorage.removeItem('email');
+        sessionStorage.removeItem('password');
+    }
+});
+
+document.querySelector('.myEditIcon').addEventListener('click', function(e) {
+    e.preventDefault(); 
+
+    const username = document.querySelector('.myUsername').value;
+    const email = document.querySelector('.myEmail').value;
+    const password = document.querySelector('.myPassword').value;
+
+    sessionStorage.setItem('username', username);
+    sessionStorage.setItem('email', email);
+    sessionStorage.setItem('password', password);
+
+    sessionStorage.setItem('mySaveFromEdit', 'true');
+
+    window.location.href = 'logo.html'; 
+});
 
 

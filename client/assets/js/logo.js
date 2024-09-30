@@ -1,3 +1,5 @@
+// Here i'm veryfing if the user chose a icon or not
+
 const myForm = document.getElementById('myForm');
 
 myForm.addEventListener('submit', function(e) {
@@ -8,16 +10,29 @@ myForm.addEventListener('submit', function(e) {
         localStorage.setItem('myChosenIcon', myChosenIcon.value);
         window.location.replace("newUser.html");
     } else {
-        const errorMessage = document.querySelector('.myFlashMessage');
-        errorMessage.textContent = "please select a icon before confirming";
-        errorMessage.className = 'myFlashMessage error show';
-        setTimeout(() => {
+        const myFlashMessage = document.getElementById('myFlashMessage');
+        const myFlashMessageAnimation = document.getElementById('myFlashMessageAnimation');
+        const myTypeOfFlashMessage = document.getElementById('myTypeOfFlashMessage');
+        const myFlashMessageContent = document.getElementById('myFlashMessageContent');
+        const myFlashMessageBtn = document.getElementById('myFlashMessageBtn');
+        const myFlashMessageOverlay = document.getElementById('myFlashMessageOverlay');
+
+        myFlashMessageAnimation.src = '/client/assets/images/animations/error.gif'
+        myTypeOfFlashMessage.textContent = "Error";
+        myFlashMessageContent.textContent = "Select a icon";
+        myFlashMessage.className = 'myFlashMessage error show';
+        myFlashMessageBtn.textContent = 'Try Again';
+        myFlashMessageOverlay.style.display = 'block'; // Show overlay
+
+       myFlashMessageBtn.onclick = function() { setTimeout(() => {
             myFlashMessage.classList.add('fade-out'); 
             setTimeout(() => {
                 myFlashMessage.classList.remove('show', 'fade-out'); 
                 myFlashMessage.className = 'myFlashMessage'; 
-            }, 500); 
-        }, 3000); 
+                myFlashMessageOverlay.style.display = 'none'; // Hide overlay
+            }, 200); 
+        }); 
+    }
     }
 
 }) 

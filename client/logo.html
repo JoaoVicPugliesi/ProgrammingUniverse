@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
     <title>Windows Universe</title>
 </head>
-<body class="flex">
-
-    <div id="myFlashMessage" class="myFlashMessage"></div>
+<body id="myBody" class="flex">
+    <div id="myFlashMessageOverlay"></div>
+    <div id="myFlashMessage" class="myFlashMessage">
+        <img id="myFlashMessageAnimation" src="" alt="myFlashMessageAnimation">
+        <h3 id="myTypeOfFlashMessage">Test</h3>
+        <p id="myFlashMessageContent">Test</p>
+        <button id="myFlashMessageBtn">Test</button>
+    </div>
     <div id="myHeader">
         <a href="index.html"><div class="flex" id="myHeaderLink">
             <img id="myLogoWindows" src="../client/assets/images/windowsBlue.png" alt="windowsBlue">
@@ -125,7 +130,7 @@
             </label>
         </div> 
         </div>
-        <div id="myBtnDiv"></div>
+        <div id="myBtnDiv">
             <button id="myBtn">Ready</button>
         </div>
     </form>

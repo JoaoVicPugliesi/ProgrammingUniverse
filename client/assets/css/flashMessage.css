@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --success-color: #7CDF4E;
@@ -6,15 +7,25 @@
     --white-color: #ffffff;
 }
 
+#myFlashMessageOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+    display: none; 
+}
+
 .myFlashMessage {
-    display: none;
     position: absolute;
+    width: 17em;
+    height: 22em;
     padding: 15px;
-    width: 20em;
-    height: 25em;
     align-content: center;
     text-align: center;
-    top: 35%;
+    top: 25%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
@@ -24,18 +35,77 @@
     transition: all 0.3s ease-in-out; 
     z-index: 1000;
     user-select: none; 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    border: var(--white-color) 2px solid;
+}
+
+#myFlashMessageAnimation {
+    width: 180px;
+}
+
+#myTypeOfFlashMessage {
+    color: white;
+    letter-spacing: 5px;
+}
+
+#myFlashMessageContent {
+    margin: 15px 0px 0px 5px;
+    font-weight: 400;
+    font-size: 0.7em;
+    width: 20em;
+    font-family: 'Cabin', sans-serif;
 }
 
 .myFlashMessage.success {
-    background-color: var(--white-color);
     color: var(--white-color);
     border: 1px solid var(--success-color); 
+    background: var(--success-color);
+
+}
+
+.myFlashMessage.success #myFlashMessageBtn {
+    box-shadow: 5px 5px var(--white-color);
+    background: var(--success-color);
+    color: var(--white-color);
+    width: 10em;
+    height: 3em;
+}
+
+.myFlashMessage.success #myFlashMessageBtn:active {
+    box-shadow: 0px 0px var(--white-color);
+    background: var(--white-color);
+    color: var(--success-color);
 }
 
 .myFlashMessage.error {
-    background-color: var(--white-color); 
-    color: var(--Third-color-main-red);
+    background-color: var(--Third-color-main-red); 
+    color: var(--white-color);
     border: 1px solid var(--Third-color-main-red);
+}
+
+.myFlashMessage.error #myFlashMessageBtn {
+    box-shadow: 5px 5px var(--white-color);
+    background: var(--Third-color-main-red);
+    color: var(--white-color);
+    width: 10em;
+    height: 3em;
+    margin-left: 38px;
+}
+
+.myFlashMessage.error #myFlashMessageBtn:active {
+    box-shadow: 0px 0px var(--white-color);
+    background: var(--white-color);
+    color: var(--Third-color-main-red);
+}
+
+
+
+.myFlashMessage.error > #myFlashMessageBtn {
+    display: block;
 }
 
 .myFlashMessage.show {
@@ -47,3 +117,4 @@
     opacity: 0; 
     transition: opacity 0.5s ease-out;
 }
+

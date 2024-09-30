@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 :root {
     --Main-color: #4294FF;
     --Second-color: #333333;
@@ -31,7 +32,7 @@
     box-sizing: border-box;
 }
 
-body {
+#myBody {
     background-image: url(../images/space.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -42,9 +43,189 @@ body {
     overflow: hidden;
     position: relative;
     background-color: var(--Second-color);
+    gap: 5em;
 }
 
 #myHeader {
     margin-top: 40px;
 }
 
+#mySearchDiv {
+    margin-top: 10px;
+}
+
+#mySearchBlock {
+    position: relative; 
+    width: 100%; 
+}
+
+#mySearch {
+    width: 20em;
+    margin: 10px;
+    background: none;
+    outline: none;
+    border: none; 
+    border-bottom: 3px solid var(--Main-color-pink);
+    padding: 5px 10px;
+    color: var(--white-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+#mySearchBtn {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+
+#mySearchIconBtn {
+    width: 2em;
+}
+
+#mySearchIconBtn:checked {
+    transform: scale(1.1);
+}
+
+#myProfilesDiv {
+    max-width: 70em;
+    width: 60em;
+    height: 20em;
+    align-items: flex-start;
+}
+
+#myFlex {
+    gap: 20px;
+ 
+}
+
+#myPlusSignDiv {
+    background: var(--Main-color-pink);
+    padding: 10px;
+    border-radius: 10px;
+    width: 8.5em;
+    height: 10em;
+}
+
+#myAddSignImage {
+    width: 5em;
+    margin-left: 18px;
+}
+
+#myContainer {
+    flex-direction: column;
+}
+
+#myImageContainer {
+    padding: 10px;
+    width: 8.5em;
+    height: 10em;
+    background-color: var(--Second-color-second);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#myProfileImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid var(--Third-color-main-red);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#myProfileCheckBox {
+    border-radius: 10px;
+}
+
+#myNameAndListDiv {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 70%;
+    margin-left: -5px;
+}
+
+#myProfileName {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white-color);
+    font-size: 0.9em;
+    padding: 5px;
+    text-wrap: wrap;
+    background:  var(--Third-color-main-red);
+    border-radius: 10px;
+    user-select: none;
+}
+
+#myButtonDiv {
+    background-color: var(--Main-color-pink);
+    padding: 2px 7px;
+    border-radius: 10px;
+    gap: 5px;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 5px;
+}
+
+#myUpdateButton, #myEnterButton, #myInfoButton, #myDeleteButton {
+    background: none;
+    border: none;
+}
+
+#myUpdateButtonImage, #myEnterButtonImage, #myInfoButtonImage, #myDeleteButtonImage {
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+#myEnterButtonImage {
+    margin-top: 3px;
+}
+
+#myUpdateButtonImage {
+    width: 1.4em;
+    height: 1.5em;
+}
+
+#myImageContainer:hover + #myNameAndListDiv > #myButtonDiv{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#userContainers {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#myFlashMessageBtn {
+    cursor: pointer;
+    width: 15em;
+    height: 4em;
+    padding: 5px 10px;
+    font-size: 1em;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 5px 5px var(--Third-color-main-red);
+    transition: all 0.2s ease;
+    margin: 10px;
+    letter-spacing: 2px;
+}

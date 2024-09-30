@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
     <title>Windows Universe</title>
 </head>
-<body class="flex">
-    
-    <div id="myFlashMessage" class="myFlashMessage">Test</div>
+<body id="myBody" class="flex">
+    <div id="myFlashMessageOverlay"></div>
+    <div id="myFlashMessage" class="myFlashMessage">
+        <img id="myFlashMessageAnimation" src="" alt="firescrackers">
+        <h3 id="myTypeOfFlashMessage">Test</h3>
+        <p id="myFlashMessageContent">Test</p>
+        <button id="myFlashMessageBtn">Test</button>
+    </div>
     <div id="myNewUser" class="flex">
         <div id="myHeader">
             <a href="index.html"><div class="flex" id="myHeaderLink">
@@ -37,7 +42,7 @@
                     <input type="password" name="password" id="myPassword" class="myPassword" required placeholder="password" autocomplete="off" maxlength="25">
                     <img id="myView" src="../client/assets/images/view.png" alt="view">
                 </div>
-                <input type="hidden" name="myChosenIcon" id="myChosenIcon" value="../client/assets/images/user.jpg">
+                <input type="hidden" name="myChosenIcon" id="myChosenIcon" value="">
                 <button type="submit" id="myBtn">Enter</button>
             </div>
         </form>

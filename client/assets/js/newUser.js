@@ -28,25 +28,38 @@ myForm.addEventListener('submit', function(e) {
     .then(res => res.json())
     .then(data => {
         const myFlashMessage = document.getElementById('myFlashMessage');
+        const myFlashMessageAnimation = document.getElementById('myFlashMessageAnimation');
+        const myTypeOfFlashMessage = document.getElementById('myTypeOfFlashMessage');
+        const myFlashMessageContent = document.getElementById('myFlashMessageContent');
+        const myFlashMessageBtn = document.getElementById('myFlashMessageBtn');
+        const myFlashMessageOverlay = document.getElementById('myFlashMessageOverlay');
 
         if (data.success) {
             const success = 'User registered successfully!';
             const display = 'myFlashMessage success show'; 
             localStorage.setItem('success', success);
-            localStorage.setItem('success', display);
+            localStorage.setItem('display', display);
             window.location.replace("index.html"); 
         } else {
-            myFlashMessage.textContent = 'Error: ' + data.message;
-            myFlashMessage.className = 'myFlashMessage error show'; 
+
+            myFlashMessageAnimation.src = '/client/assets/images/animations/error.gif';
+            myTypeOfFlashMessage.textContent = "Error";
+            myFlashMessageContent.textContent = data.message;
+            myFlashMessage.className = 'myFlashMessage error show';
+            myFlashMessageOverlay.style.display = 'block'; // Show overlay
+            myFlashMessageBtn.textContent = 'Try Again';
         }
 
-        setTimeout(() => {
+        myFlashMessageBtn.onclick = function() {
+            setTimeout(() => {
             myFlashMessage.classList.add('fade-out'); 
             setTimeout(() => {
                 myFlashMessage.classList.remove('show', 'fade-out'); 
                 myFlashMessage.className = 'myFlashMessage'; 
-            }, 500); 
-        }, 3000); 
+                myFlashMessageOverlay.style.display = 'none'; // Hide overlay
+            }, 200); 
+        }); 
+    }
     }) 
     .catch(error => console.error('Error', error));
 })
@@ -57,8 +70,7 @@ window.onload = function () {
     const myChosenIcon = localStorage.getItem('myChosenIcon');
     if(myChosenIcon) {
         document.getElementById('myIcon').src = myChosenIcon;
-        document.getElementsByTagName('myChosenIcon').value = myChosenIcon;
-
+        document.getElementById('myChosenIcon').value = myChosenIcon;
         localStorage.removeItem('myChosenIcon');
     }
 }

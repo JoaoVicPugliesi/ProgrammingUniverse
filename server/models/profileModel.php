@@ -7,10 +7,10 @@
             $this->pdo = $pdo;
         }
 
-        public function setProfile() {
-            $stmt = $this->pdo->query('SELECT * FROM User ORDER BY user_id DESC LIMIT 5');
-            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $_SESSION["user"] = $users;
-            $_SESSION["user_id"] = $users['user_id'];
+        public function setProfiles() {
+            $sql = 'SELECT * FROM User ORDER BY user_id DESC LIMIT 5';
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }

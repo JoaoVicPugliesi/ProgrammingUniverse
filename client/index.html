@@ -26,24 +26,26 @@
     <div id="mySearchDiv">
     <form id="mySearchForm">
         <div id="mySearchBlock" class="flex">
-        <input type="text" name="username" id="mySearch" placeholder="Who is exploring today?" autocomplete="off" maxlength="25">
-        <button id="mySearchBtn"><img src="/client/assets/images/search.png" alt="mySearchIconBtn" id="mySearchIconBtn"></button>
+        <input type="text" name="searchedUsername" id="mySearch" placeholder="Who is exploring today?" autocomplete="off" maxlength="25">
+        <button type="submit" id="mySearchBtn"><img src="/client/assets/images/search.png" alt="mySearchIconBtn" id="mySearchIconBtn"></button>
         </div>
     </form>
     </div>
     <div id="myProfilesDiv" class="flex">
-    <form id="myProfilesForm">
-        <div id="myFlex" class="flex">
-            <div id="myPlusSignDiv" class="flex">
-            <a href="newUser.html"><img src="/client/assets/images/plus-icon.png" alt="plusign" id="myAddSignImage"></a>
-            </div>
-            
-            <div id="userContainers">
-                
-            </div>
+    <form id="myProfilesForm" class="flex">  
+        <div id="myPlusSign">
+            <a href="newUser.html"><img src="/client/assets/images/plus-icon.png" alt="plusign" id="myPlusSignImage"></a>
+            <h3 id="myPlusName">Add New Profile</h3>
         </div>
+        <div id="noUsersFound" class="myDisplay">
+            <h3 id="noUsersFoundContent" >No Users Found</h3>
+        </div>
+        <div id="userContainer" class="flex">
+            
+        </div>  
     </form>
     </div>
     <script src="/client/assets/js/index.js"></script>
 </body>
 </html>
+

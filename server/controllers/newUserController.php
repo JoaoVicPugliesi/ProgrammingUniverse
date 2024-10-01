@@ -1,4 +1,5 @@
 <?php 
+    header('Content-Type: application/json'); 
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type, Authorization');
@@ -28,7 +29,7 @@
                 $validatePassword = $validateController->passwordController($password);
         
                 if($validateUsername && $validateEmail && $validatePassword) {
-                    $hash = password_hash($password, PASSWORD_DEFAULT);
+                    $hash = password_hash($password, PASSWORD_BCRYPT);
                     $newUser = new NewUserModel($username, $email, $hash, $myIcon, $this->pdo);
 
                     try {

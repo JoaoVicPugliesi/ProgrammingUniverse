@@ -3,14 +3,12 @@
     class LoginModel {
         private $email;
         private $password;
-        private $user;
         private $userId;
         private $pdo;
 
-        public function __construct($email, $password, $user, $userId, $pdo) {
+        public function __construct($email, $password, $userId, $pdo) {
             $this->email = $email;
             $this->password = $password;
-            $this->user = $user;
             $this->userId = $userId;
             $this->pdo = $pdo;
         }
@@ -21,12 +19,15 @@
             $stmt->bindParam(':userId', $this->userId, PDO::PARAM_INT);
             $stmt->execute();
 
-            $this->user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if($this->user && $this->email == $this->user['email'] && password_verify($this->password, $this->user['password'])) {
-                $_SESSION['success'] = "Welcome User";
+            if($user && $this->email == $user['email'] && password_verify($this->password, $user['password'])) {
+                $_SESSION['success'] = true;
+                $_SESSION['message'] = "Welcome";
+                $_SESSION['user'] = $user;
             } else {
-                $_SESSION['error'] = "Invalid Password or User";
+                $_SESSION['success'] = false;
+                $_SESSION['user'] = $user;
             }
 
         }

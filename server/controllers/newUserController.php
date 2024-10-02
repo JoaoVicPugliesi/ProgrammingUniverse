@@ -29,7 +29,7 @@
                 $validatePassword = $validateController->passwordController($password);
         
                 if($validateUsername && $validateEmail && $validatePassword) {
-                    $hash = password_hash($password, PASSWORD_BCRYPT);
+                    $hash = password_hash($password, PASSWORD_DEFAULT);
                     $newUser = new NewUserModel($username, $email, $hash, $myIcon, $this->pdo);
 
                     try {

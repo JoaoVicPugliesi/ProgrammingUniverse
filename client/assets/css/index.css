@@ -44,6 +44,111 @@
     gap: 5em;
 }
 
+.myDeleteFormOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 997; 
+    display: none; 
+}
+
+.myDeleteFormOverlay.Display {
+    display: block;
+}
+
+.myDeleteDiv {
+    position: absolute;
+    width: 17em;
+    height: 30em;
+    padding: 15px;
+    align-content: center;
+    text-align: center;
+    top: 25%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1em;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all 0.3s ease-in-out; 
+    z-index: 998;
+    user-select: none; 
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2px;
+    border: var(--white-color) 2px solid;
+    background-color: var(--Main-color);
+    color: var(--white-color);
+}
+
+.myDeleteDiv.Display {
+    display: flex;
+}
+
+#myCancelBtn {
+    background: none;
+    border: none;
+    margin: 0px -16em 0px 0px;
+}
+
+#myCancelBtnImage {
+    width: 3em;
+    cursor: pointer;
+}
+
+#myFormColumn {
+    flex-direction: column;
+    gap: 5px;
+}
+
+#myBubble {
+    width: 10em;
+}
+
+#myEmail, #myPassword {
+    margin: 10px 0px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid var(--Second-color);
+    padding: 5px 10px;
+    outline: none;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    width: 13em;
+    position: relative;
+}
+
+#myDeleteBtn {
+    cursor: pointer;
+    width: 10em;
+    height: 2em;
+    padding: 5px 10px;
+    font-size: 1em;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 5px 5px var(--Main-color-pink);
+    transition: all 0.2s ease;
+    margin: 10px;
+    letter-spacing: 2px;
+}
+
+#myDeleteBtn:active {
+    background-color: var(--Main-color-pink);
+    transform: scale(0.95);
+    backdrop-filter: blur(50px);
+    box-shadow: 0px 0px var(--Third-color-main-red);
+    color: #ffffff;
+}
+
+
 #myHeader {
     margin-top: 40px;
 }
@@ -96,7 +201,7 @@
     margin: 20px;
 }
 
-#myProfilesForm {
+#myProfiles {
     width: 100%;
     height: 15em;
     align-items: center;
@@ -198,13 +303,13 @@
     opacity: 0;
     visibility: hidden;
     gap: 5px;
-    justify-content: space-around;
+    justify-content: center;
     margin-bottom: 5em;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    width: 8em;
+    width: 5em;
 }
 
-#myEnterButton, #myInfoButton, #myDeleteButton {
+.myEnterButton, .myDeleteButton {
     background: none;
     border: none;
 }
@@ -233,6 +338,7 @@
 #noUsersFound {
     border: 1px black solid;
     width: 12em;
+    text-align: center;
 }
 
 .myDisplay {
@@ -245,29 +351,73 @@
     display: block;
 }
 
-@media (max-width: 990px) {
 
-    #myProfilesDiv {
-        margin-top: -20px;
+@media (max-width: 1050px) {
+    #myProfiles {
+        flex-direction: column;
+        margin: -10em 0px 0px 0px;
     }
 
-    #myFlex {
-        flex-direction: column;
-        margin-left: 10px;
+    #myPlusSign {
+        align-self: center;
+        position: relative;
+        z-index: 5;
     }
 
-    #myNameAndListDiv {
-        display: flex;  
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    #userContainer {
         position: absolute;
-        top: 91%;
-        margin-left: -5px;
-    }
-
-    #userContainers {
+        margin: 0px 10em 0px 10em;
         flex-wrap: nowrap;
     }
+
+    #myContainer:nth-child(1) {
+        margin: 15em -10.5em 0px 0px;
+    }   
+
+    #myContainer:nth-child(3) {
+        margin: 15em 0px 0px 0px;
+    }
+
+    #myContainer:nth-child(5) {
+        margin: 15em 0px 0px -10.5em;
+    }
     
+}
+
+@media (max-width: 520px) {
+
+    #myPlusSignImage {
+        width: 7em;
+        height: 8em;
+    }
+
+    #myContainer {
+        align-self: flex-start;
+    }
+
+    #userContainer {
+        margin: 0px 10em 0px 10em;
+    }
+
+    #myContainer:nth-child(1) {
+        margin: 15em -12.5em 0px 0em;
+    }   
+    
+    #myContainer:nth-child(5) {
+        margin: 15em 0px 0px -12.5em;
+    }
+    
+    #myImageContainer {
+        width: 7em;
+        height: 8em;
+    }
+      
+    #myProfileName {
+        font-size: 0.8em;
+        width: 10em;
+    }
+
+    #myButtonDiv {
+        width: 6em;
+    }
 }

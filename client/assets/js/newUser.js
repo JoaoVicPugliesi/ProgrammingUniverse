@@ -39,7 +39,7 @@ myForm.addEventListener('submit', function(e) {
             const display = 'myFlashMessage success show'; 
             localStorage.setItem('success', success);
             localStorage.setItem('display', display);
-            window.location.replace("index.html"); 
+            window.location.replace("/index.html"); 
         } else {
 
             myFlashMessageAnimation.src = '/client/assets/images/animations/error.gif';

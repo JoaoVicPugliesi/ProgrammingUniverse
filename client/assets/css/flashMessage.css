@@ -20,7 +20,7 @@
 .myFlashMessage {
     position: absolute;
     width: 17em;
-    height: 22em;
+    height: 30em;
     padding: 15px;
     align-content: center;
     text-align: center;
@@ -59,10 +59,28 @@
     font-family: 'Cabin', sans-serif;
 }
 
+
+#myFlashMessageBtn {
+    cursor: pointer;
+    width: 15em;
+    height: 4em;
+    padding: 5px 10px;
+    font-size: 1em;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 5px 5px var(--Third-color-main-red);
+    transition: all 0.2s ease;
+    margin: 28px 0px 0px 0px;
+    letter-spacing: 2px;
+}
+
 .myFlashMessage.success {
     color: var(--white-color);
-    border: 1px solid var(--success-color); 
+    border: 2px solid var(--white-color); 
     background: var(--success-color);
+
 
 }
 
@@ -83,7 +101,7 @@
 .myFlashMessage.error {
     background-color: var(--Third-color-main-red); 
     color: var(--white-color);
-    border: 1px solid var(--Third-color-main-red);
+    border: 2px solid var(--white-color);
 }
 
 .myFlashMessage.error #myFlashMessageBtn {
@@ -100,8 +118,6 @@
     background: var(--white-color);
     color: var(--Third-color-main-red);
 }
-
-
 
 .myFlashMessage.error > #myFlashMessageBtn {
     display: block;

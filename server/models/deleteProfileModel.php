@@ -2,13 +2,13 @@
 
     class DeleteProfileModel {
         private $password;
-        private $user;
+        private $email;
         private $userId;
         private $pdo;
 
-        public function __construct($password, $user, $userId, $pdo) {
+        public function __construct($password, $email, $userId, $pdo) {
             $this->password = $password;
-            $this->$user = $user;
+            $this->email = $email;
             $this->userId = $userId;
             $this->pdo = $pdo;
         }
@@ -16,22 +16,36 @@
         public function setDelete() {
             $sql = 'SELECT * FROM User WHERE user_id = :user_id';
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':user_id', $this->userId, PDO::PARAM_INT);
-            $stmt->execute();
+            $stmt->execute([':user_id' => $this->userId]);
 
-            $this->user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if($this->user && password_verify($this->password, $this->user['password'])) {
-                $sql = 'DELETE FROM User WHERE user_id = :user_id AND password = :pass';
-                $stmt = $this->pdo->prepare($sql);
-                $stmt->execute([
-                    ':user_id' => $this->userId,
-                    ':pass' => $this->password
-                ]);
+            if($user) {
+                if($user['email'] == $this->email && password_verify($this->password, $user['password'])) {
+                    $sql = 'DELETE FROM User WHERE user_id = :user_id';
+                    $stmt = $this->pdo->prepare($sql);
+                    $stmt->execute([
+                        ':user_id' => $this->userId,
+                    ]);
 
-                $_SESSION['success'] = "Profile Deleted Successfully";
-            } else {
-                $_SESSION['error'] = "Invalid Password or User";
-            }
+                    $_SESSION['success'] = true;
+                    $_SESSION['user'] = $user;
+                }
+                    
+                if($user['email'] !== $this->email) {
+                    $_SESSION['success'] = false;
+                    $_SESSION['user'] = $user;
+                    $_SESSION['error'] = 'Invalid Email';
+                }
+
+                if(!password_verify($this->password, $user['password'])) {
+                    $_SESSION['success'] = false;
+                    $_SESSION['user'] = $user;
+                    $_SESSION['error'] = 'Invalid Password';
+                }
+            } 
+
+            } 
         }
-    }
+    
+    

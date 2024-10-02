@@ -168,7 +168,7 @@ input[type="radio"]:not(:checked) + #myRadio1 > #myRow {
 
     #myRadio1, #myRadio2, #myRadio3, #myRadio4, #myRadio5, #myRadio6, #myRadio7, #myRadio8, #myRadio9, #myRadio10 {
         width: 5em;
-        height: 15em;
+        height: 13em;
     }
 
     #myName {
@@ -216,7 +216,7 @@ input[type="radio"]:not(:checked) + #myRadio1 > #myRow {
     
 }
 
-@media (max-width: 570px) {
+@media (max-width: 600px) {
 
     #myRadio1, #myRadio2, #myRadio3, #myRadio4, #myRadio5, #myRadio6, #myRadio7, #myRadio8, #myRadio9, #myRadio10 {
         height: 9em;

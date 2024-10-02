@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../client/assets/images/windowsBlue.png" type="image/x-icon">
-    <link rel="stylesheet" href="../client/assets/css/index.css">
-    <link rel="stylesheet" href="../client/assets/css/myHeaderLink.css">
-    <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
+    <link rel="shortcut icon" href="/client/assets/images/windowsBlue.png" type="image/x-icon">
+    <link rel="stylesheet" href="/client/assets/css/index.css">
+    <link rel="stylesheet" href="/client/assets/css/myHeaderLink.css">
+    <link rel="stylesheet" href="/client/assets/css/flashMessage.css">
     <title>Windows Universe</title>
 </head>
 <body id="myBody" class="flex">
+    <div id="myDeleteFormOverlay" class="myDeleteFormOverlay"></div>
+    <div id="myDeleteDiv" class="myDeleteDiv">
+        <form id="myDeleteForm">
+            <button id="myCancelBtn"><img id="myCancelBtnImage" src="/client/assets/images/close.png" alt="myCancelBtnImg"></button>
+            <div id="myFormColumn" class="flex">
+                <img id="myBubble" src="/client/assets/images/animations/login.gif" alt="myBubble">
+                <h3>Are you sure you wanna delete this profile?</h3>
+                <input id="myEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50" required >
+                <input id="myPassword" type="text" name="password" placeholder="password" autocomplete="off" maxlength="25" required>
+                <input id="myUserId" type="hidden" name="userId" value="">
+            </div>
+            <button type="submit" id="myDeleteBtn">Delete</button>
+        </form>
+    </div>
     <div id="myFlashMessageOverlay"></div>
     <div id="myFlashMessage" class="myFlashMessage">
         <img id="myFlashMessageAnimation" src="" alt="firescrackers">
@@ -19,7 +33,7 @@
     </div>
     <div id="myHeader">
         <a href="index.html"><div class="flex" id="myHeaderLink">
-            <img id="myLogoWindows" src="../client/assets/images/windowsBlue.png" alt="windowsBlue">
+            <img id="myLogoWindows" src="/client/assets/images/windowsBlue.png" alt="windowsBlue">
             <h3 id="myWindowsName">Windows Universe</h3>
         </div></a>
     </div>
@@ -32,9 +46,9 @@
     </form>
     </div>
     <div id="myProfilesDiv" class="flex">
-    <form id="myProfilesForm" class="flex">  
+    <div id="myProfiles" class="flex">  
         <div id="myPlusSign">
-            <a href="newUser.html"><img src="/client/assets/images/plus-icon.png" alt="plusign" id="myPlusSignImage"></a>
+            <a href="/client/newUser.html"><img src="/client/assets/images/plus-icon.png" alt="plusign" id="myPlusSignImage"></a>
             <h3 id="myPlusName">Add New Profile</h3>
         </div>
         <div id="noUsersFound" class="myDisplay">
@@ -43,7 +57,7 @@
         <div id="userContainer" class="flex">
             
         </div>  
-    </form>
+    </div>
     </div>
     <script src="/client/assets/js/index.js"></script>
 </body>

@@ -24,10 +24,10 @@
 
                 $validateController = new NewUserInputController();
 
-                $validateUsername = $validateController->usernameController($username);
-                $validateEmail = $validateController->emailController($email);
                 $validatePassword = $validateController->passwordController($password);
-        
+                $validateEmail = $validateController->emailController($email);
+                $validateUsername = $validateController->usernameController($username);
+              
                 if($validateUsername && $validateEmail && $validatePassword) {
                     $hash = password_hash($password, PASSWORD_DEFAULT);
                     $newUser = new NewUserModel($username, $email, $hash, $myIcon, $this->pdo);

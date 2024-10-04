@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Main-color: #4294FF;
+    --Second-color: #333333;
+    --success-color: #7CDF4E;
+    --Main-color-second: #3c31dd;
+    --Second-color-second: #0f0f10;
+    --Third-color-main-red: #dd3f31;
+    --Main-color-pink: #ff0066;
+    --white-color: #ffffff;
+}
+
+::-webkit-input-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-moz-placeholder { color: white; }
+
+#myNavBar {
+    width: 100%;
+    height: 20vh;
+    color: var(--white-color);
+    background: linear-gradient(45deg, var(--Main-color), var(--Main-color-pink));
+    backdrop-filter: blur(10px);
+    justify-content: space-between;
+}
+
+#myProfile {
+    height: 100%;
+    width: 10em;
+    gap: 10px;
+    padding: 10px;
+}
+
+#myStatusAnswerText {
+    font-size: 1em;
+}
+
+#myProfileTools {
+    justify-items: center;
+    gap: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    position: relative;
+}
+
+#myProfileImage {
+    width: 8em;
+    height: 8em;
+    border: var(--Third-color-main-red) solid 3px;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+}
+
+#myProfileToolsImage {
+    width: 3em;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    background: #ff0066;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: 0;
+}
+
+#myProfileTools > #myProfileImage:hover + #myProfileToolsImage, #myProfileToolsImage:hover {
+    opacity: 1;
+    visibility: 1;
+}
+
+#myStatus {
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 8em;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: var(--white-color);
+}
+
+#myStatus > Div {
+    gap: 5px;
+    margin-left: -15px;
+}
+
+.myStatusAnswer {
+    width: 15px;
+    height: 15px;
+    background: var(--success-color);
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; 
+    }
+    50% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.myStatusAnswer.online {
+    background: var(--success-color);
+}
+
+.myStatusAnswer.offline {
+    background: var(--Third-color-main-red);
+}
+
+#myWindowsUniverse {
+    background-color: var(--white-color);
+    height: 5em;
+    width: 10em;
+}
+
+#myTinyFeatures {
+    background-color: var(--white-color);
+    height: 5em;
+    width: 10em;
+}

@@ -13,15 +13,31 @@
     <div id="myDeleteFormOverlay" class="myDeleteFormOverlay"></div>
     <div id="myDeleteDiv" class="myDeleteDiv">
         <form id="myDeleteForm">
-            <button id="myCancelBtn"><img id="myCancelBtnImage" src="/client/assets/images/close.png" alt="myCancelBtnImg"></button>
+            <button id="myCancelBtn1"><img id="myCancelBtnImage" src="/client/assets/images/close.png" alt="myCancelBtnImg"></button>
             <div id="myFormColumn" class="flex">
-                <img id="myBubble" src="/client/assets/images/animations/login.gif" alt="myBubble">
+                <img id="myBubble" src="/client/assets/images/animations/bubble.gif" alt="myBubble">
                 <h3>Are you sure you wanna delete this profile?</h3>
-                <input id="myEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50" required >
-                <input id="myPassword" type="text" name="password" placeholder="password" autocomplete="off" maxlength="25" required>
-                <input id="myUserId" type="hidden" name="userId" value="">
+                <input id="myDeleteEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50">
+                <input id="myDeletePassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25">
+                <img id="myView" class="myViewDelete" src="../client/assets/images/view.png" alt="view">
+                <input id="myDeleteUserId" type="hidden" name="userId" value="">
             </div>
             <button type="submit" id="myDeleteBtn">Delete</button>
+        </form>
+    </div>
+    <div id="myLoginFormOverlay" class="myLoginFormOverlay"></div>
+    <div id="myLoginDiv" class="myLoginDiv">
+        <form id="myLoginForm">
+            <button id="myCancelBtn2"><img id="myCancelBtnImage" src="/client/assets/images/close.png" alt="myCancelBtnImg"></button>
+            <div id="myFormColumn" class="flex">
+                <img id="myBubble" src="/client/assets/images/animations/bubble.gif" alt="myBubble">
+                <h3>Login</h3>
+                <input id="myLoginEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50">
+                <input id="myLoginPassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25">
+                <img id="myView" src="../client/assets/images/view.png" alt="view">
+                <input id="myLoginUserId" type="hidden" name="userId" value="">
+            </div>
+            <button type="submit" id="myLoginBtn">Login</button>
         </form>
     </div>
     <div id="myFlashMessageOverlay"></div>
@@ -42,6 +58,7 @@
         <div id="mySearchBlock" class="flex">
         <input type="text" name="searchedUsername" id="mySearch" placeholder="Who is exploring today?" autocomplete="off" maxlength="25">
         <button type="submit" id="mySearchBtn"><img src="/client/assets/images/search.png" alt="mySearchIconBtn" id="mySearchIconBtn"></button>
+        <button type="submit" id="myFetchBtn"><img src="/client/assets/images/reload.png" alt="reload" id="myFetchIconBtn"></button>
         </div>
     </form>
     </div>

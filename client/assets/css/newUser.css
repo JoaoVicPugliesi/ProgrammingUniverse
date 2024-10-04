@@ -65,8 +65,8 @@
 }
 
 #myIconShadow {
-    width: 8.2em;
-    height: 12.2em;
+    width: 9.2em;
+    height: 9.2em;
     background-color: var(--Third-color-main-red);
     position: absolute;
     z-index: 2;
@@ -76,8 +76,8 @@
 }
 
 #myIcon {
-    width: 8em;
-    height: 12em;
+    width: 9em;
+    height: 9em;
     position: relative;
     cursor: pointer; 
     border-radius: 10px;

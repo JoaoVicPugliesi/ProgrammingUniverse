@@ -44,7 +44,7 @@
     gap: 5em;
 }
 
-.myDeleteFormOverlay {
+.myDeleteFormOverlay, .myLoginFormOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -55,11 +55,11 @@
     display: none; 
 }
 
-.myDeleteFormOverlay.Display {
+.myDeleteFormOverlay.Display, .myLoginFormOverlay.Display {
     display: block;
 }
 
-.myDeleteDiv {
+.myDeleteDiv, .myLoginDiv {
     position: absolute;
     width: 17em;
     height: 30em;
@@ -85,11 +85,11 @@
     color: var(--white-color);
 }
 
-.myDeleteDiv.Display {
+.myDeleteDiv.Display, .myLoginDiv.Display {
     display: flex;
 }
 
-#myCancelBtn {
+#myCancelBtn1, #myCancelBtn2 {
     background: none;
     border: none;
     margin: 0px -16em 0px 0px;
@@ -106,10 +106,10 @@
 }
 
 #myBubble {
-    width: 10em;
+    width: 8em;
 }
 
-#myEmail, #myPassword {
+#myDeleteEmail, #myDeletePassword, #myLoginEmail, #myLoginPassword {
     margin: 10px 0px;
     background: none;
     border: none;
@@ -121,10 +121,22 @@
     font-weight: 500;
     font-size: 1em;
     width: 13em;
+}
+
+#myLoginPassword, #myDeletePassword {
     position: relative;
 }
 
-#myDeleteBtn {
+#myView {
+    width: 1.4em;
+    height: 1.4em;
+    position: absolute;
+    cursor: pointer;
+    top: 62%;
+    right: 12%;
+}
+
+#myDeleteBtn, #myLoginBtn {
     cursor: pointer;
     width: 10em;
     height: 2em;
@@ -136,18 +148,17 @@
     border: none;
     box-shadow: 5px 5px var(--Main-color-pink);
     transition: all 0.2s ease;
-    margin: 10px;
+    margin: 30px 0px 0px 0px;
     letter-spacing: 2px;
 }
 
-#myDeleteBtn:active {
+#myDeleteBtn:active, #myLoginBtn:active {
     background-color: var(--Main-color-pink);
     transform: scale(0.95);
     backdrop-filter: blur(50px);
     box-shadow: 0px 0px var(--Third-color-main-red);
     color: #ffffff;
 }
-
 
 #myHeader {
     margin-top: 40px;
@@ -176,15 +187,20 @@
     font-size: 1em;
 }
 
-#mySearchBtn {
+#mySearchBtn, #myFetchBtn {
     background: none;
     border: none;
     position: absolute;
     right: 5%;
     cursor: pointer;
+    user-select: none;
 }
 
-#mySearchIconBtn {
+#myFetchBtn {
+    right: -5%;
+}
+
+#mySearchIconBtn, #myFetchIconBtn {
     width: 2em;
 }
 
@@ -197,7 +213,6 @@
     width: 100%;
     height: 15em;
     align-items: center;
-    border: 1px solid black;
     margin: 20px;
 }
 
@@ -211,12 +226,13 @@
 #myPlusSign {
     align-self: flex-start;
     flex-wrap: wrap;
+    user-select: none;
 }
 
 #myPlusSignImage {
     width: 9em;
     background: var(--Main-color-pink);
-    height: 10em;
+    height: 9em;
     border-radius: 10px;
     padding: 30px;
     margin: 0px 10px;
@@ -239,7 +255,6 @@
     height: 15em;
     flex-wrap: wrap;
     width: fit-content;
-    border: 1px solid black;
 }
 
 #myContainer {
@@ -248,7 +263,7 @@
 
 #myImageContainer {
     width: 9em;
-    height: 10em;
+    height: 9em;
     background-color: var(--Second-color-second);
     border-radius: 10px;
     overflow: hidden;
@@ -336,23 +351,31 @@
 }
 
 #noUsersFound {
-    border: 1px black solid;
     width: 12em;
     text-align: center;
+    background: transparent;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100px;
 }
 
 .myDisplay {
     color: var(--white-color);
     font-family: 'Cabin', sans-serif;
     display: none;
+    
 }
 
 .myDisplay.block {
-    display: block;
+    display: flex;
 }
 
 
 @media (max-width: 1050px) {
+    #myBody {
+        overflow-y: scroll;
+    }
+
     #myProfiles {
         flex-direction: column;
         margin: -10em 0px 0px 0px;
@@ -365,59 +388,25 @@
     }
 
     #userContainer {
-        position: absolute;
         margin: 0px 10em 0px 10em;
         flex-wrap: nowrap;
     }
-
-    #myContainer:nth-child(1) {
-        margin: 15em -10.5em 0px 0px;
-    }   
-
-    #myContainer:nth-child(3) {
-        margin: 15em 0px 0px 0px;
-    }
-
-    #myContainer:nth-child(5) {
-        margin: 15em 0px 0px -10.5em;
-    }
-    
 }
 
-@media (max-width: 520px) {
+@media(max-width: 870px) {
 
-    #myPlusSignImage {
-        width: 7em;
-        height: 8em;
-    }
-
-    #myContainer {
-        align-self: flex-start;
+    #myBody {
+       height: 210vh;
     }
 
     #userContainer {
-        margin: 0px 10em 0px 10em;
+        flex-direction: column;
     }
+}
 
-    #myContainer:nth-child(1) {
-        margin: 15em -12.5em 0px 0em;
-    }   
-    
-    #myContainer:nth-child(5) {
-        margin: 15em 0px 0px -12.5em;
-    }
-    
-    #myImageContainer {
-        width: 7em;
-        height: 8em;
-    }
-      
-    #myProfileName {
+@media(max-width: 350px) {
+    #mySearch {
+        width: 15em;
         font-size: 0.8em;
-        width: 10em;
-    }
-
-    #myButtonDiv {
-        width: 6em;
     }
 }

@@ -68,16 +68,17 @@ a {
     
     #myHeaderLink {
         padding: 8px 12px;
+        flex-direction: column;
    }
 
    #myLogoWindows {
-        width: 3.5em;
-        height: 3.5em;
+        width: 3em;
+        height: 3em;
    }
 
    #myWindowsName {
         text-wrap: nowrap;
-        font-size: 1.1em;
+        font-size: 1em;
    }
 }
 

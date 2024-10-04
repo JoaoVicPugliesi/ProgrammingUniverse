@@ -14,21 +14,39 @@
         }
 
         public function setLogin() {
-            $sql = 'SELECT * FROM User WHERE user_id = :userId';
+            $sql = 'SELECT * FROM User WHERE user_id = :user_id';
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':userId', $this->userId, PDO::PARAM_INT);
-            $stmt->execute();
+            $stmt->execute([':user_id' => $this->userId]);
 
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if($user && $this->email == $user['email'] && password_verify($this->password, $user['password'])) {
-                $_SESSION['success'] = true;
-                $_SESSION['message'] = "Welcome";
-                $_SESSION['user'] = $user;
-            } else {
-                $_SESSION['success'] = false;
-                $_SESSION['user'] = $user;
-            }
+            if($user) {
+                if($user['email'] == $this->email && password_verify($this->password, $user['password'])) {
+                    $sql = 'UPDATE User SET last_activity = NOW(), is_online = 1 WHERE user_id = :user_id';
+                    $stmt = $this->pdo->prepare($sql);
+                    $stmt->execute([':user_id' => $this->userId]);
 
+                    $_SESSION['success'] = true;
+                    $_SESSION['user'] = $user;
+                }
+
+                if(!password_verify($this->password, $user['password'])) {
+                    $_SESSION['success'] = false;
+                    $_SESSION['user'] = $user;
+                    $_SESSION['error'] = 'Invalid Password';
+                }
+    
+                if($user['email'] !== $this->email) {
+                    $_SESSION['success'] = false;
+                    $_SESSION['user'] = $user;
+                    $_SESSION['error'] = 'Invalid Email';
+                }
+
+                if(empty($this->email) || empty($this->password)) {
+                    $_SESSION['success'] = false;
+                    $_SESSION['user'] = $user;
+                    $_SESSION['error'] = 'Please. Fill The Email and Password';
+                }
+             }
         }
     }

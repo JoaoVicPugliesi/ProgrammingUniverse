@@ -160,7 +160,7 @@ input[type="radio"]:not(:checked) + #myRadio1 > #myRow {
     color: #ffffff;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
 
     #myForm {
         flex-direction: column;
@@ -224,9 +224,20 @@ input[type="radio"]:not(:checked) + #myRadio1 > #myRow {
     input[type="radio"]:checked + #myRadio1, input[type="radio"]:checked + #myRadio2, input[type="radio"]:checked + #myRadio3, input[type="radio"]:checked + #myRadio4, input[type="radio"]:checked + #myRadio5, input[type="radio"]:checked + #myRadio6, input[type="radio"]:checked + #myRadio7, input[type="radio"]:checked + #myRadio8, input[type="radio"]:checked + #myRadio9, input[type="radio"]:checked + #myRadio10 {
         width: 9em;
     }
+
+    #myBtn {
+        margin-top: -10px;
+        height: 3em;
+        width: 10em;
+    }
 }
 
 @media (max-width: 470px) {
+
+    #myBody {
+        overflow-y: scroll;
+        height: 110vh;
+    }
 
     #myRadio1, #myRadio2, #myRadio3, #myRadio4, #myRadio5, #myRadio6, #myRadio7, #myRadio8, #myRadio9, #myRadio10 {
         height: 8em;
@@ -236,8 +247,11 @@ input[type="radio"]:not(:checked) + #myRadio1 > #myRow {
     }
 }
 
-@media (max-width: 320px) {
-
+@media (max-width: 340px) {
+    #myBody {
+       
+        height: 130vh;
+    }
     #myRadio1, #myRadio2, #myRadio3, #myRadio4, #myRadio5, #myRadio6, #myRadio7, #myRadio8, #myRadio9, #myRadio10 {
         height: 7em;
     }

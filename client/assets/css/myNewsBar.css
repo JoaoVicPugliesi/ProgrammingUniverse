@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Main-color: #4294FF;
+    --Second-color: #333333;
+    --success-color: #7CDF4E;
+    --Main-color-second: #3c31dd;
+    --Second-color-second: #0f0f10;
+    --Third-color-main-red: #dd3f31;
+    --Main-color-pink: #ff0066;
+    --white-color: #ffffff;
+    --Main-test-1: #0b2e70;
+    --Main-test-2: #d18d70;
+    --Main-test-3: #010326;
+    --Main-test-4: #e35a7e;
+    --Main-test-5: #743583;
+    --Main-test-6: #1c71a6;
+}
+
+::-webkit-input-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-moz-placeholder { color: white; }
+
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: none;
+}
+
+
+#myNewsBar {
+    width: 12em;
+    height: 10em;
+    position: absolute;
+    top: 3.5%;
+    right: 5%;
+    border-radius: 2px;
+    align-items: flex-start;
+    justify-content: space-around;
+    z-index: 2;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+}
+
+#myFriendsBtnDiv, #myNotificationsDiv {
+    width: 4em;
+    justify-content: space-evenly;
+}
+
+#myLogoutDiv {
+    flex-direction: column;
+    justify-content: space-around;
+   
+}
+
+#myLogoutConfirmation {
+    flex-direction: column;
+    width: 5em;
+    display: none;
+}
+
+#myLogoutConfirmation > h3 {
+    text-wrap: nowrap;
+    font-size: 0.8em;
+}
+
+#myLogoutConfirmation > div {
+    justify-content: center;
+}
+
+#myLogoutConfirmation > div > form > button , #myLogoutConfirmation > div > button {
+    background: none;
+    border: none;
+}
+
+#myNotificationsBtn, #myFriendsBtn, #myLogoutBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#myNotificationsImage, #myFriendsImage, #myLogoutImage {
+    width: 2em;
+    cursor: pointer;
+}
+
+#myNumberOfFriends, #myNumberOfNotifications {
+    font-size: 1.1em;
+    color: white;
+}
+
+#myFriends {
+    background: var(--Main-color-pink);
+}
+
+

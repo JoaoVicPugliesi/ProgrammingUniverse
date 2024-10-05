@@ -9,6 +9,12 @@
     --Third-color-main-red: #dd3f31;
     --Main-color-pink: #ff0066;
     --white-color: #ffffff;
+    --Main-test-1: #0b2e70;
+    --Main-test-2: #f7ae83;
+    --Main-test-3: #010326;
+    --Main-test-4: #e35a7e;
+    --Main-test-5: #743583;
+    --Main-test-6: #1c71a6;
 }
 
 ::-webkit-input-placeholder { color: white; }
@@ -31,7 +37,7 @@
 }
 
 #myBody {
-    background-image: url(../images/space.jpg);
+    background-image: url(../images/backgrounds/radlands.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,6 +48,16 @@
     position: relative;
     background-color: var(--Second-color);
     gap: 5em;
+}
+
+#myBackgroundOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1 ; 
 }
 
 .myDeleteFormOverlay, .myLoginFormOverlay {
@@ -81,7 +97,7 @@
     align-items: flex-start;
     gap: 2px;
     border: var(--white-color) 2px solid;
-    background-color: var(--Main-color);
+    background: var(--Main-color);
     color: var(--white-color);
 }
 
@@ -123,17 +139,21 @@
     width: 13em;
 }
 
+#myPasswordDiv {
+    position: relative;
+}
+
 #myLoginPassword, #myDeletePassword {
     position: relative;
 }
 
-#myView {
+#myLoginView, #myDeleteView {
     width: 1.4em;
     height: 1.4em;
     position: absolute;
     cursor: pointer;
-    top: 62%;
-    right: 12%;
+    top: 32%;
+    right: 3%;
 }
 
 #myDeleteBtn, #myLoginBtn {
@@ -146,14 +166,14 @@
     font-weight: 700;
     text-transform: uppercase;
     border: none;
-    box-shadow: 5px 5px var(--Main-color-pink);
+    box-shadow: 5px 5px var(--Main-test-4);
     transition: all 0.2s ease;
     margin: 30px 0px 0px 0px;
     letter-spacing: 2px;
 }
 
 #myDeleteBtn:active, #myLoginBtn:active {
-    background-color: var(--Main-color-pink);
+    background-color: var(--Main-test-4);
     transform: scale(0.95);
     backdrop-filter: blur(50px);
     box-shadow: 0px 0px var(--Third-color-main-red);
@@ -173,13 +193,13 @@
     width: 100%; 
 }
 
-#mySearch {
+.mySearch {
     width: 20em;
     margin: 10px;
-    background: none;
+    background: var(--Main-test-6);
     outline: none;
     border: none; 
-    border-bottom: 3px solid var(--Main-color-pink);
+    border-bottom: 3px solid var(--white-color);
     padding: 5px 10px;
     color: var(--white-color);
     font-family: 'Poppins', sans-serif;
@@ -187,25 +207,15 @@
     font-size: 1em;
 }
 
-#mySearchBtn, #myFetchBtn {
-    background: none;
-    border: none;
-    position: absolute;
-    right: 5%;
-    cursor: pointer;
-    user-select: none;
+.mySearch.change {
+    background: var(--Main-test-3);
+    border-bottom: 3px solid var(--Main-test-6);
 }
 
-#myFetchBtn {
-    right: -5%;
-}
-
-#mySearchIconBtn, #myFetchIconBtn {
+#mySearchIconBtn {
     width: 2em;
-}
-
-#mySearchIconBtn:checked {
-    transform: scale(1.1);
+    position: absolute;
+    left: 87%;
 }
 
 #myProfilesDiv {
@@ -231,9 +241,9 @@
 
 #myPlusSignImage {
     width: 9em;
-    background: var(--Main-color-pink);
+    background: var(--Main-test-5);
     height: 9em;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 30px;
     margin: 0px 10px;
     text-decoration: none;
@@ -242,11 +252,11 @@
 #myPlusName {
     font-family: 'Poppins', sans-serif;
     font-size: 0.9em;
-    border-radius: 10px;
+    border-radius: 5px;
     user-select: none;
     text-wrap: wrap;
     text-align: center;
-    color: var(--Main-color-pink);
+    color: var(--Main-test-3);
     background: var(--white-color);
 }
 
@@ -265,7 +275,7 @@
     width: 9em;
     height: 9em;
     background-color: var(--Second-color-second);
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
     position: relative;
     user-select: none;
@@ -282,7 +292,7 @@
     left: 0;
     overflow: hidden;
     cursor: pointer;
-    border: 3px solid var(--Third-color-main-red);
+    border: 3px solid var(--Main-test-6);
     user-select: none;
     -webkit-user-drag: none;
 }
@@ -293,18 +303,16 @@
     border-radius: 5px;
     width: 9.8em;
     margin: 5px 0px 5px -5px;
-
 }
 
 #myProfileName {
     font-family: 'Poppins', sans-serif;
     color: var(--white-color);
     font-size: 0.9em;
-    border-radius: 10px;
+    border-radius: 5px;
     user-select: none;
     text-wrap: wrap;
-    background: rgb(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: var(--Main-test-3);
 }
 
 #myButtonDiv {
@@ -312,9 +320,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--Main-color-pink);
+    background-color: var(--Main-test-4);
     padding: 2px 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     opacity: 0;
     visibility: hidden;
     gap: 5px;
@@ -351,19 +359,19 @@
 }
 
 #noUsersFound {
-    width: 12em;
+    width: 10em;
     text-align: center;
-    background: transparent;
     justify-content: center;
     align-items: flex-start;
-    height: 100px;
+    margin-top: -70px;
+    border-radius: 10px;
+    background: var(--Main-test-5);
 }
 
 .myDisplay {
     color: var(--white-color);
     font-family: 'Cabin', sans-serif;
     display: none;
-    
 }
 
 .myDisplay.block {
@@ -401,6 +409,10 @@
 
     #userContainer {
         flex-direction: column;
+    }
+
+    .myDeleteDiv, .myLoginDiv {
+       top: 40%; 
     }
 }
 

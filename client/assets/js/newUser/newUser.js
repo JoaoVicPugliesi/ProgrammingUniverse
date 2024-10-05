@@ -1,4 +1,13 @@
-const myForm = document.getElementById('myForm');
+// Here i'm retriving the myChosenIcon from the local storage
+
+window.onload = function () {
+    const myChosenIcon = localStorage.getItem('myChosenIcon');
+    if(myChosenIcon) {
+        document.getElementById('myIcon').src = myChosenIcon;
+        document.getElementById('myChosenIcon').value = myChosenIcon;
+        localStorage.removeItem('myChosenIcon');
+    }
+}
 
 /* 
 
@@ -9,6 +18,8 @@ const myForm = document.getElementById('myForm');
    applied into the module logic sending the feedback (response);
 
 */
+
+const myForm = document.getElementById('myForm');
 
 myForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -64,17 +75,6 @@ myForm.addEventListener('submit', function(e) {
     .catch(error => console.error('Error', error));
 })
 
-// Here i'm retriving the myChosenIcon from the local storage
-
-window.onload = function () {
-    const myChosenIcon = localStorage.getItem('myChosenIcon');
-    if(myChosenIcon) {
-        document.getElementById('myIcon').src = myChosenIcon;
-        document.getElementById('myChosenIcon').value = myChosenIcon;
-        localStorage.removeItem('myChosenIcon');
-    }
-}
-
 // Here i'm changing the TogglePasswordVisibility
 
 myView.onclick = function() {
@@ -129,5 +129,20 @@ document.querySelector('.myEditIcon').addEventListener('click', function(e) {
 
     window.location.href = 'logo.html'; 
 });
+
+const myUsername = document.getElementById('myUsername');
+
+function changeInput(element) {
+    element.addEventListener('input', () => {
+        if(element.value.length > 0) {
+            element.classList.add('change');
+        } else {
+            element.classList.remove('change');
+        }
+    })
+}
+
+changeInput(myUsername);
+
 
 

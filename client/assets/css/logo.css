@@ -9,6 +9,12 @@
     --Third-color-main-red: #dd3f31;
     --Main-color-pink: #ff0066;
     --white-color: #ffffff;
+    --Main-test-1: #0b2e70;
+    --Main-test-2: #f7ae83;
+    --Main-test-3: #010326;
+    --Main-test-4: #e35a7e;
+    --Main-test-5: #743583;
+    --Main-test-6: #1c71a6;
 }
 
 .flex {
@@ -28,11 +34,21 @@
     width: 100%;
     background-color: var(--Second-color);
     overflow: hidden;
-    background-image: url(../images/space.jpg);
+    background-image: url(../images/backgrounds/radlands.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     flex-direction: column;
+}
+
+#myBackgroundOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1 ; 
 }
 
 #myHeader {
@@ -49,6 +65,9 @@
     font-weight: 500;
     text-transform: uppercase;
     color: var(--white-color);
+    background: var(--Main-test-6);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #myForm {
@@ -79,7 +98,7 @@
     cursor: pointer;
     transition: width 0.4s ease, margin-right 0.4s ease; 
     overflow: hidden; 
-    border: 2px solid var(--Third-color-main-red);
+    border: 2px solid var(--Main-test-6);
 }
 
 #myRow {
@@ -98,22 +117,23 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     margin: 0px 0px 2px 0px;
-    background: var(--Main-color-pink);
-    padding: 2px;
+    background: var(--Main-test-5);
+    padding: 3px;
+    font-size: 1.5em;
 }
 
 #myLine {
-    height: 1px;
+    height: 2px;
     width: 100%;
     background: var(--white-color);
 }
 
 #myPhrase {
     margin: 2px 0px;
-    font-size: 0.66em;
-    text-wrap: nowrap;
-    background: var(--Main-color-pink);
+    font-size: 0.80em;
+    background: var(--Main-test-5);
     padding: 1px 3px;
+    text-wrap: wrap;
 }
 
 input[type="radio"]:checked + #myRadio1, input[type="radio"]:checked + #myRadio2, input[type="radio"]:checked + #myRadio3, input[type="radio"]:checked + #myRadio4, input[type="radio"]:checked + #myRadio5, input[type="radio"]:checked + #myRadio6, input[type="radio"]:checked + #myRadio7, input[type="radio"]:checked + #myRadio8, input[type="radio"]:checked + #myRadio9, input[type="radio"]:checked + #myRadio10 {
@@ -146,14 +166,14 @@ input[type="radio"]:not(:checked) + #myRadio1 > #myRow {
     font-weight: 700;
     text-transform: uppercase;
     border: none;
-    box-shadow: 5px 5px var(--success-color);
+    box-shadow: 5px 5px var(--Main-test-4);
     transition: all 0.2s ease;
     margin: 10px;
     letter-spacing: 2px;
 }
 
 #myBtn:active {
-    background-color: var(--success-color);
+    background-color: var(--Main-test-4);
     transform: scale(0.95);
     backdrop-filter: blur(50px);
     box-shadow: 0px 0px var(--Third-color-main-red);
@@ -202,7 +222,6 @@ input[type="radio"]:not(:checked) + #myRadio1 > #myRow {
     #myName {
         font-weight: 500;
         font-size: 0.70em;
-        
     }
 
     #myPhrase {

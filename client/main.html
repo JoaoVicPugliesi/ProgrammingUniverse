@@ -6,12 +6,12 @@
     <link rel="shortcut icon" href="../client/assets/images/windowsBlue.png" type="image/x-icon">
     <link rel="stylesheet" href="../client/assets/css/main.css">
     <link rel="stylesheet" href="../client/assets/css/myNavBar.css">
+    <link rel="stylesheet" href="../client/assets/css/myNewsBar.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
     <title>Windows Universe</title>
 </head>
 <body id="myBody"class="flex">
-
-   
+    <input type="hidden" id="userId" name="userId" value="">
     <div id="myFlashMessageOverlay"></div>
     <div id="myFlashMessage" class="myFlashMessage">
         <img id="myFlashMessageAnimation" src="" alt="firescrackers">
@@ -19,25 +19,50 @@
         <p id="myFlashMessageContent">Test</p>
         <button id="myFlashMessageBtn">Test</button>
     </div>
-
+    <div id="myBackgroundOverlay"></div>
+    <div id="myNewsBar" class="flex">
+        <div id="myNotificationsDiv" class="flex">
+        <button id="myNotificationsBtn"><img id="myNotificationsImage" src="/client/assets/images/notification.png" alt="notification"></button>
+        <h3 id="myNumberOfNotifications">0</h3>
+        </div>
+        <div id="myFriendsBtnDiv" class="flex">
+        <button id="myFriendsBtn"><img id="myFriendsImage" src="/client/assets/images/friends.png" alt="friends"></button>
+        <h3 id="myNumberOfFriends">0</h3>
+        </div>  
+        <div id="myLogoutDiv" class="flex">
+        <button id="myLogoutBtn"><img id="myLogoutImage" src="/client/assets/images/logoutgold.png" alt="logout"></button>
+        <div id="myLogoutConfirmation">
+            <h3>Are You Sure?</h3>
+            <div class="flex">
+                <form>
+                <button>Yes</button>
+                </form>
+                <button>No</button>  
+            </div>
+        </div>
+        </div>
+    </div>
     <div id="myAppsUniverse" class="flex">
         <div id="myTrashBin" class="myTrashBin">
             <img id="myTrashBinImage" src="/client/assets/images/trash.png" alt="trash">
             <h3>Trash</h3>
         </div>
         <div id="myAppContainer" draggable="true">
-            <img id="myAppImage" src="/client/assets/images/windowsBlue.png" alt="windowsBlue">
+            <img id="myAppImage" src="/client/assets/images/programmer.png" alt="programmer">
             <h3>App1</h3>
         </div>
     </div>
-    
     <div id="myNavBar" class="flex">
         <div id="myProfile" class="flex">
             <div id="myProfileTools" class="flex">
-            <img id="myProfileImage" src="/client/assets/images/icon_images/boredom.png" alt="boredom">
-            <img id="myProfileToolsImage" src="/client/assets/images/support.png" alt="tools">
+            <img id="myProfileImage" src="" alt="myProfileLogo">
+           
             <div id="myStatus" class="flex">
-                <h3 id="myProfileName">Jessehaha</h3>
+                <h3 id="myProfileName">.</h3>
+                <div id="myMedalDiv" class="flex">
+                <img id="myMedalImage" src="/client/assets/images/medal.png" alt="myMedal">
+                <h3 id="myNumberOfMedals">0</h3>
+                </div>
                 <div class="flex">
                 <div id="myStatusAnswer" class="myStatusAnswer"></div>
                 <h3 id="myStatusAnswerText" class="myStatusAnswerText">Online</h3>
@@ -46,10 +71,13 @@
            
             </div>
         </div>
-        <div id="myWindowsUniverse"></div>
+        <div id="myWindowsUniverse" class="flex">
+            <img id="myMenu" src="/client/assets/images/programmer.png" alt="programmer">
+            <h3>Menu</h3>
+        </div>
         <div id="myTinyFeatures"></div>
     </div>
 
-    <script src="/client/assets/js/main.js"></script>
+    <script type="module" src="/client/assets/js/main/main.js" defer></script>
 </body>
 </html>

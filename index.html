@@ -7,24 +7,9 @@
     <link rel="stylesheet" href="/client/assets/css/index.css">
     <link rel="stylesheet" href="/client/assets/css/myHeaderLink.css">
     <link rel="stylesheet" href="/client/assets/css/flashMessage.css">
-    <title>Windows Universe</title>
+    <title>Programming Universe</title>
 </head>
 <body id="myBody" class="flex">
-    <div id="myDeleteFormOverlay" class="myDeleteFormOverlay"></div>
-    <div id="myDeleteDiv" class="myDeleteDiv">
-        <form id="myDeleteForm">
-            <button id="myCancelBtn1"><img id="myCancelBtnImage" src="/client/assets/images/close.png" alt="myCancelBtnImg"></button>
-            <div id="myFormColumn" class="flex">
-                <img id="myBubble" src="/client/assets/images/animations/bubble.gif" alt="myBubble">
-                <h3>Are you sure you wanna delete this profile?</h3>
-                <input id="myDeleteEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50">
-                <input id="myDeletePassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25">
-                <img id="myView" class="myViewDelete" src="../client/assets/images/view.png" alt="view">
-                <input id="myDeleteUserId" type="hidden" name="userId" value="">
-            </div>
-            <button type="submit" id="myDeleteBtn">Delete</button>
-        </form>
-    </div>
     <div id="myLoginFormOverlay" class="myLoginFormOverlay"></div>
     <div id="myLoginDiv" class="myLoginDiv">
         <form id="myLoginForm">
@@ -33,11 +18,30 @@
                 <img id="myBubble" src="/client/assets/images/animations/bubble.gif" alt="myBubble">
                 <h3>Login</h3>
                 <input id="myLoginEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50">
+                <div id="myPasswordDiv">
                 <input id="myLoginPassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25">
-                <img id="myView" src="../client/assets/images/view.png" alt="view">
+                <img id="myLoginView"  src="../client/assets/images/view.png" alt="view">
+                </div>
                 <input id="myLoginUserId" type="hidden" name="userId" value="">
             </div>
             <button type="submit" id="myLoginBtn">Login</button>
+        </form>
+    </div>
+    <div id="myDeleteFormOverlay" class="myDeleteFormOverlay"></div>
+    <div id="myDeleteDiv" class="myDeleteDiv">
+        <form id="myDeleteForm">
+            <button id="myCancelBtn1"><img id="myCancelBtnImage" src="/client/assets/images/close.png" alt="myCancelBtnImg"></button>
+            <div id="myFormColumn" class="flex">
+                <img id="myBubble" src="/client/assets/images/animations/bubble.gif" alt="myBubble">
+                <h3>Are you sure you wanna delete this profile?</h3>
+                <input id="myDeleteEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50">
+                <div id="myPasswordDiv">
+                <input id="myDeletePassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25">
+                <img id="myDeleteView" src="../client/assets/images/view.png" alt="view">
+                </div>
+                <input id="myDeleteUserId" type="hidden" name="userId" value="">
+            </div>
+            <button type="submit" id="myDeleteBtn">Delete</button>
         </form>
     </div>
     <div id="myFlashMessageOverlay"></div>
@@ -47,18 +51,18 @@
         <p id="myFlashMessageContent">Test</p>
         <button id="myFlashMessageBtn">Test</button>
     </div>
+    <div id="myBackgroundOverlay"></div>
     <div id="myHeader">
         <a href="index.html"><div class="flex" id="myHeaderLink">
-            <img id="myLogoWindows" src="/client/assets/images/windowsBlue.png" alt="windowsBlue">
-            <h3 id="myWindowsName">Windows Universe</h3>
+            <img id="myLogoWindows" src="/client/assets/images/programmer.png" alt="windowsBlue">
+            <h3 id="myWindowsName">Programming Universe</h3>
         </div></a>
     </div>
     <div id="mySearchDiv">
     <form id="mySearchForm">
         <div id="mySearchBlock" class="flex">
-        <input type="text" name="searchedUsername" id="mySearch" placeholder="Who is exploring today?" autocomplete="off" maxlength="25">
-        <button type="submit" id="mySearchBtn"><img src="/client/assets/images/search.png" alt="mySearchIconBtn" id="mySearchIconBtn"></button>
-        <button type="submit" id="myFetchBtn"><img src="/client/assets/images/reload.png" alt="reload" id="myFetchIconBtn"></button>
+        <input type="text" name="searchedUsername" id="mySearch" class="mySearch" placeholder="Who is exploring today?" autocomplete="off" maxlength="25">
+        <img src="/client/assets/images/search.png" alt="mySearchIconBtn" id="mySearchIconBtn">
         </div>
     </form>
     </div>
@@ -76,7 +80,8 @@
         </div>  
     </div>
     </div>
-    <script src="/client/assets/js/index.js"></script>
+    
+    <script type="module" src="/client/assets/js/profilesPage/index.js" defer></script>
 </body>
 </html>
 

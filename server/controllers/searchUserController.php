@@ -5,9 +5,9 @@
     header('Access-Control-Allow-Headers: Content-Type, Authorization');
     session_start();
     require_once '../core/pdo.php';
-    require_once '../models/searchUsernameModel.php';
+    require_once '../models/searchUserModel.php';
 
-    class SearchUsernameController {
+    class SearchUserController {
         private $pdo;
 
         public function __construct($pdo) {
@@ -17,20 +17,17 @@
         public function getUsername() {
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $searchedUsername = filter_input(INPUT_POST, 'searchedUsername', FILTER_SANITIZE_SPECIAL_CHARS);
-                    $searchUsernameModel = new SearchUsernameModel($searchedUsername, $this->pdo);
-                    $searchUsernameModel->searchName();
+                    $searchUsernameModel = new SearchUserModel($searchedUsername, $this->pdo);
+                    $users = $searchUsernameModel->searchName();
 
-                    $user = $_SESSION['user'];
-                    $success = $_SESSION['success'];
-                    
-                    if($user) {
-                        echo json_encode(['success' => $success, 'user' => $user]);
+                    if ($users) {
+                        echo json_encode(['success' => true, 'users' => $users]);
                     } else {
-                        echo json_encode(['success' => $success, 'user' => 'No Users Found']);
+                        echo json_encode(['success' => false, 'message' => 'No Users Found']);
                     }
             }
         }
     }
 
-$searchUsernameController = new SearchUsernameController($pdo);
+$searchUsernameController = new SearchUserController($pdo);
 $searchUsernameController->getUsername();

@@ -37,7 +37,7 @@
 }
 
 #myBody {
-    background-image: url(../images/backgrounds/radlands.jpeg);
+    background-image: url(/client/assets/images/backgrounds/radlands.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,6 +48,7 @@
     overflow: hidden;
     position: relative;
     background-color: var(--Second-color);
+    margin: 0;
 }
 
 #myBackgroundOverlay {
@@ -66,7 +67,7 @@
     justify-items: center;
     align-items: start;
     background: transparent;
-    height: 85vh;
+    height: 100vh;
     width: 100%;
     overflow-y: auto;
     font-family: 'Montserrat', sans-serif;

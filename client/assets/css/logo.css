@@ -65,7 +65,7 @@
     font-weight: 500;
     text-transform: uppercase;
     color: var(--white-color);
-    background: var(--Main-test-6);
+    background: var(--Main-color);
     padding: 10px;
     border-radius: 5px;
 }
@@ -98,7 +98,7 @@
     cursor: pointer;
     transition: width 0.4s ease, margin-right 0.4s ease; 
     overflow: hidden; 
-    border: 2px solid var(--Main-test-6);
+    border: 2px solid var(--Main-color);
 }
 
 #myRow {

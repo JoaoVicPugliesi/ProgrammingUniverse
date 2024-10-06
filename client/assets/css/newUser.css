@@ -84,7 +84,7 @@
 #myIconShadow {
     width: 9.2em;
     height: 9.2em;
-    background-color: var(--Main-test-6);
+    background-color: var(--Main-color);
     position: absolute;
     z-index: 2;
     display: none;
@@ -99,7 +99,7 @@
     cursor: pointer; 
     border-radius: 5px;
     z-index: 1;
-    border: 3px solid var(--Main-test-6);
+    border: 3px solid var(--Main-color);
 }
 
 a #myEditIcon {
@@ -134,7 +134,7 @@ a #myEditIcon {
 }
 
 .myUsername {
-    background: var(--Main-test-6);
+    background: var(--Main-color);
 }
 
 .myUsername.change {

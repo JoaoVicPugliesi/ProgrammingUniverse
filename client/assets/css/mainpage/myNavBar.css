@@ -22,18 +22,29 @@
 ::-moz-placeholder { color: white; }
 :-moz-placeholder { color: white; }
 
+#myContainer {
+    position: absolute;
+    bottom: 10%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 50em;
+    height: 30em;
+    z-index: 100;
+}
+
 #myNavBar {
     width: 50em;
     position: absolute;
-    bottom: 10%;
-    height: 10em;
+    height: 8em;
     color: var(--white-color);
-    background: var(--Second-color);
+    background: var(--Main-test-1);
     padding: 20px; 
     justify-content: space-between;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    border-radius: 10px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    bottom: 0px;
 }
 
 #myProfile {
@@ -75,6 +86,23 @@
     color: var(--white-color);
 }
 
+#myMedalDiv {
+    align-self: center;
+    font-family: 'Cabin', sans-serif;
+    justify-content: space-evenly;
+    width: 7em;
+}
+
+#myMedalImage {
+    width: 2em;
+}
+
+#myEditUser {
+    width: 1.7em;
+    cursor: pointer;
+    z-index: 1;
+}
+
 #myStatus > Div {
     gap: 5px;
     margin-left: -15px;
@@ -108,7 +136,7 @@
     background: var(--Third-color-main-red);
 }
 
-#myWindowsUniverse {
+#myProgrammingUniverse {
     height: 100%;
     width: 10em;
     justify-content: center;
@@ -118,6 +146,7 @@
 #myMenu {
     width: 5em;
     cursor: pointer;
+    z-index: 2;
 }
 
 #myTinyFeatures {
@@ -126,11 +155,3 @@
     width: 10em;
 }
 
-#myMedalDiv {
-    align-self: center;
-    font-family: 'Cabin', sans-serif;
-}
-
-#myMedalImage{
-    width: 2em;
-}

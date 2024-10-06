@@ -97,7 +97,7 @@
     align-items: flex-start;
     gap: 2px;
     border: var(--white-color) 2px solid;
-    background: var(--Main-color);
+    background: var(--Main-test-1);
     color: var(--white-color);
 }
 
@@ -121,15 +121,35 @@
     gap: 5px;
 }
 
-#myBubble {
-    width: 8em;
+.bubble {
+    width: 5em;
+    height: 5em;
+    background-color: #e35a7e;
+    border-radius: 50%;
+    transition: border-radius 0.5s ease; 
+    animation: bubbleEffect 1.5s infinite; 
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.bubble:hover {
+    border-radius: 0; 
+}
+
+@keyframes bubbleEffect {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); 
+    }
 }
 
 #myDeleteEmail, #myDeletePassword, #myLoginEmail, #myLoginPassword {
     margin: 10px 0px;
     background: none;
     border: none;
-    border-bottom: 3px solid var(--Second-color);
+    border-bottom: 3px solid var(--white-color);
     padding: 5px 10px;
     outline: none;
     color: #ffffff;
@@ -196,7 +216,7 @@
 .mySearch {
     width: 20em;
     margin: 10px;
-    background: var(--Main-test-6);
+    background: var(--Main-color);
     outline: none;
     border: none; 
     border-bottom: 3px solid var(--white-color);
@@ -209,7 +229,7 @@
 
 .mySearch.change {
     background: var(--Main-test-3);
-    border-bottom: 3px solid var(--Main-test-6);
+    border-bottom: 3px solid var(--Main-color);
 }
 
 #mySearchIconBtn {
@@ -292,7 +312,7 @@
     left: 0;
     overflow: hidden;
     cursor: pointer;
-    border: 3px solid var(--Main-test-6);
+    border: 3px solid var(--Main-color);
     user-select: none;
     -webkit-user-drag: none;
 }

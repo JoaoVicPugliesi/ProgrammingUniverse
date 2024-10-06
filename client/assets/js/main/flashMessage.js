@@ -6,14 +6,12 @@ export function flashMessage() {
     const myFlashMessageContent = document.getElementById('myFlashMessageContent');
     const myFlashMessageBtn = document.getElementById('myFlashMessageBtn');
     const myFlashMessageOverlay = document.getElementById('myFlashMessageOverlay');
-    const userId = document.getElementById('userId');
-
-    
+    const userIdMain = document.getElementById('userIdMain');
 
     window.addEventListener ('load', function() {
         const fetchedUserId = localStorage.getItem('user_id');
-        localStorage.setItem('fetchedUser_id', fetchedUserId);
-        userId.value = fetchedUserId;
+        userIdMain.value = fetchedUserId;
+    
         if(localStorage.getItem('display')) {
         myFlashMessageOverlay.style.display = 'block';
         myFlashMessage.classList.add('show', 'success');
@@ -34,7 +32,7 @@ export function flashMessage() {
             });
         });
         localStorage.removeItem('display');
-        this.localStorage.removeItem('username');
+        localStorage.removeItem('username');
         }
     });
 }

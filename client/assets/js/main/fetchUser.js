@@ -1,9 +1,10 @@
-const userId = document.getElementById('userId');
-const myProfileImage = document.getElementById('myProfileImage');
-const myProfileName = document.getElementById('myProfileName');
-
 export function fetchUser() {
-    const payLoad = new URLSearchParams({userId : userId.value});
+
+    const userIdMain = document.getElementById('userIdMain');
+    const myProfileImage = document.getElementById('myProfileImage');
+    const myProfileName = document.getElementById('myProfileName');
+
+    const payLoad = new URLSearchParams({userId : userIdMain.value});
 
     fetch('http://localhost/WindowsUniverse/server/controllers/fetchLoggedUserController.php', {
         method: 'POST',

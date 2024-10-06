@@ -45,7 +45,7 @@ export function setupLogin() {
                 localStorage.setItem('username', data.user.username);
                 localStorage.setItem('display', true);
                 localStorage.setItem('user_id', data.user.user_id);
-                window.location.replace('/client/main.html');
+                window.location.replace('main.html');
             } else {
                 myFlashMessageAnimation.src = '/client/assets/images/animations/error.gif';
                 myTypeOfFlashMessage.textContent = "Error";

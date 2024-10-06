@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../client/assets/images/windowsBlue.png" type="image/x-icon">
-    <link rel="stylesheet" href="../client/assets/css/main.css">
-    <link rel="stylesheet" href="../client/assets/css/myNavBar.css">
-    <link rel="stylesheet" href="../client/assets/css/myNewsBar.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/main.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/myNavBar.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/myNewsBar.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/myEditProfile.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
     <title>Windows Universe</title>
 </head>
 <body id="myBody"class="flex">
-    <input type="hidden" id="userId" name="userId" value="">
+    <input type="hidden" id="userIdMain" name="userId" value="">
     <div id="myFlashMessageOverlay"></div>
     <div id="myFlashMessage" class="myFlashMessage">
         <img id="myFlashMessageAnimation" src="" alt="firescrackers">
@@ -31,13 +32,18 @@
         </div>  
         <div id="myLogoutDiv" class="flex">
         <button id="myLogoutBtn"><img id="myLogoutImage" src="/client/assets/images/logoutgold.png" alt="logout"></button>
-        <div id="myLogoutConfirmation">
-            <h3>Are You Sure?</h3>
-            <div class="flex">
-                <form>
-                <button>Yes</button>
+        <div id="myLogoutConfirmation" class="myLogoutConfirmation">
+            <h3>Are you sure you wanna Logout?</h3>
+            <div id="myDecisionDiv" class="flex">
+                <div>
+                <form id="myLogoutForm">
+                <input type="hidden" id="userIdLogout" name="userId" value="">
+                <button type="submit" id="myYes">Yes</button>
                 </form>
-                <button>No</button>  
+                </div>
+                <div>
+                <button id="myNo">No</button>
+                </div>  
             </div>
         </div>
         </div>
@@ -52,16 +58,23 @@
             <h3>App1</h3>
         </div>
     </div>
+    <div id="myContainer">
+    <div id="myEditProfileDiv" class="myEditProfileDiv">
+
+    </div>
     <div id="myNavBar" class="flex">
         <div id="myProfile" class="flex">
             <div id="myProfileTools" class="flex">
-            <img id="myProfileImage" src="" alt="myProfileLogo">
+            <img id="myProfileImage" src="/client/assets/images/icon_images/randomUser.jpeg" alt="myProfileLogo">
            
             <div id="myStatus" class="flex">
-                <h3 id="myProfileName">.</h3>
+                <h3 id="myProfileName">Random</h3>
                 <div id="myMedalDiv" class="flex">
+                <div class="flex">
                 <img id="myMedalImage" src="/client/assets/images/medal.png" alt="myMedal">
                 <h3 id="myNumberOfMedals">0</h3>
+                </div>
+                <img id="myEditUser" src="/client/assets/images/edituser.png" alt="editUser">
                 </div>
                 <div class="flex">
                 <div id="myStatusAnswer" class="myStatusAnswer"></div>
@@ -71,13 +84,13 @@
            
             </div>
         </div>
-        <div id="myWindowsUniverse" class="flex">
+        <div id="myProgrammingUniverse" class="flex">
             <img id="myMenu" src="/client/assets/images/programmer.png" alt="programmer">
             <h3>Menu</h3>
         </div>
         <div id="myTinyFeatures"></div>
     </div>
-
+    </div>
     <script type="module" src="/client/assets/js/main/main.js" defer></script>
 </body>
 </html>

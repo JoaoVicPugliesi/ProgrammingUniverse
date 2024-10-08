@@ -1,3 +1,5 @@
+import { fetchUsers } from './fetchUsers.js';
+
 export function setupDeleteProfile() {
     const myFlashMessage = document.getElementById('myFlashMessage');
     const myFlashMessageAnimation = document.getElementById('myFlashMessageAnimation');
@@ -47,7 +49,7 @@ export function setupDeleteProfile() {
                 if (userProfile) {
                     userProfile.remove();  
                 }
-
+                fetchUsers();
                 myDeleteFormOverlay.classList.remove('Display');
                 myDeleteDiv.classList.remove('Display');
                 myFlashMessageAnimation.src = '/client/assets/images/animations/success.gif';

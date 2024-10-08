@@ -36,18 +36,24 @@
     box-sizing: border-box;
 }
 
-#myBody {
+.myBody {
     background-image: url(../images/backgrounds/radlands.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
+    display: none;
+    align-items: center;
     flex-direction: column;
     overflow: hidden;
     position: relative;
     background-color: var(--Second-color);
     gap: 5em;
+}
+
+.myBody.display {
+    display: flex;
 }
 
 #myBackgroundOverlay {
@@ -67,7 +73,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 997; 
+    z-index: 994; 
     display: none; 
 }
 
@@ -90,7 +96,7 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     transition: all 0.3s ease-in-out; 
-    z-index: 998;
+    z-index: 995;
     user-select: none; 
     display: none;
     justify-content: center;
@@ -380,12 +386,20 @@
 
 #noUsersFound {
     width: 10em;
+    height: 10em;
     text-align: center;
     justify-content: center;
     align-items: flex-start;
-    margin-top: -70px;
-    border-radius: 10px;
+    align-self: flex-start;
+    border-radius: 5px;
+}
+
+#noUsersFoundContent {
     background: var(--Main-test-5);
+    border-radius: 10px;
+    padding: 2px 4px;
+    align-self: center;
+    width: 8em
 }
 
 .myDisplay {
@@ -419,6 +433,11 @@
         margin: 0px 10em 0px 10em;
         flex-wrap: nowrap;
     }
+
+    #noUsersFound {
+        align-self: center;
+    }
+    
 }
 
 @media(max-width: 870px) {
@@ -438,7 +457,12 @@
 
 @media(max-width: 350px) {
     #mySearch {
-        width: 15em;
+        width: 17em;
         font-size: 0.8em;
+    }
+
+    #mySearchIconBtn {
+        width: 1.5em;
+        left: 85%;
     }
 }

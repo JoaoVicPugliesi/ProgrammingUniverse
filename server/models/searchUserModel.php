@@ -9,7 +9,7 @@
         }
 
         public function searchName () {
-            $sql = 'SELECT * FROM User WHERE username LIKE :searchedUsername';
+            $sql = 'SELECT * FROM User WHERE username LIKE :searchedUsername LIMIT 5';
             $stmt = $this->pdo->prepare($sql);
             $searchTerm = '%' . $this->searchedUser . '%';
             $stmt->bindParam(':searchedUsername', $searchTerm, PDO::PARAM_STR);

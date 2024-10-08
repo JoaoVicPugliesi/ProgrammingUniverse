@@ -2,6 +2,20 @@
 
 const myForm = document.getElementById('myForm');
 
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        myBody.classList.add('display');
+    }, 20)
+    setTimeout(() => {
+        myLoadOverlay.classList.add('display');
+        myLoad.classList.add('display');
+        setTimeout(() => {
+            myLoadOverlay.classList.remove('display');
+            myLoad.classList.remove('display');
+        }, 2000)
+    })
+});
+
 myForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const myChosenIcon = document.querySelector('input[name="icon"]:checked');

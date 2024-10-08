@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="../client/assets/css/newUser.css">
     <link rel="stylesheet" href="../client/assets/css/myHeaderLink.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
+    <link rel="stylesheet" href="../client/assets/css/load.css">
     <title>Programming Universe</title>
 </head>
 <body id="myBody" class="flex">
+    <div id="myLoadOverlay" class="myLoadOverlay"></div>
+    <div id="myLoad" class="myLoad">
+        <img id="myLoadImage" src="/client/assets/images/programmer.png" alt="hacker">
+        <h3 id="myLoadContent">Loading...</h3>
+        <div class="loader"></div>
+    </div>
     <div id="myFlashMessageOverlay"></div>
     <div id="myFlashMessage" class="myFlashMessage">
         <img id="myFlashMessageAnimation" src="" alt="firescrackers">
@@ -29,21 +36,21 @@
             <div id="myUsernameAndIconChoice" class="flex">
                 <div class="myIconContainer">
                 <a rel="prefetch" href="logo.html"><div id="myIconShadow"></div></a>
-                <img id="myIcon" src="../client/assets/images/icon_images/randomUser.jpeg" alt="user">
-                <a rel="prefetch" href="logo.html"><img id="myEditIcon" class="myEditIcon" src="../client/assets/images/edit.png" alt="edit"></a>
+                <img id="myIcon" src="../client/assets/images/icon_images/randomUser.png" alt="user">
+                <a rel="prefetch" href="logo.html"><img id="myEditIcon" class="myEditIcon" src="../client/assets/images/icons/edit.png" alt="edit"></a>
                 </div>
-                <input type="text" name="username" id="myUsername" class="myUsername" placeholder="username" autocomplete="off" maxlength="20" oninput="getUsername">
+                <input type="text" name="username" id="myUsername" class="myUsername" placeholder="username" autocomplete="off" maxlength="20" oninput="getUsername" spellcheck="false">
             </div>
             <div id="myEmailAndPasswordChoice" class="flex">  
                 <h1 id="myWelcome">Create Profile</h1>
                 <div id="myEmailAndPassword" class="flex">
-                    <input type="text" name="email" id="myEmail" class="myEmail" placeholder="email" autocomplete="off" maxlength="50">
+                    <input type="text" name="email" id="myEmail" class="myEmail" placeholder="email" autocomplete="off" maxlength="50" spellcheck="false">
                     <div id="myPasswordDiv">
-                    <input type="password" name="password" id="myPassword" class="myPassword" placeholder="password" autocomplete="off" maxlength="25">
-                    <img id="myView" src="../client/assets/images/view.png" alt="view">
+                    <input type="password" name="password" id="myPassword" class="myPassword" placeholder="password" autocomplete="off" maxlength="25" spellcheck="false">
+                    <img id="myView" src="../client/assets/images/icons/view.png" alt="view">
                     </div>
                 </div>
-                <input type="hidden" name="myChosenIcon" id="myChosenIcon" value="../client/assets/images/icon_images/randomUser.jpeg">
+                <input type="hidden" name="myChosenIcon" id="myChosenIcon" value="../client/assets/images/icon_images/randomUser.png">
                 <button type="submit" id="myBtn">Enter</button>
             </div>
         </form>

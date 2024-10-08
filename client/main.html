@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../client/assets/images/windowsBlue.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../client/assets/images/icons/windowsBlue.png" type="image/x-icon">
     <link rel="stylesheet" href="../client/assets/css/mainpage/main.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/myNavBar.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/myNewsBar.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/myEditProfile.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/myMenu.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
-    <title>Windows Universe</title>
+    <link rel="stylesheet" href="../client/assets/css/load.css">
+    <title>Programming</title>
 </head>
-<body id="myBody"class="flex">
+<body id="myBody" class="myBody">
     <input type="hidden" id="userIdMain" name="userId" value="">
     <div id="myFlashMessageOverlay"></div>
     <div id="myFlashMessage" class="myFlashMessage">
@@ -22,16 +24,19 @@
     </div>
     <div id="myBackgroundOverlay"></div>
     <div id="myNewsBar" class="flex">
+        <div id="myRankingDiv" class="flex">
+            <button id="myRankingBtn"><img id="myRankingImage" src="/client/assets/images/icons/ranking.png" alt="notification"></button>
+        </div>
         <div id="myNotificationsDiv" class="flex">
-        <button id="myNotificationsBtn"><img id="myNotificationsImage" src="/client/assets/images/notification.png" alt="notification"></button>
+        <button id="myNotificationsBtn"><img id="myNotificationsImage" src="/client/assets/images/icons/notification.png" alt="notification"></button>
         <h3 id="myNumberOfNotifications">0</h3>
         </div>
         <div id="myFriendsBtnDiv" class="flex">
-        <button id="myFriendsBtn"><img id="myFriendsImage" src="/client/assets/images/friends.png" alt="friends"></button>
+        <button id="myFriendsBtn"><img id="myFriendsImage" src="/client/assets/images/icons/friends.png" alt="friends"></button>
         <h3 id="myNumberOfFriends">0</h3>
         </div>  
         <div id="myLogoutDiv" class="flex">
-        <button id="myLogoutBtn"><img id="myLogoutImage" src="/client/assets/images/logoutgold.png" alt="logout"></button>
+        <button id="myLogoutBtn"><img id="myLogoutImage" src="/client/assets/images/icons/log.png" alt="logout"></button>
         <div id="myLogoutConfirmation" class="myLogoutConfirmation">
             <h3>Are you sure you wanna Logout?</h3>
             <div id="myDecisionDiv" class="flex">
@@ -60,32 +65,148 @@
     </div>
     <div id="myContainer">
     <div id="myEditProfileDiv" class="myEditProfileDiv">
-
+        <div id="myEditProfileOverlay"></div>
+        <img id="myEditProfileBackgroundImage" src="/client/assets/images/icon_images/randomUser.png" alt="missionImpossible">
+        <div id="myEditProfileBanner" class="flex">
+            <button id="myEditProfileBannerBtn" class="flex"><img id="myEditProfileBannerImage" src="/client/assets/images/icons/view.png" alt="hide"></button>
+        </div>
+        <div id="myEditProfileInformations">
+            <form id="myEditProfileForm" class="myEditProfileForm">
+            <div id="myEditAlbum" class="myEditAlbum">
+                <button id="myCloseAlbumBtn" class="flex"><img id="myCloseAlbumBtnImage" src="/client/assets/images/icons/close.png" alt="myCloseAlbum"></button>
+                <div id="myAlbumPhotosDiv" class="flex">
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon1" value="/client/assets/images/icon_images/fly.png" name="myIcon" hidden>
+                        <label for="myIcon1">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/fly.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon2" value="/client/assets/images/icon_images/facingthelimitsoftime.png" name="myIcon" hidden>
+                        <label for="myIcon2">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/facingthelimitsoftime.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon3" value="/client/assets/images/icon_images/decisions.png" name="myIcon" hidden>
+                        <label for="myIcon3">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/decisions.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon4" value="/client/assets/images/icon_images/rich.png" name="myIcon" hidden>
+                        <label for="myIcon4">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/rich.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon5" value="/client/assets/images/icon_images/teamwork.png" name="myIcon" hidden>
+                        <label for="myIcon5">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/teamwork.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon6" value="/client/assets/images/icon_images/boredom.png" name="myIcon" hidden>
+                        <label for="myIcon6">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/boredom.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon7" value="/client/assets/images/icon_images/missionImpossible.png" name="myIcon" hidden>
+                        <label for="myIcon7">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/missionImpossible.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon8" value="/client/assets/images/icon_images/sophisticated.png" name="myIcon" hidden>
+                        <label for="myIcon8">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/sophisticated.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon9" value="/client/assets/images/icon_images/hardworker.png" name="myIcon" hidden>
+                        <label for="myIcon9">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/hardworker.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon10" value="/client/assets/images/icon_images/challenges.png" name="myIcon" hidden>
+                        <label for="myIcon10">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/challenges.png" alt="">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon11" name="myIcon" value="/client/assets/images/icon_images/randomUser.png" hidden>
+                        <label for="myIcon11">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/randomUser.png" alt="challenges">
+                        </label>
+                    </div>
+                    <div id="myAlbumPhotoContainer">
+                        <input type="radio" id="myIcon12" value="/client/assets/images/icon_images/spy.png" name="myIcon" hidden>
+                        <label for="myIcon12">
+                            <img id="myAlbumPhoto" src="/client/assets/images/icon_images/spy.png" alt="">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="userIdUpdate" name="userId">
+            <h1 id="myEditProfileMessage">Your Profile</h1>
+            <div id="myEditIconNameEmailDiv" class="flex">
+                <div>
+                    <button id="myEditIconBtn"><img id="myEditIcon" src="/client/assets/images/icons/edit.png" alt="myChosenIcon"></button>
+                </div>
+                <div id="myNameEmail" class="flex">
+                <input type="text" id="myUsername" name="username" value="random" maxlength="25" autocomplete="off" spellcheck="false">
+                <input type="text" id="myEmail" name="email" value="random" maxlength="50" autocomplete="off" spellcheck="false">
+                <div id="myEditMedalsClockFriends" class="flex">
+                    <div id="myEditMedalDiv" class="flex">
+                        <img id="myEditMedalImage" src="/client/assets/images/icons/medal.png" alt="">
+                        <h3>0</h3>
+                    </div>
+                    <div id="myEditFriendsDiv" class="flex">
+                        <img id="myEditFriendsImage" src="/client/assets/images/icons/friends.png" alt="">
+                        <h3>0</h3>
+                    </div>
+                    <div id="myEditHoursDiv" class="flex">
+                        <img id="myEditClockImage" src="/client/assets/images/icons/time.png" alt="">
+                        <h3>0</h3>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div>
+                <textarea id="myDescription" name="description" placeholder="No user description" maxlength="255" autocomplete="off" spellcheck="false"></textarea>
+            </div>
+            <div>
+            </div>
+            <button type="submit" id="myUpdateBtn">Save</button>
+            </form>
+        </div>
     </div>
     <div id="myNavBar" class="flex">
-        <div id="myProfile" class="flex">
-            <div id="myProfileTools" class="flex">
-            <img id="myProfileImage" src="/client/assets/images/icon_images/randomUser.jpeg" alt="myProfileLogo">
-           
-            <div id="myStatus" class="flex">
-                <h3 id="myProfileName">Random</h3>
-                <div id="myMedalDiv" class="flex">
-                <div class="flex">
-                <img id="myMedalImage" src="/client/assets/images/medal.png" alt="myMedal">
-                <h3 id="myNumberOfMedals">0</h3>
+        <div id="myProfile" class="flex"> 
+            <img id="myProfileImage" src="/client/assets/images/icon_images/randomUser.png" alt="myProfileLogo">
+            <div id="myStatusMedalEdit" class="flex">
+                <div id="myProfileNameDiv">
+                <h3 id="myProfileName">random</h3>
                 </div>
-                <img id="myEditUser" src="/client/assets/images/edituser.png" alt="editUser">
-                </div>
-                <div class="flex">
+                <div id="myStatusDiv" class="flex">
                 <div id="myStatusAnswer" class="myStatusAnswer"></div>
                 <h3 id="myStatusAnswerText" class="myStatusAnswerText">Online</h3>
+                </div>   
+                <div id="myMedalEditDiv" class="flex">
+                <img id="myMedalImage" src="/client/assets/images/icons/medal.png" alt="myMedal">
+                <h3 id="myNumberOfMedals">0</h3>
+                <button id="myEditUserBtn" class="myEditUserBtn"><img id="myEditUser" src="/client/assets/images/icons/edituser.png" alt="editUser"></button> 
                 </div>
             </div>  
-           
-            </div>
+        </div>
+        <div id="myMenuDiv" class="myMenuDiv">
+            <div id="myMenuOverlay"></div>
+            <img id="myMenuBackgroundImage" src="/client/assets/images/backgrounds/programmingUniverse.jpeg" alt="ProgrammingUniverse">
         </div>
         <div id="myProgrammingUniverse" class="flex">
-            <img id="myMenu" src="/client/assets/images/programmer.png" alt="programmer">
+            <button id="myMenuBtn" class="myMenuBtn"><img id="myMenu" src="/client/assets/images/programmer.png" alt="programmer"></button>
             <h3>Menu</h3>
         </div>
         <div id="myTinyFeatures"></div>

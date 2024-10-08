@@ -43,6 +43,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     border-radius: 5px;
+    border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     bottom: 0px;
 }
@@ -76,7 +77,7 @@
     visibility: 1;
 }
 
-#myStatus {
+#myStatusMedalEdit {
     flex-direction: column;
     justify-content: center;
     height: 8em;
@@ -84,28 +85,64 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     color: var(--white-color);
+    gap: 2px;
 }
 
-#myMedalDiv {
-    align-self: center;
-    font-family: 'Cabin', sans-serif;
-    justify-content: space-evenly;
-    width: 7em;
+#myStatusDiv, #myMedalEditDiv {
+    align-self: flex-start;
+}
+
+#myMedalEditDiv {
+    margin-left: -8px;
+}
+
+#myProfileNameDiv {
+    text-align: start;
+    width: 13em;
 }
 
 #myMedalImage {
     width: 2em;
 }
 
+#myNumberOfMedals {
+    margin: 0px 10px 0px 0px;
+}
+
 #myEditUser {
-    width: 1.7em;
+    margin-left: 2px;
+}
+
+.myEditUserBtn {
+   background: none;
+   border: none;
+   width: 2.5em;
+   display: flex;
+   justify-content: center;
+   margin: 0px 10px;
+   cursor: pointer;
+   transition: background 0.4s ease hover 0.4s ease;
+   border-radius: 5px;
+   text-align: center;
+}
+
+.myEditUserBtn.background {
+    background: rgb(255, 255, 255, 0.1);
+}
+
+#myEditUser {
+    width: 2em;
     cursor: pointer;
     z-index: 1;
 }
 
 #myStatus > Div {
     gap: 5px;
-    margin-left: -15px;
+   
+}
+
+#myStatusAnswerText {
+    margin: 0px 10px 0px 0px;
 }
 
 .myStatusAnswer {
@@ -114,6 +151,7 @@
     background: var(--success-color);
     border-radius: 50%;
     animation: blink 1s infinite;
+    margin: 0px 5px 0px 0px;
 }
 
 @keyframes blink {
@@ -143,10 +181,24 @@
     flex-direction: column;
 }
 
+.myMenuBtn {
+    background: none;
+    border: none;
+    border-radius: 5px;
+    padding: 1px 5px;
+    margin-top: 10px;
+    transition: background 0.4s ease hover 0.4s ease;
+}
+
+.myMenuBtn.background {
+    background: rgb(255, 255, 255, 0.1);
+}
+
 #myMenu {
-    width: 5em;
+    width: 6em;
     cursor: pointer;
     z-index: 2;
+    margin: 5px 0px -5px 0px;
 }
 
 #myTinyFeatures {

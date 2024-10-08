@@ -46,11 +46,8 @@ myForm.addEventListener('submit', function(e) {
         const myFlashMessageOverlay = document.getElementById('myFlashMessageOverlay');
 
         if (data.success) {
-            const success = 'User registered successfully!';
-            const display = 'myFlashMessage success show'; 
-            localStorage.setItem('success', success);
-            localStorage.setItem('display', display);
-            window.location.replace("/index.html"); 
+            localStorage.setItem('success', true);
+            window.location.replace("index.html"); 
         } else {
 
             myFlashMessageAnimation.src = '/client/assets/images/animations/error.gif';
@@ -84,10 +81,10 @@ myView.onclick = function() {
 
     if(myPassword.type === 'password') {
         myPassword.type = 'text';
-        myView.src = '../client/assets/images/hide.png';
+        myView.src = '../client/assets/images/icons/hide.png';
     } else  {
         myPassword.type = 'password';
-        myView.src = '../client/assets/images/view.png';
+        myView.src = '../client/assets/images/icons/view.png';
     }
 }
 

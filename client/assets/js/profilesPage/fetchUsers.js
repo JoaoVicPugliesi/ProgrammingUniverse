@@ -16,10 +16,10 @@ export function fetchUsers() {
                             <img id="myProfileImage" src="${user.user_icon}" alt="myProfileImg">
                             <div id="myButtonDiv" class="flex">
                                 <button class="myEnterButton" data-user-id="${user.user_id}">
-                                    <img id="myEnterButtonImage" src="/client/assets/images/enter.png" alt="myEnterImg">
+                                    <img id="myEnterButtonImage" src="/client/assets/images/icons/enter.png" alt="myEnterImg">
                                 </button>
                                 <button class="myDeleteButton" data-user-id="${user.user_id}">
-                                    <img id="myDeleteButtonImage" src="/client/assets/images/delete.png" alt="myDeleteImg">
+                                    <img id="myDeleteButtonImage" src="/client/assets/images/icons/delete.png" alt="myDeleteImg">
                                 </button>
                             </div>
                         </div>

@@ -7,20 +7,27 @@
     <link rel="stylesheet" href="/client/assets/css/index.css">
     <link rel="stylesheet" href="/client/assets/css/myHeaderLink.css">
     <link rel="stylesheet" href="/client/assets/css/flashMessage.css">
+    <link rel="stylesheet" href="/client/assets/css/load.css">
     <title>Programming Universe</title>
 </head>
-<body id="myBody" class="flex">
+<body id="myBody" class="myBody">
+    <div id="myLoadOverlay" class="myLoadOverlay"></div>
+    <div id="myLoad" class="myLoad">
+        <img id="myLoadImage" src="/client/assets/images/programmer.png" alt="hacker">
+        <h3 id="myLoadContent">Loading...</h3>
+        <div class="loader"></div>
+    </div>
     <div id="myLoginFormOverlay" class="myLoginFormOverlay"></div>
     <div id="myLoginDiv" class="myLoginDiv">
         <form id="myLoginForm">
-            <button id="myCancelBtn2"><img id="myCancelBtnImage" src="/client/assets/images/close.png" alt="myCancelBtnImg"></button>
+            <button id="myCancelBtn2"><img id="myCancelBtnImage" src="/client/assets/images/icons/close.png" alt="myCancelBtnImg"></button>
             <div id="myFormColumn" class="flex">
                 <div id="myBubble" class="bubble"></div>
                 <h3>Login</h3>
-                <input id="myLoginEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50">
+                <input id="myLoginEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50" spellcheck="false">
                 <div id="myPasswordDiv">
-                <input id="myLoginPassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25">
-                <img id="myLoginView"  src="../client/assets/images/view.png" alt="view">
+                <input id="myLoginPassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25" spellcheck="false">
+                <img id="myLoginView"  src="../client/assets/images/icons/view.png" alt="view">
                 </div>
                 <input id="myLoginUserId" type="hidden" name="userId" value="">
             </div>
@@ -30,14 +37,14 @@
     <div id="myDeleteFormOverlay" class="myDeleteFormOverlay"></div>
     <div id="myDeleteDiv" class="myDeleteDiv">
         <form id="myDeleteForm">
-            <button id="myCancelBtn1"><img id="myCancelBtnImage" src="/client/assets/images/close.png" alt="myCancelBtnImg"></button>
+            <button id="myCancelBtn1"><img id="myCancelBtnImage" src="/client/assets/images/icons/close.png" alt="myCancelBtnImg"></button>
             <div id="myFormColumn" class="flex">
                 <div id="myBubble" class="bubble"></div>
                 <h3>Are you sure you wanna delete this profile?</h3>
-                <input id="myDeleteEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50">
+                <input id="myDeleteEmail" type="text" name="email" placeholder="email" autocomplete="off" maxlength="50" spellcheck="false">
                 <div id="myPasswordDiv">
-                <input id="myDeletePassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25">
-                <img id="myDeleteView" src="../client/assets/images/view.png" alt="view">
+                <input id="myDeletePassword" type="password" name="password" placeholder="password" autocomplete="off" maxlength="25" spellcheck="false">
+                <img id="myDeleteView" src="../client/assets/images/icons/view.png" alt="view">
                 </div>
                 <input id="myDeleteUserId" type="hidden" name="userId" value="">
             </div>
@@ -61,16 +68,16 @@
     <div id="mySearchDiv">
     <form id="mySearchForm">
         <div id="mySearchBlock" class="flex">
-        <input type="text" name="searchedUsername" id="mySearch" class="mySearch" placeholder="Who is exploring today?" autocomplete="off" maxlength="25">
-        <img src="/client/assets/images/search.png" alt="mySearchIconBtn" id="mySearchIconBtn">
+        <input type="text" name="searchedUsername" id="mySearch" class="mySearch" placeholder="Who is exploring today?" autocomplete="off" maxlength="25" spellcheck="false">
+        <img src="/client/assets/images/icons/search.png" alt="mySearchIconBtn" id="mySearchIconBtn">
         </div>
     </form>
     </div>
     <div id="myProfilesDiv" class="flex">
     <div id="myProfiles" class="flex">  
         <div id="myPlusSign">
-            <a href="/client/newUser.html"><img src="/client/assets/images/plus-icon.png" alt="plusign" id="myPlusSignImage"></a>
-            <h3 id="myPlusName">Add New Profile</h3>
+            <a href="/client/newUser.html"><img src="/client/assets/images/icons/plus-icon.png" alt="plusign" id="myPlusSignImage"></a>
+            <h3 id="myPlusName">Create your account</h3>
         </div>
         <div id="noUsersFound" class="myDisplay">
             <h3 id="noUsersFoundContent" >No Users Found</h3>

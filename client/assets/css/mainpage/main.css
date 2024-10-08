@@ -36,19 +36,25 @@
     box-sizing: border-box;
 }
 
-#myBody {
+.myBody {
     background-image: url(/client/assets/images/backgrounds/radlands.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
+    display: none;
+    align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     overflow: hidden;
     position: relative;
     background-color: var(--Second-color);
     margin: 0;
+}
+
+.myBody.display {
+    display: flex;
 }
 
 #myBackgroundOverlay {

@@ -1,14 +1,18 @@
 // Here i'm handling the FlashMessages onload;
-    import { handleFlashMessage } from './flashMessage.js';
+    import { onload } from './onload.js';
     import { fetchUsers } from './fetchUsers.js';
     import { searchProfile } from './searchProfile.js';
     import { setupLogin } from './login.js';
     import { setupDeleteProfile } from './deleteProfile.js';
     import { setupPasswordToggle } from './togglePassword.js';
+    import { handleFlashMessage } from './handleFlashMessage.js';
+    
 
     document.addEventListener('DOMContentLoaded', function() {
-        handleFlashMessage(); // Moved inside DOMContentLoaded
-    
+        onload(); // Moved inside DOMContentLoaded
+        
+        handleFlashMessage();
+        
         // Here i'm Fetching and displaying user profiles
         fetchUsers(); 
     

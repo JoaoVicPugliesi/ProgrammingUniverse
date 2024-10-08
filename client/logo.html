@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="../client/assets/css/logo.css">
     <link rel="stylesheet" href="../client/assets/css/myHeaderLink.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
+    <link rel="stylesheet" href="../client/assets/css/load.css">
     <title>Programming Universe</title>
 </head>
-<body id="myBody" class="flex">
+<body id="myBody" class="myBody">
+    <div id="myLoadOverlay" class="myLoadOverlay"></div>
+    <div id="myLoad" class="myLoad">
+        <img id="myLoadImage" src="/client/assets/images/programmer.png" alt="hacker">
+        <h3 id="myLoadContent">Loading...</h3>
+        <div class="loader"></div>
+    </div>
     <div id="myFlashMessageOverlay"></div>
     <div id="myFlashMessage" class="myFlashMessage">
         <img id="myFlashMessageAnimation" src="" alt="myFlashMessageAnimation">

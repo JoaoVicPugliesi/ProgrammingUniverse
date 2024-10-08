@@ -31,13 +31,13 @@
 }
 
 #myNewsBar {
-    width: 12em;
+    width: 15em;
     height: 2.5em;
     position: absolute;
     top: 3.5%;
     right: 5%;
     border-radius: 2px;
-    justify-content: space-around;
+    justify-content: space-between;
     z-index: 3;
     font-family: 'Cabin', sans-serif;
     font-weight: 400;
@@ -49,16 +49,20 @@
     position: relative;
 }
 
-#myLogoutDiv {
+#myLogoutDiv, #myRankingDiv  {
     justify-content: space-around;
     position: relative;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
 
+#myHallOfFame {
+    font-size: 1em;
+}
+
 .myLogoutConfirmation {
     flex-direction: column;
-    width: 15em;
+    width: 15.5em;
     height: 3.5em;
     position: absolute;
     text-align: center;
@@ -111,6 +115,9 @@
     cursor: pointer;
     user-select: none;
     color: var(--Main-test-3);
+    transition: all 0.2s ease;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
 }
 
 #myYes:active, #myNo:active {
@@ -120,7 +127,7 @@
     color: var(--white-color);
 }
 
-#myNotificationsBtn, #myFriendsBtn, #myLogoutBtn {
+#myNotificationsBtn, #myFriendsBtn, #myLogoutBtn, #myRankingBtn {
     background: none;
     border: none;
     cursor: pointer;
@@ -128,6 +135,11 @@
 
 #myNotificationsImage, #myFriendsImage, #myLogoutImage {
     width: 2em;
+    cursor: pointer;
+}
+
+#myRankingImage {
+    width: 3em;
     cursor: pointer;
 }
 

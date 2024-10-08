@@ -8,10 +8,10 @@ export function setupPasswordToggle() {
         e.preventDefault;
         if (myLoginPassword.type === 'password') {
             myLoginPassword.type = 'text';
-            myLoginView.src = '../client/assets/images/hide.png';
+            myLoginView.src = '../client/assets/images/icons/hide.png';
         } else {
             myLoginPassword.type = 'password';
-            myLoginView.src = '../client/assets/images/view.png';
+            myLoginView.src = '../client/assets/images/icons/view.png';
         }
     });
 
@@ -19,10 +19,10 @@ export function setupPasswordToggle() {
         e.preventDefault();
         if (myDeletePassword.type === 'password') {
             myDeletePassword.type = 'text';
-            myDeleteView.src = '../client/assets/images/hide.png';
+            myDeleteView.src = '../client/assets/images/icons/hide.png';
         } else {
             myDeletePassword.type = 'password';
-            myDeleteView.src = '../client/assets/images/view.png';
+            myDeleteView.src = '../client/assets/images/icons/view.png';
         }
     });
 }

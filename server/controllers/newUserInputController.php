@@ -20,8 +20,38 @@
             return true;
         }
 
+        public function descriptionController($description) {
+
+            if (strlen($description) < 8) {
+                $this->setError("Description must contain at least 8 characters.");
+                return false;
+            }
+        
+            if (strlen($description) > 255) {
+                $this->setError("Description must not exceed 255 characters.");
+                return false;
+            }
+        
+            if (!preg_match("/^[a-zA-Z0-9\s.,!?'-]*$/", $description)) {
+                $this->setError("Description can only contain letters, numbers, spaces, and basic punctuation.");
+                return false;
+            }
+        
+            if (stripos($description, '<script>') !== false) {
+                $this->setError("Description contains invalid content.");
+                return false;
+            }
+
+            return true;
+        }
+
         public function emailController($email) {
             list($local, $domain) = explode('@', $email);
+
+            if(!preg_match("/^[a-z0-9]+$/i", $local)) {
+                $this->setError("Local must contain only letters and numbers");
+                return false;
+            }
 
             if(!preg_match('/@/', $email)) {
                 $this->setError("Email must contain @");

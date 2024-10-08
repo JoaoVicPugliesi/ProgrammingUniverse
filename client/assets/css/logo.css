@@ -29,7 +29,7 @@
     box-sizing: border-box;
 }
 
-#myBody {
+.myBody {
     height: 100vh;
     width: 100%;
     background-color: var(--Second-color);
@@ -38,7 +38,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: none;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+}
+
+.myBody.display {
+    display: flex;
 }
 
 #myBackgroundOverlay {
@@ -83,6 +90,7 @@
 
 #myContainer {
     padding: 10px;
+    position: relative;
 }
 
 #myRadio1, #myRadio2, #myRadio3, #myRadio4, #myRadio5, #myRadio6, #myRadio7, #myRadio8, #myRadio9, #myRadio10 {
@@ -263,6 +271,17 @@ input[type="radio"]:not(:checked) + #myRadio1 > #myRow {
     }
     input[type="radio"]:checked + #myRadio1, input[type="radio"]:checked + #myRadio2, input[type="radio"]:checked + #myRadio3, input[type="radio"]:checked + #myRadio4, input[type="radio"]:checked + #myRadio5, input[type="radio"]:checked + #myRadio6, input[type="radio"]:checked + #myRadio7, input[type="radio"]:checked + #myRadio8, input[type="radio"]:checked + #myRadio9, input[type="radio"]:checked + #myRadio10 {
         width: 9em;
+    }
+
+    #myName {
+        font-weight: 500;
+        font-size: 0.6em;
+        
+    }
+
+    #myPhrase {
+        font-size: 0.55em;
+        text-wrap: wrap;
     }
 }
 

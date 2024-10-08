@@ -44,10 +44,10 @@ export function searchProfile() {
                             <img id="myProfileImage" src="${user.user_icon}" alt="ProfileImg">
                             <div id="myButtonDiv" class="flex">
                                 <button id="myEnterButton" class="myEnterButton" data-user-id="${user.user_id}">
-                                    <img id="myEnterButtonImage" src="/client/assets/images/enter.png" alt="Enter">
+                                    <img id="myEnterButtonImage" src="/client/assets/images/icons/enter.png" alt="Enter">
                                 </button>
                                 <button id="myDeleteButton" class="myDeleteButton" data-user-id="${user.user_id}">
-                                    <img id="myDeleteButtonImage" src="/client/assets/images/delete.png" alt="Delete">
+                                    <img id="myDeleteButtonImage" src="/client/assets/images/icons/delete.png" alt="Delete">
                                 </button>
                             </div>
                         </div>

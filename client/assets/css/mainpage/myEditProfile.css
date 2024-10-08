@@ -24,16 +24,272 @@
 
 
 .myEditProfileDiv {
-    background: var(--Main-test-2);
     height: 22em;
     width: 18em;
     bottom: 8em;
     position: absolute;
     opacity: 0;
     visibility: hidden;
+    border: 2px solid var(--Main-color);
+    border-right: none;
+    border-top-left-radius: 5px;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .myEditProfileDiv.display {
     opacity: 1;
     visibility: visible;
+}
+
+#myEditProfileOverlay {
+    background: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    border-top-left-radius: 5px;
+}
+
+#myEditProfileBackgroundImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    z-index: 1;
+    border-top-left-radius: 5px;
+}
+
+#myEditProfileBanner {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    z-index: 900;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: var(--Main-color);
+    justify-content: center;
+}
+
+#myEditProfileBannerBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    z-index: 901;
+}
+
+#myEditProfileBannerImage {
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    z-index: 902;
+}
+
+#myEditProfileInformations {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+.myEditProfileForm {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    padding: 10px;
+    flex-direction: column;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.myEditProfileForm.display {
+    opacity: 1;
+    visibility: visible;
+}
+
+.myEditAlbum {
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+    background: var(--Main-test-3);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 898;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-top-left-radius: 5px;
+}
+
+.myEditAlbum.display {
+    opacity: 1;
+    visibility: visible;
+}
+
+#myCloseAlbumBtn {
+    background: var(--Main-color);
+    border: none;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+    top: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    z-index: 900;
+}
+
+#myCloseAlbumBtnImage {
+    width: 2em;
+    height: 2em;
+}
+
+#myAlbumPhotosDiv {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 899;
+    border-top-left-radius: 5px;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+#myAlbumPhotoContainer {
+    width: 5em;
+    height: 5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#myAlbumPhotoContainer input[type="radio"]:checked + label #myAlbumPhoto {
+    border: 2px solid var(--Main-color-pink); 
+}
+
+#myAlbumPhoto {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--Main-color);
+    cursor: pointer;
+}
+
+#myEditProfileMessage {
+    font-size: 1em;
+    text-transform: uppercase;
+    background: var(--Main-test-1);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#myEditIconNameEmailDiv {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 8em;
+}
+
+#myNameEmail {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+#myUsername, #myEmail {
+    background: var(--Main-color);
+    border: none;
+    border-bottom: 2px solid var(--white-color);
+    padding: 2px 5px;
+    color: white;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 0.8em;
+    width: 15em;
+}
+
+#myEditIconBtn {
+    background: var(--Main-test-4);
+    border: none;
+    border-radius: 5px;
+    width: 3em;
+    height: 3em;
+    padding: 3px 1px 1px 1px;
+}
+
+#myEditIcon {
+    width: 2em;
+    cursor: pointer;
+}
+
+#myEditMedalsClockFriends {
+    width: 100%;
+    justify-content: space-between;
+    background: var(--Main-test-1);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Cabin', sans-serif;
+}
+
+#myEditMedalsClockFriends h3 {
+    font-size: 0.8em;
+    margin: 0px 10px 0px 0px;
+}
+
+#myEditMedalImage, #myEditFriendsImage, #myEditClockImage {
+    width: 1.8em;
+    margin: 0px 5px 0px 0px;
+    cursor: pointer;
+}
+
+#myEditClockImage {
+    width: 1.5em;
+}
+
+#myDescription {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--white-color);
+    background: var(--Main-color);
+    text-align: start;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 5px;
+    text-wrap: wrap;
+    width: 20em;
+    height: 8em;
+    box-sizing: border-box;  
+    resize: none;
+    overflow-y: auto;
+}
+
+#myUpdateBtn {
+    box-shadow: 5px 5px var(--Main-test-4);
+    width: 10em;
+    height: 3em;
+    background: var(--white-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#myUpdateBtn:active {
+    box-shadow: 0px 0px var(--Main-test-4);
+    background: var(--Main-test-4);
+    color: var(--white-color);
 }

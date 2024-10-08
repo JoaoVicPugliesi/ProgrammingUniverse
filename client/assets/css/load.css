@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Main-color: #4294FF;
+    --Second-color: #333333;
+    --success-color: #7CDF4E;
+    --Main-color-second: #3c31dd;
+    --Second-color-second: #0f0f10;
+    --Third-color-main-red: #dd3f31;
+    --Main-color-pink: #ff0066;
+    --white-color: #ffffff;
+    --Main-test-1: #0b2e70;
+    --Main-test-2: #d18d70;
+    --Main-test-3: #010326;
+    --Main-test-4: #e35a7e;
+    --Main-test-5: #743583;
+    --Main-test-6: #1c71a6;
+}
+
+::-webkit-input-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-moz-placeholder { color: white; }
+
+.myLoadOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--Main-test-1);
+    z-index: 998; 
+    display: none;
+}
+
+.myLoad {
+    position: absolute;
+    z-index: 999;
+    width: 20em;
+    height: 20em;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.myLoadOverlay.display {
+    display: block;
+}
+
+.myLoad.display {
+    display: flex;
+}
+
+#myLoadImage {
+    width: 10em;
+}
+
+#myLoadContent {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white-color);
+    letter-spacing: 1px;
+}
+
+.loader {    
+    --r1: 154%;
+    --r2: 68.5%;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%; 
+    background:
+      radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%, var(--Main-color) 80%),
+      radial-gradient(var(--r1) var(--r2) at bottom,var(--Main-color) 79.5%,#0000 80%),
+      radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,var(--Main-color) 80%),
+      #ccc;
+    background-size: 50.5% 220%;
+    background-position: -100% 0%,0% 0%,100% 0%;
+    background-repeat:no-repeat;
+    animation: l9 2s infinite linear;
+  }
+  @keyframes l9 {
+      33%  {background-position:    0% 33% ,100% 33% ,200% 33% }
+      66%  {background-position: -100%  66%,0%   66% ,100% 66% }
+      100% {background-position:    0% 100%,100% 100%,200% 100%}
+}

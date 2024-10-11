@@ -22,25 +22,25 @@
                 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
                 $myIcon = $_POST['myChosenIcon'];
 
-                $validateController = new NewUserInputController();
-
-                $validatePassword = $validateController->passwordController($password);
-                $validateEmail = $validateController->emailController($email);
-                $validateUsername = $validateController->usernameController($username);
+                $validateController = new NewUserInputController($username, $email, $password, $this->pdo);
+                
+                $validatePassword = $validateController->passwordController();
+                $validateEmail = $validateController->emailController();
+                $validateUsername = $validateController->usernameController();
+                $validateAlreadyTaken = $validateController->alreadyTaken();
               
-                if($validateUsername && $validateEmail && $validatePassword) {
+                if($validateAlreadyTaken && $validateUsername && $validateEmail && $validatePassword) {
                     $hash = password_hash($password, PASSWORD_DEFAULT);
                     $newUser = new NewUserModel($username, $email, $hash, $myIcon, $this->pdo);
-
                     try {
                         $newUser->setNewUser();
                         echo json_encode(['success' => true]);
                         
                     } catch(Exception) {
-                        echo json_encode(['success' => false, 'message' => $_SESSION["error"]]);
+                        echo json_encode(['success' => false, 'message' => $_SESSION['error'] ? $_SESSION['error'] : 'Unkown Error']);
                     }
                 } else {
-                    echo json_encode(['success' => false, 'message' => $_SESSION["error"]]);
+                    echo json_encode(['success' => false, 'message' => $_SESSION['error']]);
                 }
             } else {
                 echo json_encode(['success' => false, 'message' => 'Invalid request method']);

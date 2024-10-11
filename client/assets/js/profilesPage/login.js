@@ -8,19 +8,30 @@ export function setupLogin() {
     const myLoginFormOverlay = document.getElementById('myLoginFormOverlay');
     const myLoginDiv = document.getElementById('myLoginDiv');
     const myCancelBtn2 = document.getElementById('myCancelBtn2');
+    const myBubbleLogin = document.getElementById('myBubbleLogin');
+    const myLoginEmail = document.getElementById('myLoginEmail');
+    const myLoginPassword = document.getElementById('myLoginPassword');
 
     document.getElementById('userContainer').addEventListener('click', function(e) {
-        if (e.target.closest('.myEnterButton')) {
+        const enterButton = e.target.closest('.myEnterButton');
+        if (enterButton) {
             e.preventDefault();
             myLoginFormOverlay.classList.add('Display');
             myLoginDiv.classList.add('Display');
 
-            const userId = e.target.closest('.myEnterButton').getAttribute('data-user-id');
+            const enterButton = e.target.closest('.myEnterButton');
+
+            const userId = enterButton.getAttribute('data-user-id');
             document.getElementById('myLoginUserId').value = userId;
+
+            const userIcon = enterButton.getAttribute('data-user-icon');
+            myBubbleLogin.style.backgroundImage = `url(${userIcon})`
         }
 
         myCancelBtn2.addEventListener('click', function(e) {
             e.preventDefault();
+            myLoginEmail.value = null;
+            myLoginPassword.value = null;
             myLoginFormOverlay.classList.remove('Display');
             myLoginDiv.classList.remove('Display');
         });
@@ -42,6 +53,8 @@ export function setupLogin() {
         .then(res => res.json())
         .then(data => {
             if (data.success) {
+                myLoginEmail.value = null;
+                myLoginPassword.value = null;
                 localStorage.setItem('username', data.user.username);
                 localStorage.setItem('display', true);
                 localStorage.setItem('user_id', data.user.user_id);

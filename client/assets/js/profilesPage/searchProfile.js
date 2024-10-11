@@ -2,9 +2,8 @@ import { fetchUsers } from './fetchUsers.js';
 
 export function searchProfile() {
     const mySearchInput = document.getElementById('mySearch');
-    const mySearchForm = document.getElementById('mySearchForm')
-    const noUsersFound = document.getElementById('noUsersFound');
     const userContainer = document.getElementById('userContainer'); 
+    const noUsersFound = document.getElementById('noUsersFound');
 
     let debounceTimeout;
     const debounce = (func, delay) => {
@@ -20,8 +19,8 @@ export function searchProfile() {
             noUsersFound.classList.remove('block');
             fetchUsers();
             return;
-        } 
-        
+        }
+
         const payLoad = new URLSearchParams({ searchedUsername: searchValue });
 
         fetch('http://localhost/WindowsUniverse/server/controllers/searchUserController.php', {
@@ -34,7 +33,7 @@ export function searchProfile() {
         .then(res => res.json())
         .then(data => {
             userContainer.innerHTML = ''; 
-            if (data.success && data.users) {
+            if (data.success && data.users.length > 0) {
                 noUsersFound.classList.remove('block');
                 data.users.forEach(user => {
                     const userDiv = document.createElement('div');
@@ -43,10 +42,10 @@ export function searchProfile() {
                         <div id="myImageContainer">
                             <img id="myProfileImage" src="${user.user_icon}" alt="ProfileImg">
                             <div id="myButtonDiv" class="flex">
-                                <button id="myEnterButton" class="myEnterButton" data-user-id="${user.user_id}">
+                                <button id="myEnterButton" class="myEnterButton" data-user-id="${user.user_id}" data-user-icon="${user.user_icon}">
                                     <img id="myEnterButtonImage" src="/client/assets/images/icons/enter.png" alt="Enter">
                                 </button>
-                                <button id="myDeleteButton" class="myDeleteButton" data-user-id="${user.user_id}">
+                                <button id="myDeleteButton" class="myDeleteButton" data-user-id="${user.user_id}" data-user-icon="${user.user_icon}">
                                     <img id="myDeleteButtonImage" src="/client/assets/images/icons/delete.png" alt="Delete">
                                 </button>
                             </div>
@@ -58,15 +57,16 @@ export function searchProfile() {
                     userContainer.appendChild(userDiv);
                 });
             } else {
+                userContainer.innerHTML = '';  
                 noUsersFound.classList.add('block');
             }
         })
         .catch(error => console.log('Error', error));
     };
 
-    mySearchInput.addEventListener('keyup', debounce(fetchSearchResults, 100)); 
+    mySearchInput.addEventListener('keyup', debounce(fetchSearchResults, 300)); 
 
-    mySearchForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-    })
+    document.getElementById('mySearchForm').addEventListener('submit', function(e) {
+        e.preventDefault();  
+    });
 }

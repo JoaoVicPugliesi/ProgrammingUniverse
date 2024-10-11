@@ -22,7 +22,7 @@
 
             if($user) {
                 if($user['email'] == $this->email && password_verify($this->password, $user['password'])) {
-                    $sql = 'UPDATE User SET last_activity = NOW(), is_online = 1 WHERE user_id = :user_id';
+                    $sql = 'UPDATE User SET last_activity = NOW(), last_seen = NOW(), is_online = 1 WHERE user_id = :user_id';
                     $stmt = $this->pdo->prepare($sql);
                     $stmt->execute([':user_id' => $this->userId]);
 

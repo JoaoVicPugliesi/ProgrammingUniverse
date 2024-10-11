@@ -34,6 +34,7 @@ export function fetchUser() {
             myProfileImage.src = localStorage.getItem('user_icon');
             myProfileBackgroundImage.src = localStorage.getItem('user_icon');
             myIcon.value = localStorage.getItem('user_icon');
+           
         } else {
             console.log('Error');
         }

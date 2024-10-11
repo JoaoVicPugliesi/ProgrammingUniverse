@@ -24,11 +24,11 @@
                 $user_icon = $_POST['myIcon'];
                 $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
 
-                $validateController = new NewUserInputController();
+                $validateController = new NewUserInputController($username, $email, null, $this->pdo);
 
                 $validateDescription = $validateController->descriptionController($description);
-                $validateEmail = $validateController->emailController($email);
-                $validateUsername = $validateController->usernameController($username);
+                $validateEmail = $validateController->emailController();
+                $validateUsername = $validateController->usernameController();
 
                 if($validateDescription && $validateEmail && $validateUsername) {
 

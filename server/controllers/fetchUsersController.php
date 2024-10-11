@@ -5,7 +5,7 @@
     header('Access-Control-Allow-Headers: Content-Type, Authorization');
     session_start();
     require_once '../core/pdo.php';
-    require_once '../models/profileModel.php';
+    require_once '../models/fetchUsersModel.php';
 
     class ProfileController {
         private $pdo;

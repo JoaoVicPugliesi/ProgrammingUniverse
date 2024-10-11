@@ -70,6 +70,8 @@
     height: 6em;
     border: var(--Main-color) solid 3px;
     border-radius: 5px;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 #myProfileTools > #myProfileImage:hover + #myProfileToolsImage, #myProfileToolsImage:hover {
@@ -141,11 +143,11 @@
    
 }
 
-#myStatusAnswerText {
+#myStatusAnswerText, #myStatusMenuText {
     margin: 0px 10px 0px 0px;
 }
 
-.myStatusAnswer {
+.myStatusAnswer, #myStatusMenuAnswer {
     width: 15px;
     height: 15px;
     background: var(--success-color);

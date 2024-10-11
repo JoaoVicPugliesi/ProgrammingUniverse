@@ -49,12 +49,11 @@ myForm.addEventListener('submit', function(e) {
             localStorage.setItem('success', true);
             window.location.replace("index.html"); 
         } else {
-
             myFlashMessageAnimation.src = '/client/assets/images/animations/error.gif';
             myTypeOfFlashMessage.textContent = "Error";
             myFlashMessageContent.textContent = data.message;
             myFlashMessage.className = 'myFlashMessage error show';
-            myFlashMessageOverlay.style.display = 'block'; // Show overlay
+            myFlashMessageOverlay.style.display = 'block'; 
             myFlashMessageBtn.textContent = 'Try Again';
         }
 

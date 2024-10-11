@@ -128,18 +128,21 @@
 }
 
 .bubble {
-    width: 5em;
-    height: 5em;
+    width: 7em;
+    height: 7em;
     background-color: #e35a7e;
     border-radius: 50%;
     transition: border-radius 0.5s ease; 
     animation: bubbleEffect 1.5s infinite; 
     margin-bottom: 20px;
     cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .bubble:hover {
-    border-radius: 0; 
+    border-radius: 5px; 
 }
 
 @keyframes bubbleEffect {

@@ -8,6 +8,11 @@ const myEditProfileBannerImage = document.getElementById('myEditProfileBannerIma
 const myEditIconBtn = document.getElementById('myEditIconBtn');
 const myEditAlbum = document.getElementById('myEditAlbum');
 const myCloseAlbumBtn = document.getElementById('myCloseAlbumBtn');
+const myMenuFeaturesDiv = document.getElementById('myMenuFeaturesDiv');
+const myMenuBannerBtn = document.getElementById('myMenuBannerBtn');
+const myMenuBannerImage = document.getElementById('myMenuBannerImage');
+const myMenuFeatureAddAppBtn = document.getElementById('myMenuFeatureAddAppBtn');
+const myAddAppDiv = document.getElementById('myAddAppDiv');
 
 
 export function myNavBar(btn, element, image) {
@@ -26,12 +31,13 @@ export function myNavBar(btn, element, image) {
     });
 }
 
-
-myNavBar(myCloseAlbumBtn, myEditAlbum);
-myNavBar(myEditIconBtn, myEditAlbum);
 myNavBar(myEditUserBtn, myEditProfileDiv);
 myNavBar(myMenuBtn, myMenuDiv);
 myNavBar(myEditProfileBannerBtn, myEditProfileForm, myEditProfileBannerImage);
+myNavBar(myEditIconBtn, myEditAlbum);
+myNavBar(myCloseAlbumBtn, myEditAlbum);
+myNavBar(myMenuBannerBtn, myMenuFeaturesDiv, myMenuBannerImage);
+myNavBar(myMenuFeatureAddAppBtn, myAddAppDiv);
 
 
 

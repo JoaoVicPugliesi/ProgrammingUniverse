@@ -1,4 +1,4 @@
-export function handleFlashMessage() {
+export function handleFlashMessage(openingTime, closingTime) {
         const myFlashMessage = document.getElementById('myFlashMessage');
         const myFlashMessageAnimation = document.getElementById('myFlashMessageAnimation');
         const myTypeOfFlashMessage = document.getElementById('myTypeOfFlashMessage');
@@ -15,7 +15,7 @@ export function handleFlashMessage() {
                 myTypeOfFlashMessage.textContent = "Success";
                 myFlashMessageContent.textContent = `Account Created`;
                 myFlashMessageBtn.textContent = 'Continue';
-            }, 2000);
+            }, openingTime);
     
             myFlashMessageBtn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -26,7 +26,7 @@ export function handleFlashMessage() {
                         myFlashMessage.className = 'myFlashMessage';
                         myFlashMessageOverlay.style.display = 'none';
                         localStorage.removeItem('success');
-                }, 200);
+                }, closingTime);
             });
         });
     }

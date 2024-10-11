@@ -1,3 +1,5 @@
+import { fetchUser } from "./fetchUser.js";
+
 export function updateUser() {
     const myEditProfileForm = document.getElementById('myEditProfileForm');
 
@@ -17,6 +19,7 @@ export function updateUser() {
         .then(res => res.json())
         .then(data => {
             if(data.success) {
+                fetchUser();
                 console.log('success');
             } else {
                 console.log(data.error);

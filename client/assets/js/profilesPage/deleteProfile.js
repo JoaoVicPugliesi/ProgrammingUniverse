@@ -10,18 +10,27 @@ export function setupDeleteProfile() {
     const myDeleteFormOverlay = document.getElementById('myDeleteFormOverlay');
     const myDeleteDiv = document.getElementById('myDeleteDiv');
     const myCancelBtn1 = document.getElementById('myCancelBtn1');
+    const myBubbleDelete = document.getElementById('myBubbleDelete');
+    const myDeleteEmail = document.getElementById('myDeleteEmail');
+    const myDeletePassword = document.getElementById('myDeletePassword');
 
     document.getElementById('userContainer').addEventListener('click', function(e) {
-        if (e.target.closest('.myDeleteButton')) {
+        const deleteButton = e.target.closest('.myDeleteButton');
+        if (deleteButton) {
             e.preventDefault();
             myDeleteFormOverlay.classList.add('Display');
             myDeleteDiv.classList.add('Display');
 
-            const userId = e.target.closest('.myDeleteButton').getAttribute('data-user-id');
+            const userId = deleteButton.getAttribute('data-user-id');
             document.getElementById('myDeleteUserId').value = userId;
+
+            const userIcon = deleteButton.getAttribute('data-user-icon');
+            myBubbleDelete.style.backgroundImage = `url(${userIcon})`;
 
             myCancelBtn1.addEventListener('click', function(e) {
                 e.preventDefault();
+                myDeleteEmail.value = null;
+                myDeletePassword.value = null;
                 myDeleteFormOverlay.classList.remove('Display');
                 myDeleteDiv.classList.remove('Display');
             }
@@ -44,6 +53,8 @@ export function setupDeleteProfile() {
         .then(res => res.json())
         .then(data => {
             if (data.success) {
+                myDeleteEmail.value = null;
+                myDeletePassword.value = null;
                 const userId = document.getElementById('myDeleteUserId').value;
                 const userProfile = document.querySelector(`.myDeleteButton[data-user-id="${userId}"]`).closest('#myContainer');
                 if (userProfile) {

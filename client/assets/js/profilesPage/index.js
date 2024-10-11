@@ -11,8 +11,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         onload(); // Moved inside DOMContentLoaded
         
-        handleFlashMessage();
-        
+        handleFlashMessage(2000, 200);
+
         // Here i'm Fetching and displaying user profiles
         fetchUsers(); 
     

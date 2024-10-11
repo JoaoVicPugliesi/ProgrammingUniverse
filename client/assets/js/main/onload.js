@@ -29,6 +29,7 @@ export function onload() {
         const fetchedUserId = localStorage.getItem('user_id');
         userIdMain.value = fetchedUserId;
         fetchUser();
+
         if(localStorage.getItem('display')) {
         setTimeout(() => {
         myFlashMessageOverlay.style.display = 'block';

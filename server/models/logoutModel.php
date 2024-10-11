@@ -17,7 +17,7 @@
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if($user) {
-                $sql = 'UPDATE User SET is_online = 0 WHERE user_id = :user_id';
+                $sql = 'UPDATE User SET is_online = 0, last_seen = NOW() WHERE user_id = :user_id';
                 $stmt = $this->pdo->prepare($sql);
                 $stmt->bindParam(':user_id', $this->userId, PDO::PARAM_INT);
                 return $stmt->execute();

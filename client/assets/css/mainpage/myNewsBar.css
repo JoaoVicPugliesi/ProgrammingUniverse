@@ -45,7 +45,7 @@
 
 #myFriendsBtnDiv, #myNotificationsDiv {
     width: 4em;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: relative;
 }
 
@@ -136,16 +136,30 @@
 #myNotificationsImage, #myFriendsImage, #myLogoutImage {
     width: 2em;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#myLogoutImage {
+    width: 1.8em;
+    margin: 0px 0px 0px 5px;
+}
+
+#myNotificationsImage {
+    width: 1.8em;
 }
 
 #myRankingImage {
     width: 3em;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 #myNumberOfFriends, #myNumberOfNotifications {
     font-size: 1.1em;
     color: white;
+    margin: 0px 10px 0px 10px;
 }
 
 #myFriends {

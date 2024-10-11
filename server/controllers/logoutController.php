@@ -18,9 +18,9 @@
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
                 $newLogoutModel = new LogoutModel($userId, $this->pdo);
-                $user = $newLogoutModel->setLogout();
+                $success = $newLogoutModel->setLogout();
 
-                if($user) {
+                if($success) {
                     echo json_encode(['success' => true]);
                 } else {
                     echo json_encode(['success' => false]);

@@ -23,7 +23,7 @@ export function searchProfile() {
 
         const payLoad = new URLSearchParams({ searchedUsername: searchValue });
 
-        fetch('http://localhost/WindowsUniverse/server/controllers/searchUserController.php', {
+        fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/searchUserController.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

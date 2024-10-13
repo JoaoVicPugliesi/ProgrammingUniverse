@@ -113,6 +113,9 @@
 
 #myEditUser {
     margin-left: 2px;
+    width: 2em;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .myEditUserBtn {
@@ -132,15 +135,8 @@
     background: rgb(255, 255, 255, 0.1);
 }
 
-#myEditUser {
-    width: 2em;
-    cursor: pointer;
-    z-index: 1;
-}
-
 #myStatus > Div {
     gap: 5px;
-   
 }
 
 #myStatusAnswerText, #myStatusMenuText {
@@ -183,6 +179,10 @@
     flex-direction: column;
 }
 
+#myProgrammingUniverse h3 {
+    margin: -3px 0px 5px 0px;
+}
+
 .myMenuBtn {
     background: none;
     border: none;
@@ -200,7 +200,6 @@
     width: 6em;
     cursor: pointer;
     z-index: 2;
-    margin: 5px 0px -5px 0px;
 }
 
 #myTinyFeatures {

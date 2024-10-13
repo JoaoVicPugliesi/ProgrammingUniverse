@@ -115,9 +115,9 @@
     cursor: pointer;
     user-select: none;
     color: var(--Main-test-3);
-    transition: all 0.2s ease;
     font-family: 'Cabin', sans-serif;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 #myYes:active, #myNo:active {

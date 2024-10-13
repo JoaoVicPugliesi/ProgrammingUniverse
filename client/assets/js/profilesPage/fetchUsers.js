@@ -1,7 +1,7 @@
 export function fetchUsers() {
     const userContainers = document.getElementById('userContainer');
     
-    fetch('http://localhost/WindowsUniverse/server/controllers/fetchUsersController.php')
+    fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/fetchUsersController.php')
         .then(res => res.json())
         .then(data => {
             if (data.success) {

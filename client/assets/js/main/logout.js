@@ -13,7 +13,7 @@ export function logout() {
 
         const payLoad = new URLSearchParams({userId: userIdLogout.value});
 
-        fetch('http://localhost/WindowsUniverse/server/controllers/logoutController.php', {
+        fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/logoutController.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

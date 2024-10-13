@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="../client/assets/css/mainpage/myMenu.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/myMenuMessage.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/myAddApp.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/myNetworking.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/info.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/config.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
     <link rel="stylesheet" href="../client/assets/css/load.css">
-    <title>Programming</title>
+    <title>Programming Universe</title>
 </head>
 <body id="myBody" class="myBody">
     <div id="myLoadOverlay" class="myLoadOverlay"></div>
@@ -31,6 +34,16 @@
         <p id="myFlashMessageContent">Test</p>
         <button id="myFlashMessageBtn">Test</button>
     </div>
+    <div id="myDeleteAppOverlay" class="myDeleteAppOverlay"></div>
+    <form id="myDeleteAppForm" class="myDeleteAppForm">
+        <input id="myDeleteAppId" type="hidden" name="appId">
+        <h3 id="myDeleteApp">Delete App</h3>
+        <p id="myDeleteAppContent">Deleting the App will make it lose all the earned prestige and it will mean -1 medal for you. Are you sure you wanna delete?</p>
+        <div id="myDeleteAppButtonsDiv" class="flex">
+            <button type="submit" id="myDeleteAppYesBtn">Delete</button>   
+            <button id="myDeleteAppNoBtn">No</button>
+        </div>
+    </form>
     <div id="myBackgroundOverlay"></div>
     <div id="myNewsBar" class="flex">
         <div id="myRankingDiv" class="flex">
@@ -62,14 +75,10 @@
         </div>
         </div>
     </div>
-    <div id="myAppsUniverse" class="flex">
+    <div id="myAppsUniverse">
         <div id="myTrashBin" class="myTrashBin">
             <img id="myTrashBinImage" src="/client/assets/images/trash.png" alt="trash">
-            <h3>Trash</h3>
-        </div>
-        <div id="myAppContainer" draggable="true">
-            <img id="myAppImage" src="/client/assets/images/programmer.png" alt="programmer">
-            <h3>App1</h3>
+            <h3 id="appName">Trash</h3>
         </div>
     </div>
     <div id="myContainer">
@@ -183,7 +192,7 @@
                 <div id="myEditMedalsClockFriends" class="flex">
                     <div id="myEditMedalDiv" class="flex">
                         <img id="myEditMedalImage" src="/client/assets/images/icons/medal.png" alt="">
-                        <h3>0</h3>
+                        <h3 id="myEditMedalDivNumbers">N/A</h3>
                     </div>
                     <div id="myEditFriendsDiv" class="flex">
                         <img id="myEditFriendsImage" src="/client/assets/images/icons/friends.png" alt="">
@@ -218,7 +227,7 @@
                 </div>   
                 <div id="myMedalEditDiv" class="flex">
                 <img id="myMedalImage" src="/client/assets/images/icons/medal.png" alt="myMedal">
-                <h3 id="myNumberOfMedals">0</h3>
+                <h3 id="myNumberOfMedals">N/A</h3>
                 <button id="myEditUserBtn" class="myEditUserBtn"><img id="myEditUser" src="/client/assets/images/icons/edituser.png" alt="editUser"></button> 
                 </div>
             </div>  
@@ -251,7 +260,63 @@
                 </div>
                 <div id="myMenuWorldApps" class="flex">
                     <div id="myAddAppDiv" class="myAddAppDiv">
-                        
+                       
+                        <div id="myAddAppOverlay"></div>
+                        <div id="myAddAppExplain">
+                            <h3>Add Your Apps</h3>
+                            <p>Here you can add your apps, earning medals and relevance inside of the Programming Universe.</p>
+                        </div>
+                        <form id="myAddAppForm" class="myAddAppForm" enctype="multipart/form-data">
+                            <input type="hidden" id="userIdApp" name="userIdApp">
+                            <input type="hidden" id="appAuthor" name="appAuthor">
+                            <div id="myAddAppLogoNameDescription" class="flex">
+                                <div id="myAddAppLogoDiv" class="flex">
+                                    <input type="file" name="appLogo" id="myAddAppLogo" hidden>
+                                    <label for="myAddAppLogo" id="myAddAppLogoLabel">
+                                        <div id="myImageUploadedOverlay"></div>
+                                        <img id="myAppUpload" src="/client/assets/images/icons/upload.png" alt="myUpload">
+                                    </label>
+                                <h3>App Logo</h3>
+                                </div>
+                                <div id="myAddNameDescription" class="flex">
+                                    <input id="myAddAppName" type="text" name="appName" placeholder="name" autocomplete="off" maxlength="50" spellcheck="false" required>
+                                    <textarea id="myAddAppDescription" placeholder="Description" name="appDescription" maxlength="255" autocomplete="off" spellcheck="false"></textarea>
+                                </div>
+                            </div>
+                            <div id="myAddAppLinkVisibility" class="flex">
+                                <input id="myAppLink" type="url" name="appURL" maxlength="255" placeholder="URL" autocomplete="off" required>
+                                <div id="myAppVisibilityDiv" class="flex">
+                                    <input type="radio" id="myPublicApp" name="appVisibility" value="public" hidden>
+                                    <label for="myPublicApp" id="myAppVisibilityLabel">
+                                        <h3>Public</h3>
+                                        <div style="position: relative;">
+                                        <div id="myCheckmark"></div>
+                                        <div id="myCheckmarkShadow"></div>
+                                        </div>
+                                    </label>
+                                    <input type="radio" id="myPrivateApp" name="appVisibility" value="private" hidden>
+                                    <label for="myPrivateApp" id="myAppVisibilityLabel">
+                                        <h3>Private</h3>
+                                        <div style="position: relative;">
+                                        <div id="myCheckmark"></div>
+                                        <div id="myCheckmarkShadow"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="myAddAppBtnDiv">
+                                <button type="submit" id="myAddAppBtn">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="myNetworkingDiv" class="myNetworkingDiv">
+                        <div id="myNetworkingOverlay"></div>
+                    </div>
+                    <div id="myInfoDiv" class="myInfoDiv">
+                        <div id="myInfoOverlay"></div>
+                    </div>
+                    <div id="myConfigDiv" class="myConfigDiv">
+                        <div id="myConfigOverlay"></div>
                     </div>
                     <div id="myMenuSearchBar">
                         <input id="myMenuSearchBarInput" placeholder="Search Apps" maxlength="50" autocomplete="off" type="text">
@@ -345,5 +410,6 @@
     </div>
     </div>
     <script type="module" src="/client/assets/js/main/main.js" defer></script>
+    <script type="module" src="/client/assets/js/main/newApp.js" defer></script>
 </body>
 </html>

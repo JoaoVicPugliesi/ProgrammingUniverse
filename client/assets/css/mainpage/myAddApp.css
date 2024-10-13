@@ -30,19 +30,286 @@
 }
 
 .myAddAppDiv {
-    background: var(--Main-test-4);
+    background: url('/client/assets/images/backgrounds/crafting.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 80%;
     height: 100%;
     position: absolute;
     z-index: 900;
     display: none;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     transition: opacity 0.4s ease, visibility 0.4s ease;
+    border-top-right-radius: 5px;
 }
 
 .myAddAppDiv.display {
+    display: flex;
+}
+
+#myAddAppOverlay {
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 5px;
+}
+
+#myAddAppExplain {
+    padding: 10px;
+    text-align: center;
+    background: var(--Main-test-1);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#myAddAppExplain h3 {
+    font-size: 1em;
+    color: var(--Main-test-4);
+}
+
+#myAddAppExplain p {
+    text-wrap: wrap;
+    width: 20em;
+    font-size: 0.8em;
+}
+
+.myAddAppForm {
+    width: 95%;
+    height: 62%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid var(--Main-test-4);
+    background: rgb(255, 255, 255, 0.10);
+}
+
+.myAddAppForm.display {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#myAddAppLogoNameDescription {
+    width: 95%;
+    height: 50%;
+    margin: 5px;
+    justify-content: space-around;
+}
+
+#myAddAppLogoDiv {
+    flex-direction: column;
+    justify-content: center;
+    height: 8em;
+}
+
+#myAddAppLogoDiv h3 {
+    font-size: 0.8em;
+    background: var(--Main-test-1);
+    padding: 2px 5px;
+    margin: 2px 0px 0px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+#myAddAppLogoLabel {
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 5em;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    border: var(--Main-color) solid 2px;
+}
+
+#myImageUploadedOverlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 3px;
+    background: var(--Main-color);
+    border: var(--Main-color) solid 2px;
+    opacity: 0;
+    visibility: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+#myAppUpload {
+    width: 2em;
+    position: absolute;
+    opacity: 0;
+    visibility: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+#myAddAppLogoLabel:hover #myImageUploadedOverlay, #myAddAppLogoLabel:hover #myAppUpload {
+    opacity: 1;
+    visibility: 1;
+}
+
+#myAddNameDescription {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 70%;
+}
+
+#myAddAppName {
+    background: var(--Main-color);
+    border: none;
+    padding: 2px 5px;
+    outline: none;
+    border-bottom: var(--white-color) 2px solid;
+    color: var(--white-color);
+    font-size: 0.8em;
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+}
+
+#myAddAppDescription {
+    resize: none;
+    background: var(--Main-color);
+    outline: none;
+    font-size: 0.8em;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-bottom: var(--white-color) 2px solid;
+    width: 90%;
+    height: 5em;
+    color: var(--white-color);
+    padding: 5px; 
+    overflow-y: scroll; 
+}
+
+#myAddAppLinkVisibility {
+    height: 2em;
+    width: 95%;
+    margin: 5px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#myAppLink {
+    background: var(--Main-test-4);
+    border: none;
+    padding: 2px 5px;
+    border-bottom: 2px solid var(--white-color);
+    color: var(--white-color);
+    outline: none;
+}
+
+#myAppVisibilityDiv {
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+    height: 2em;
+    background: var(--Main-test-3);
+    text-align: center;
+    margin: 0px 0px 0px 5px;
+    width: 10em;
+    border-radius: 5px;
+}
+
+#myAppVisibilityLabel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    position: relative;
+}
+
+#myAppVisibilityLabel h3 {
+    font-size: 0.8em;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+}
+
+#myCheckmark {
+    width: 1em;
+    height: 1em;
+    background: none;
+    border: 1px solid var(--Main-color);
+    cursor: pointer;
+    position: relative;
+}
+
+#myCheckmarkShadow {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background: var(--Main-color);
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease; 
+}
+
+#myAppVisibilityDiv input[type="radio"]:checked + label #myCheckmarkShadow {
     opacity: 1;
     visibility: visible;
 }
+
+#myAppVisibilityDiv input[type="radio"]:checked + label::after {
+    content: '✔'; 
+    position: absolute;
+    right: 0;
+    transform: translate(-25%);
+    font-size: 0.8em;
+    color: var(--white-color); 
+    z-index: 101; 
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+#myAddAppBtn {
+    border: none;
+    box-shadow: 4px 4px var(--Main-test-4);
+    background: var(--white-color);
+    width: 10em;
+    height: 3em;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 2px;
+    margin: 5px;
+    text-transform: uppercase;
+}
+
+#myAddAppBtn:active {
+    box-shadow: 0px 0px var(--Main-test-4);
+    background: var(--Main-test-4);
+    color: var(--white-color);
+}
+
+#myAddAppVisibilityBtn {
+    background: var(--Main-color);
+    position: absolute;
+    left: 0;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    border-bottom-right-radius: 5px;
+    width: 2.5em;
+}
+
+#myAddAppVisibilityBtnImage {
+    width: 1.5em;
+    height: 1.5em;
+}
+

@@ -4,8 +4,8 @@
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type, Authorization');
-    require_once '../core/pdo.php';
-    require_once '../models/fetchLoggedUserModel.php';
+    require_once '../../core/pdo.php';
+    require_once '../../models/userModels/fetchLoggedUserModel.php';
 
     class FetchLoggedUserController {
         private $pdo;

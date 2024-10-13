@@ -29,7 +29,7 @@ myForm.addEventListener('submit', function(e) {
 
     console.log(...payLoad);
 
-    fetch('http://localhost/WindowsUniverse/server/controllers/newUserController.php', {
+    fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/newUserController.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

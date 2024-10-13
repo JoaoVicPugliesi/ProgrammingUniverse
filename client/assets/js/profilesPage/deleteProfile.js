@@ -43,7 +43,7 @@ export function setupDeleteProfile() {
         const prePayLoad = new FormData(myDeleteForm);
         const payLoad = new URLSearchParams(prePayLoad);
 
-        fetch('http://localhost/WindowsUniverse/server/controllers/deleteProfileController.php', {
+        fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/deleteProfileController.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

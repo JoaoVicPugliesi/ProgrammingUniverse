@@ -1,6 +1,6 @@
 <?php
 
-    class FetchUserApps {
+    class FetchUserAppsModel {
         private $userId;
         private $pdo;
 
@@ -10,10 +10,9 @@
         }
 
         public function setUserApps() {
-            $sql = 'SELECT * FROM App WHERE user_id = :user_id ORDER BY app_id DESC LIMIT 50';
+            $sql = 'SELECT * FROM App WHERE user_id = :user_id ORDER BY app_id ASC LIMIT 10';
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':user_id', $this->userId, PDO::PARAM_INT);
-            $stmt->execute();
+            $stmt->execute([':user_id' => $this->userId]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }

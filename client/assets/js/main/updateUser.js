@@ -9,7 +9,7 @@ export function updateUser() {
         const prePayLoad = new FormData(myEditProfileForm);
         const payLoad = new URLSearchParams(prePayLoad);
 
-        fetch('http://localhost/WindowsUniverse/server/controllers/updateProfileController.php', {
+        fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/updateProfileController.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

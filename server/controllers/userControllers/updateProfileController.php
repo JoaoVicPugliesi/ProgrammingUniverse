@@ -5,8 +5,8 @@
     header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type, Authorization');
     session_start();
-    require_once '../core/pdo.php';
-    require_once '../models/updateProfileModel.php';
+    require_once '../../core/pdo.php';
+    require_once '../../models/userModels/updateProfileModel.php';
     require_once 'newUserInputController.php';
 
     class UpdateProfileController {

@@ -43,7 +43,7 @@ export function setupLogin() {
         const prePayLoad = new FormData(myLoginForm);
         const payLoad = new URLSearchParams(prePayLoad);
 
-        fetch('http://localhost/WindowsUniverse/server/controllers/loginController.php', {
+        fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/loginController.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

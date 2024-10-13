@@ -4,8 +4,8 @@
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type, Authorization');
-    require_once '../core/pdo.php';
-    require_once '../models/logoutModel.php';
+    require_once '../../core/pdo.php';
+    require_once '../../models/userModels/logoutModel.php';
 
     class LogoutController {
         private $pdo;

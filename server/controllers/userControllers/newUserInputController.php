@@ -50,8 +50,8 @@
                 return false;
             }
 
-            if(!preg_match("/^[a-z0-9]+$/i", $this->username)) {
-                $this->setError("Username must contain only letters and numbers");
+            if(!preg_match("/^[a-zA-Z0-9^~´]+$/i", $this->username)) {
+                $this->setError("Username must contain only letters, numbers and no empty spaces");
                 return false;
             }
 
@@ -65,7 +65,7 @@
                 return false;
             }
         
-            if (!preg_match("/^[a-zA-Z0-9\s.,!?'-]*$/", $description)) {
+            if (!preg_match("/^[a-zA-Z0-9\s.,!?'^~\"´áéíóúãõâêîôûçÇ]*$/", $description)) {
                 $this->setError("Description can only contain letters, numbers, spaces, and basic punctuation.");
                 return false;
             }

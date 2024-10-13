@@ -11,9 +11,6 @@ const myCloseAlbumBtn = document.getElementById('myCloseAlbumBtn');
 const myMenuFeaturesDiv = document.getElementById('myMenuFeaturesDiv');
 const myMenuBannerBtn = document.getElementById('myMenuBannerBtn');
 const myMenuBannerImage = document.getElementById('myMenuBannerImage');
-const myMenuFeatureAddAppBtn = document.getElementById('myMenuFeatureAddAppBtn');
-const myAddAppDiv = document.getElementById('myAddAppDiv');
-
 
 export function myNavBar(btn, element, image) {
     btn.addEventListener('click', (e) => {
@@ -37,7 +34,7 @@ myNavBar(myEditProfileBannerBtn, myEditProfileForm, myEditProfileBannerImage);
 myNavBar(myEditIconBtn, myEditAlbum);
 myNavBar(myCloseAlbumBtn, myEditAlbum);
 myNavBar(myMenuBannerBtn, myMenuFeaturesDiv, myMenuBannerImage);
-myNavBar(myMenuFeatureAddAppBtn, myAddAppDiv);
+
 
 
 

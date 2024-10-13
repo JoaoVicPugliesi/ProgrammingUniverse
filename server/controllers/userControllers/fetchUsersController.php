@@ -3,9 +3,8 @@
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type, Authorization');
-    session_start();
-    require_once '../core/pdo.php';
-    require_once '../models/fetchUsersModel.php';
+    require_once '../../core/pdo.php';
+    require_once '../../models/userModels/fetchUsersModel.php';
 
     class ProfileController {
         private $pdo;

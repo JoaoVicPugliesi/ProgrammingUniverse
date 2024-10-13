@@ -1,4 +1,5 @@
 import { fetchUser } from "./fetchUser.js";
+import { fetchUserApps } from "./fetchUserApps.js";
 
 export function onload() {
 
@@ -29,7 +30,7 @@ export function onload() {
         const fetchedUserId = localStorage.getItem('user_id');
         userIdMain.value = fetchedUserId;
         fetchUser();
-
+        fetchUserApps();
         if(localStorage.getItem('display')) {
         setTimeout(() => {
         myFlashMessageOverlay.style.display = 'block';

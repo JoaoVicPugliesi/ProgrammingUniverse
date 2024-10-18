@@ -39,8 +39,8 @@
                 return false;
             }
 
-            if(!preg_match("/^[a-zA-Z0-9^~´]+$/i", $this->appName)) {
-                $this->setError("App name must contain only letters, numbers and no empty spaces");
+            if(!preg_match("/^[a-zA-Z0-9^~´ ]+$/i", $this->appName)) {
+                $this->setError("App name must contain only letters numbers");
                 return false;
             }
 

@@ -59,6 +59,7 @@
     z-index: 1;
     border-top-left-radius: 5px;
     -webkit-user-drag: none;
+    user-select: none;
 }
 
 #myEditProfileBanner, #myMenuBanner {
@@ -288,14 +289,20 @@
     margin: 0px 10px 0px 0px;
 }
 
-#myEditMedalImage, #myEditFriendsImage, #myEditClockImage {
+#myEditMedalImage, #myEditStarsImage, #myEditClockImage {
     width: 1.8em;
     margin: 0px 5px 0px 0px;
     cursor: pointer;
 }
 
+#myEditStarsImage {
+    width: 1.3em;
+    margin: 0px 10px 0px 0px;
+}
+
 #myEditClockImage {
-    width: 1.5em;
+    width: 1.3em;
+    margin: 0px 10px 0px 0px;
 }
 
 #myDescription {
@@ -310,9 +317,21 @@
     text-wrap: wrap;
     width: 20em;
     height: 8em;
-    box-sizing: border-box;  
     resize: none;
-    overflow-y: auto;
+    overflow-y: scroll;
+    cursor:auto;
+}
+
+#myDescription::-webkit-scrollbar {
+    width: 15px;
+}
+    
+#myDescription::-webkit-scrollbar-track {
+    background: var(--Main-test-1);
+}
+    
+#myDescription::-webkit-scrollbar-thumb {
+    background: var(--Main-test-4);
 }
 
 #myUpdateBtn {

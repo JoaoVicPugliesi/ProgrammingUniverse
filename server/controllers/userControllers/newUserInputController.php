@@ -50,7 +50,7 @@
                 return false;
             }
 
-            if(!preg_match("/^[a-zA-Z0-9^~´]+$/i", $this->username)) {
+            if(!preg_match("/^[a-zA-Z0-9^~´`_]+$/i", $this->username)) {
                 $this->setError("Username must contain only letters, numbers and no empty spaces");
                 return false;
             }

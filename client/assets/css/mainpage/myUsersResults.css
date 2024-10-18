@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Main-color: #4294FF;
+    --Second-color: #333333;
+    --success-color: #7CDF4E;
+    --Main-color-second: #3c31dd;
+    --Second-color-second: #0f0f10;
+    --Third-color-main-red: #dd3f31;
+    --Main-color-pink: #ff0066;
+    --white-color: #ffffff;
+    --Main-test-1: #0b2e70;
+    --Main-test-2: #d18d70;
+    --Main-test-3: #010326;
+    --Main-test-4: #e35a7e;
+    --Main-test-5: #743583;
+    --Main-test-6: #1c71a6;
+    --silver: #c0c0c0;
+    --bronze: #cd7f32;
+}
+
+::-webkit-input-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-moz-placeholder { color: white; }
+
+.myUsersResults {
+    width: 100%;
+    height: 100%;
+    background: var(--Main-test-1);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.myUsersResults.display {
+    display: flex;
+}
+
+#myUsersResultsSearch {
+    width: 100%;
+    height: 10%;
+    background: var(--Main-test-4);
+    justify-content: center;
+    position: relative;
+}
+
+#myUsersSearch {
+    background: var(--Main-color);
+    border: none;
+    color: var(--white-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid var(--white-color);
+    padding: 2px 5px;
+    outline: none;
+    position: relative;
+}
+
+#myUsersSearchImage {
+    width: 1.5em;
+    position: absolute;
+    right: 0%;
+}
+
+#myUsersDiv {
+    background: var(--Main-test-1);
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+#myUsersDiv::-webkit-scrollbar {
+    width: 15px;
+}
+    
+#myUsersDiv::-webkit-scrollbar-track {
+    background: var(--Main-test-1);
+}
+    
+#myUsersDiv::-webkit-scrollbar-thumb {
+    background: var(--Main-color);
+}
+
+#mySelfUser {
+    width: 100%;
+    height: 32%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#mySelfUserDisplay {
+    width: 100%;
+    height: 30%;
+    background: var(--silver);
+    gap: 5px;
+}
+
+#mySelfUserDisplayArrowImage {
+    width: 1em;
+    margin: 0px 0px 0px 5px;
+}
+
+#mySelfUserDisplayArrowImageBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    height: 100%;
+    width: 2em;
+}
+
+#mySelfUserDisplayArrowH3 {
+    font-size: .8em;
+    font-family: 'Cabin', sans-serif;
+}
+
+#mySelf {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    background: var(--Main-test-4);
+    border-bottom: 2px solid var(--white-color);
+}
+
+#mySelfNameStatusNotification {
+    flex-direction: column;
+}
+
+#mySelfNameStatus {
+    align-self: flex-start;
+    width: 100%;
+}
+
+#mySelfImageNameStatus {
+    width: 60%;
+    height: 100%;
+    gap: 10px;
+    margin: 0px 0px 0px 10px;
+}
+
+#mySelfBtnDiv {
+    width: 40%;
+    height: 100%;
+    justify-content: center;
+}
+
+#mySelfBtn {
+    background: var(--white-color);
+    border: none;
+    box-shadow: 2px 2px var(--Main-color);
+    justify-content: center;
+    cursor: pointer;
+    height: 2em;
+    width: 8em;
+    align-self: center;
+    margin-left: -5px;
+}
+
+#mySelfBtnH3 {
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    height: 2em;
+    font-weight: 800;
+    padding: 2.5px;
+}
+
+#mySelfNotificationDiv {
+    width: 100%;
+    align-self: flex-start;
+    gap: 5px;
+    margin-left: -3px;
+}
+
+#mySelfNotificationImage {
+    width: 1.2em;
+}
+
+#mySelfNotificationH3 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1em;
+}
+
+#myUsers {
+    background: var(--Main-test-1);
+    height: 68%;
+    width: 100%;
+}
+
+#myUser {    
+    background: var(--Main-test-1);
+    width: 100%;
+    height: 3.5em;
+    border-bottom: 2px solid var(--white-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#myUserResultImageNameStatusDiv {
+    width: 60%;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+    height: 100%;
+}
+
+#myUserResultImage, #mySelfImage {
+    width: 3em;
+    border-radius: 5px;
+    border: 2px solid var(--Main-color);
+}
+
+#myUserResultNameStatusRequestDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+#myUserResultNameStatusDiv, #mySelfNameStatus {
+    justify-content: flex-start;
+    gap: 5px;
+    width: 100%;
+    align-self: flex-start;
+}
+
+#myUserResultName, #mySelfH3 {
+    font-size: 0.8em;
+    max-width: 8em;
+    white-space: normal; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+#myUserStatusResult, #mySelfStatus {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success-color);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; 
+    }
+    50% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#myUserResultRequestDiv {
+    justify-content: flex-start;
+    align-self: flex-start;
+    gap: 5px;
+    width: 80%;
+}
+
+.myUserResultAddFriendBtn {
+    background: none;
+    border: none;
+}
+
+.myUserResultAddFriendImageBtn {
+    width: 1.8em;
+    cursor: pointer;
+}
+
+#myUserResultAddFriendH3 {
+    font-size: 0.7em;
+}
+
+#mySeeProfileBtnDiv {
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+}

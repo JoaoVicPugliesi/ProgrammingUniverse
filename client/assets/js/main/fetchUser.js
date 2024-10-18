@@ -13,8 +13,14 @@ export function fetchUser() {
     const appAuthor = document.getElementById('appAuthor');
     const myNumberOfMedals = document.getElementById('myNumberOfMedals');
     const myEditMedalDivNumbers = document.getElementById('myEditMedalDivNumbers');
-    
-    
+    const mySelfImage = document.getElementById('mySelfImage');
+    const mySelfH3 = document.getElementById('mySelfH3');
+    const myNumberOfNotifications = document.getElementById('myNumberOfNotifications');
+    const myNumberOfFriends = document.getElementById('myNumberOfFriends');
+    const mySelfNotificationH3 = document.getElementById('mySelfNotificationH3');
+    const myEditStarDivNumbers = document.getElementById('myEditStarDivNumbers');
+
+
     const payLoad = new URLSearchParams({userId : userIdMain.value});
 
     fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/fetchLoggedUserController.php', {
@@ -32,7 +38,11 @@ export function fetchUser() {
             localStorage.setItem('description', data.user.user_description);
             localStorage.setItem('user_icon', data.user.user_icon);
             localStorage.setItem('medals', data.user.medal_count);
+            localStorage.setItem('friends', data.user.friends_count);
+            localStorage.setItem('notifications', data.user.notifications_count);
+            localStorage.setItem('stars', data.user.total_stars);
             myProfileName.textContent = localStorage.getItem('username');
+            mySelfH3.textContent = localStorage.getItem('username');
             myUsername.value = localStorage.getItem('username');
             appAuthor.value = localStorage.getItem('username');
             myEmail.value = localStorage.getItem('email');
@@ -40,10 +50,15 @@ export function fetchUser() {
             userIdUpdate.value = localStorage.getItem('user_id');
             userIdApp.value = localStorage.getItem('user_id');
             myProfileImage.src = localStorage.getItem('user_icon');
+            mySelfImage.src = localStorage.getItem('user_icon');
             myProfileBackgroundImage.src = localStorage.getItem('user_icon');
             myIcon.value = localStorage.getItem('user_icon');
             myNumberOfMedals.textContent = localStorage.getItem('medals');
             myEditMedalDivNumbers.textContent = myNumberOfMedals.textContent;
+            myNumberOfNotifications.textContent = localStorage.getItem('notifications');
+            mySelfNotificationH3.textContent = localStorage.getItem('notifications');
+            myNumberOfFriends.textContent = localStorage.getItem('friends');
+            myEditStarDivNumbers.textContent = localStorage.getItem('stars');
            
         } else {
             console.log('Error');

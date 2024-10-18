@@ -8,14 +8,14 @@ export function deleteApp() {
   
 
     document.addEventListener('dragstart', (e) => {
-        const myAppContainer = e.target.closest('#myAppContainer');
+        const myAppContainer = e.target.closest('.myAppContainer');
         if(myAppContainer) {
             myAppContainer.classList.add('dragging');
         }
     })
 
     document.addEventListener('dragend', (e) => {
-        const myAppContainer = e.target.closest('#myAppContainer');
+        const myAppContainer = e.target.closest('.myAppContainer');
         if(myAppContainer) {
             myAppContainer.classList.remove('dragging');
         }
@@ -35,7 +35,7 @@ export function deleteApp() {
         
         const myAppContainer = document.querySelector('.dragging');
         if (myAppContainer) {
-            const appId = myAppContainer.querySelector('#myAppImageBtn').getAttribute('data-app-id');
+            const appId = myAppContainer.querySelector('.myAppImageBtn').getAttribute('data-app-id');
             myDeleteAppId.value = appId; 
             myDeleteAppOverlay.classList.add('display');
             myDeleteAppForm.classList.add('display');
@@ -71,7 +71,7 @@ export function deleteApp() {
                 myDeleteAppForm.classList.remove('display');
                 console.log('success');
             } else {
-                console.log('error');
+                console.log(data.error);
             }
         })
         .catch(error => console.error('Error', error));

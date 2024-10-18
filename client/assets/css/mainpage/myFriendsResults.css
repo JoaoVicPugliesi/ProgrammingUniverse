@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Main-color: #4294FF;
+    --Second-color: #333333;
+    --success-color: #7CDF4E;
+    --Main-color-second: #3c31dd;
+    --Second-color-second: #0f0f10;
+    --Third-color-main-red: #dd3f31;
+    --Main-color-pink: #ff0066;
+    --white-color: #ffffff;
+    --Main-test-1: #0b2e70;
+    --Main-test-2: #d18d70;
+    --Main-test-3: #010326;
+    --Main-test-4: #e35a7e;
+    --Main-test-5: #743583;
+    --Main-test-6: #1c71a6;
+    --silver: #c0c0c0;
+    --bronze: #cd7f32;
+}
+
+::-webkit-input-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-moz-placeholder { color: white; }
+
+
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.myFriendsResults {
+    width: 100%;
+    height: 100%;
+    background: var(--Main-test-1);
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myFriendsResults.display {
+    display: flex;
+}
+
+#myFriendsOnlineResults {
+    height: auto;
+    width: 100%;
+    background: var(--Main-color);
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+#myFriendsOfflineResults {
+    height:auto;
+    width: 100%;
+    background: var(--Main-test-4);
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+
+#myFriendsOnlineResults::-webkit-scrollbar, #myFriendsOfflineResults::-webkit-scrollbar {
+    width: 15px;
+}
+    
+#myFriendsOnlineResults::-webkit-scrollbar-track {
+    background: var(--Main-test-1);
+}
+
+#myFriendsOfflineResults::-webkit-scrollbar-track {
+    background: var(--Main-test-1);
+}
+
+#myFriendsOnlineResults::-webkit-scrollbar-thumb, #myFriendsOfflineResults::-webkit-scrollbar-thumb {
+    background: var(--Main-color);
+}
+
+#myFriendsOnlineResultsDisplay, #myFriendsOfflineResultsDisplay {
+    width: 100%;
+    align-self: flex-start;
+    gap: 5px;
+    padding: 5px;
+}
+
+#myFriendsOnlineResultsDisplay {
+    background: #5CAF3B;
+    position: sticky;
+    top: 0;
+}
+
+#myFriendsOfflineResultsDisplay {
+    background: var(--Third-color-main-red);
+    position: sticky;
+    top: 0;
+}
+
+#myFriendsOnlineResultsDisplayImageBtn, #myFriendsOfflineResultsDisplayImageBtn {
+    background: none;
+    border: none;
+    justify-content: center;
+    height: 100%;
+}
+
+#myFriendsOnlineResultsDisplayImage, #myFriendsOfflineResultsDisplayImage {
+    width: 1em;
+    margin: 0px 0px 0px 5px;
+}
+
+#myFriendsOnlineResultsDisplayH3, #myFriendsOfflineResultsDisplayH3 {
+    font-size: .8em;
+    font-family: 'Cabin', sans-serif;
+}
+    
+#myFriendsOnlineResult, #myFriendsOfflineResult {
+    width: 100%;
+    background: var(--Main-color);
+    flex-direction: column;
+}
+
+#myFriendOnline, #myFriendOffline {
+    background: var(--Main-test-1);
+    width: 100%;
+    height: 3.5em;
+    border-bottom: var(--white-color) 2px solid;
+    justify-content: center;
+}
+
+#myFriendOnlineImageNameLastSeen, #myFriendOfflineImageNameLastSeen {
+    width: 60%;
+    height: 100%;  
+    gap: 10px;
+    margin: 0px 0px 0px 5px;
+}
+
+#myFriendOnlineImage, #myFriendOfflineImage {
+    width: 3em;
+    border: 2px solid var(--Main-color);
+    border-radius: 5px;
+}
+
+#myFriendOnlineNameLastSeenMessage, #myFriendOfflineNameLastSeenMessage {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#myFriendOnlineName, #myFriendOfflineName {
+    font-size: 1em;
+    align-self: flex-start;
+}
+
+#myFriendOnlineLastSeenMessage, #myFriendOfflineLastSeenMessage {
+    align-self: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 5px;
+}
+
+#myFriendOnlineLastSeen, #myFriendOfflineLastSeen {
+    font-size: .8em;
+    align-self: flex-start;
+    gap: 5px;
+}
+
+#myFriendOnlineStatus, #myFriendOfflineStatus {
+    width: 8px;
+    height: 8px;
+    background: var(--success-color);
+    border-radius: 5px;
+    animation: blink 1s infinite;
+}
+
+#myFriendOfflineStatus {
+    background: var(--Third-color-main-red);
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; 
+    }
+    50% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#myFriendOnlineChatBtn, #myFriendOfflineChatBtn {
+    background: none;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#myFriendOnlineChat, #myFriendOfflineChat {
+    width: 1.2em;
+}
+
+#myFriendOnlineBtnDiv, #myFriendOfflineBtnDiv {
+    height: 100%;
+    width: 40%;
+    justify-content: center;
+}
+
+#myFriendOnlineBtn, #myFriendOfflineBtn {
+    background: var(--white-color);
+    border: none;
+    box-shadow: 2px 2px var(--Main-test-4);
+    justify-content: center;
+    cursor: pointer;
+    height: 2em;
+    width: 8em;
+    align-self: center;
+}
+
+#myFriendOnlineBtnH3, #myFriendOfflineBtnH3 {
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    height: 2em;
+    font-weight: 800;
+    padding: 2.5px;
+}

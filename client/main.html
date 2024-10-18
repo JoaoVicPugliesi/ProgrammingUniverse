@@ -13,10 +13,15 @@
     <link rel="stylesheet" href="../client/assets/css/mainpage/myAddApp.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/myNetworking.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/info.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/appContainerOpen.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/config.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
     <link rel="stylesheet" href="../client/assets/css/flashMessage.css">
     <link rel="stylesheet" href="../client/assets/css/load.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/myUsersResults.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/myFriendsResults.css">
+    <link rel="stylesheet" href="../client//assets/css/mainpage/myStarsResults.css">
+    <link rel="stylesheet" href="../client//assets/css/mainpage/myTimeResults.css">
     <title>Programming Universe</title>
 </head>
 <body id="myBody" class="myBody">
@@ -39,6 +44,7 @@
         <input id="myDeleteAppId" type="hidden" name="appId">
         <h3 id="myDeleteApp">Delete App</h3>
         <p id="myDeleteAppContent">Deleting the App will make it lose all the earned prestige and it will mean -1 medal for you. Are you sure you wanna delete?</p>
+        <input type="text" id="myDeleteAppName" name="appName" autocomplete="off" placeholder="vindicate app's name" spellcheck="false" maxlength="50">
         <div id="myDeleteAppButtonsDiv" class="flex">
             <button type="submit" id="myDeleteAppYesBtn">Delete</button>   
             <button id="myDeleteAppNoBtn">No</button>
@@ -73,6 +79,23 @@
                 </div>  
             </div>
         </div>
+        </div>
+    </div>
+    <div id="myAppContainerOverlay" class="myAppContainerOverlay"></div>
+    <div id="myAppContainerOpen" class="myAppContainerOpen">
+        <div id="myAppContainerOpenIcons" class="flex">
+            <input type="hidden" id="myOpenAppId" name="appId">
+            <button id="myAppContainerMinimizeBtn" class="flex"><img id="myAppContainerMinimizeImageBtn" src="/client/assets/images/icons/minus.png" alt=""></button>
+            <button id="myAppContainerDimensionBtn" class="flex"><img id="myAppContainerDimensionImageBtn" src="/client/assets/images/icons/maximize.png" alt=""></button>
+            <button id="myAppContainerDimensionBtn2" class="flex"><img id="myAppContainerDimensionImageBtn2" src="/client/assets/images/icons/maximizeWhite.png" alt=""></button>
+            <button id="myAppContainerCloseBtn" class="flex"><img id="myAppContainerCloseImageBtn" src="/client/assets/images/icons/close.png" alt=""></button>
+        </div>
+        <div id="myAppContainerInfo" class="flex">
+            <div id="myAppContainerInfoBanner">
+                <div id="">
+
+                </div>
+            </div>
         </div>
     </div>
     <div id="myAppsUniverse">
@@ -194,9 +217,9 @@
                         <img id="myEditMedalImage" src="/client/assets/images/icons/medal.png" alt="">
                         <h3 id="myEditMedalDivNumbers">N/A</h3>
                     </div>
-                    <div id="myEditFriendsDiv" class="flex">
-                        <img id="myEditFriendsImage" src="/client/assets/images/icons/friends.png" alt="">
-                        <h3>0</h3>
+                    <div id="myStarsDiv" class="flex">
+                        <img id="myEditStarsImage" src="/client/assets/images/icons/star.png" alt="">
+                        <h3 id="myEditStarDivNumbers">N/A</h3>
                     </div>
                     <div id="myEditHoursDiv" class="flex">
                         <img id="myEditClockImage" src="/client/assets/images/icons/time.png" alt="">
@@ -260,11 +283,12 @@
                 </div>
                 <div id="myMenuWorldApps" class="flex">
                     <div id="myAddAppDiv" class="myAddAppDiv">
-                       
                         <div id="myAddAppOverlay"></div>
-                        <div id="myAddAppExplain">
+                        <div id="myAddAppExplainOverlay" class="myAddAppExplainOverlay"></div>
+                        <div id="myAddAppExplain" class="myAddAppExplain">
                             <h3>Add Your Apps</h3>
                             <p>Here you can add your apps, earning medals and relevance inside of the Programming Universe.</p>
+                            <button id="myAddAppExplainBtn">I Got it</button>
                         </div>
                         <form id="myAddAppForm" class="myAddAppForm" enctype="multipart/form-data">
                             <input type="hidden" id="userIdApp" name="userIdApp">
@@ -311,6 +335,189 @@
                     </div>
                     <div id="myNetworkingDiv" class="myNetworkingDiv">
                         <div id="myNetworkingOverlay"></div>
+                        <div id="myNetworkingExplainOverlay" class="myAddAppExplainOverlay"></div>
+                        <div id="myNetworkingExplain" class="myNetworkingExplain">
+                            <h3>Explore Making Friends</h3>
+                            <p>Discovering new people lets you experience the passion behind what they do. It's a beautiful and unique way to find inspiration.</p>
+                            <button id="myNetworkingExplainBtn">I Got it</button>
+                        </div>
+                        <form id="myNetworkingForm" class="myNetworkingForm">
+                            <div id="myNetworkingSpacesBtn" class="flex">
+                                <button id="myNetworkingUsersSpaceBtn" class="myNetworkingUsersSpaceBtn">
+                                    <img id="myNetworkingUsersSpaceImageBtn" src="/client/assets/images/icons/group.png" alt="">
+                                    <h3 id="myNetworkingUsersH3">User's Universe</h3>
+                                </button>
+                                <button id="myNetworkingHallOfFameBtn" class="myNetworkingHallOfFameBtn">
+                                    <img id="myNetworkingHallOfFameImageBtn" src="/client/assets/images/icons/ranking.png" alt="">
+                                    <h3 id="myNetworkingHallOfFameH3">Hall Of Fame</h3>
+                                </button>
+                            </div>
+                            <div id="myNetworkingSubSpaces" class="myNetworkingSubSpaces">
+                            <div id="myNetworkingSubSpacesUserBtnsDiv" class="myNetworkingSubSpacesUserBtnsDiv">
+                                <div id="myNetworkingFriendsBtnDiv" class="flex">
+                                <button type="submit" id="myNetworkingFriendsBtn" class="myNetworkingFriendsBtn"><img id="myNetworkingFriendsImageBtn" src="/client/assets/images/friendsPink.png" alt=""></button>
+                                <h3 id="myNetworkingFriendsH3">Friends</h3>
+                                </div>
+                                <div id="myNetworkingUsersBtnDiv" class="flex">
+                                <button type="submit" id="myNetworkingUsersBtn" class="myNetworkingUsersBtn"><img id="myNetworkingUsersImageBtn" src="/client/assets/images/icons/group.png" alt=""></button>
+                                <h3 id="myNetworkingUsersH3">Users</h3>
+                                </div>
+                            </div>
+                            <div id="myNetworkingSubSpacesHallOfFameBtnsDiv" class="myNetworkingSubSpacesHallOfFameBtnsDiv">
+                                <div id="myNetworkingMedalsBtnDiv" class="flex">
+                                    <button type="submit" id="myNetworkingHallOfFameMedalsBtn" class="flex"><img id="myNetworkingHallOfFameMedalsImageBtn" src="/client/assets/images/icons/medal.png" alt=""></button>
+                                    <h3 id="myNetworkingHallOfFameMedalsH3">Medals</h3>
+                                </div>
+                                <div id="myNetworkingStarsBtnDiv" class="flex">
+                                    <button type="submit" id="myNetworkingHallOfFameStarsBtn" class="flex"><img id="myNetworkingHallOfFameStarsImageBtn" src="/client/assets/images/icons/star.png" alt=""></button>
+                                    <h3 id="myNetworkingHallOfFameMedalsH3">Stars</h3>
+                                </div>
+                                <div id="myNetworkingTimeBtnDiv" class="flex">
+                                    <button type="submit" id="myNetworkingHallOfFameTimeBtn" class="flex"><img id="myNetworkingHallOfFameTimeImageBtn" src="/client/assets/images/icons/time.png" alt=""></button>
+                                    <h3 id="myNetworkingHallOfFameMedalsH3">Time</h3>
+                                </div>
+                            </div>
+                            <div id="myNetworkingUsersResults" class="myNetworkingUsersResults">
+                                <div id="myFriendsResults" class="myFriendsResults">
+                                    <div id="myFriendsOnlineResults" class="flex">
+                                        <div id="myFriendsOnlineResultsDisplay" class="flex">
+                                            <button id="myFriendsOnlineResultsDisplayImageBtn" class="flex"><img id="myFriendsOnlineResultsDisplayImage" src="/client/assets/images/icons/arrow.png" alt=""></button>
+                                            <h3 id="myFriendsOnlineResultsDisplayH3">Friends Online</h3>
+                                        </div>
+                                        <div id="myFriendsOnlineResult" class="flex">
+                                            <div id="myFriendOnline" class="flex">
+                                                <div id="myFriendOnlineImageNameLastSeen" class="flex">
+                                                    <img id="myFriendOnlineImage" src="/client/assets/images/icon_images/sophisticated.png" alt="">
+                                                    <div id="myFriendOnlineNameLastSeenMessage" class="flex">
+                                                        <h3 id="myFriendOnlineName">nandalisboa</h3>
+                                                        <div id="myFriendOnlineLastSeenMessage" class="flex">
+                                                        <h3 id="myFriendOnlineLastSeen" class="flex">Online <div id="myFriendOnlineStatus"></div></h3>
+                                                        <button id="myFriendOnlineChatBtn" class="flex"><img id="myFriendOnlineChat" src="/client/assets/images/icons/chat.png" alt=""></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="myFriendOnlineBtnDiv" class="flex">
+                                                    <button id="myFriendOnlineBtn"><h3 id="myFriendOnlineBtnH3">See Profile</h3></button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="myFriendsOfflineResults" class="flex">
+                                        <div id="myFriendsOfflineResultsDisplay" class="flex">
+                                            <button id="myFriendsOfflineResultsDisplayImageBtn" class="flex"><img id="myFriendsOfflineResultsDisplayImage" src="/client/assets/images/icons/arrow.png" alt=""></button>
+                                            <h3 id="myFriendsOfflineResultsDisplayH3">Friends Offline</h3>
+                                        </div>
+                                        <div id="myFriendsOfflineResult" class="flex">
+                                            <div id="myFriendOffline" class="flex">
+                                                <div id="myFriendOfflineImageNameLastSeen" class="flex">
+                                                    <img id="myFriendOfflineImage" src="/client/assets/images/icon_images/fly.png" alt="">
+                                                    <div id="myFriendOfflineNameLastSeenMessage" class="flex">
+                                                        <h3 id="myFriendOfflineName">kraken19</h3>
+                                                        <div id="myFriendOfflineLastSeenMessage" class="flex">
+                                                        <h3 id="myFriendOfflineLastSeen" class="flex">Offline <div id="myFriendOfflineStatus"></div></h3>
+                                                        <button id="myFriendOfflineChatBtn" class="flex"><img id="myFriendOfflineChat" src="/client/assets/images/icons/chat.png" alt=""></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="myFriendOnlineBtnDiv" class="flex">
+                                                    <button id="myFriendOnlineBtn"><h3 id="myFriendOnlineBtnH3">See Profile</h3></button>
+                                                </div>
+                                            </div>
+                                            <div id="myFriendOffline" class="flex"></div>
+                                            <div id="myFriendOffline"></div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="myUsersResults" class="myUsersResults">
+                                    <div id="myUsersResultsSearch" class="flex">
+                                        <input id="myUsersSearch" type="text" name="searchedUsername" placeholder="Discover new users" autocomplete="off" maxlength="40" spellcheck="false">
+                                        <img id="myUsersSearchImage" src="/client/assets/images/icons/search.png" alt="">
+                                    </div>
+                                    <div id="myUsersDiv">
+                                        <div id="mySelfUser">
+                                            <div id="mySelfUserDisplay" class="flex">
+                                                <button id="mySelfUserDisplayArrowImageBtn" class="flex"><img id="mySelfUserDisplayArrowImage" src="/client/assets/images/icons/arrow.png" alt=""></button>
+                                                <h3 id="mySelfUserDisplayArrowH3">Your Profile</h3>
+                                            </div>
+                                            <div id="mySelf">
+                                                    <div id="mySelfImageNameStatus" class="flex">
+                                                    <img id="mySelfImage" src="/client/assets/images/icon_images/randomUser.png" alt="">
+                                                    <div id="mySelfNameStatusNotification" class="flex">
+                                                    <div id="mySelfNameStatus" class="flex">
+                                                    <h3 id="mySelfH3">random</h3>
+                                                    <div id="mySelfStatus"></div>
+                                                    </div>
+                                                    <div id="mySelfNotificationDiv" class="flex">
+                                                        <img id="mySelfNotificationImage" src="/client/assets/images/icons/notification.png" alt="">
+                                                        <h3 id="mySelfNotificationH3">N/A</h3>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                <div id="mySelfBtnDiv" class="flex">
+                                                    <button id="mySelfBtn"><h3 id="mySelfBtnH3">See Profile</h3></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="myUsers">
+
+                                            <div id="myUser">
+                                               
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="myNetworkingHallOfFameResults" class="myNetworkingHallOfFameResults">
+                                <div id="myMedalResults" class="myMedalResults">
+                                    <div id="myMedalResultsH3P" class="flex">
+                                        <h3>Medals</h3>
+                                        <p>Here are your medal heroes</p>
+                                    </div>
+                                    <div id="myMedalHeroesDiv" class="myMedalHeroesDiv">
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <div id="myStarsResults" class="myStarsResults">
+                                    <div id="myStarsResultsH3P" class="flex">
+                                        <h3>Stars</h3>
+                                        <p>Here are your interestelar Users and Apps</p>
+                                    </div>
+                                    <div id="myStarsResultsTypeBtns" class="flex">
+                                        <button id="myStarsUserResultsBtn"><h3 id="myStarsUserResultsH3">Users</h3></button>
+                                        <button id="myStarsAppResultsBtn"><h3 id="myStarsAppResultsH3">Apps</h3></button>
+                                    </div>
+                                    <div id="myStarsHeroesDiv" class="myMedalHeroesDiv">
+
+                                        <div id="myStarUserHero" class="flex">
+                                            <div id="myStarUser" class="flex">
+                                                <h3 class="myHeroPosition">1</h3>
+                                                <img id="myStarUserHeroImage" src="/server/controllers/appControllers/uploads/" alt="">
+                                                <div id="myStarUserHeroStars" class="flex">
+                                                    <h3 id="myStarUserHeroName">Johnpugliesi10</h3>
+                                                    <div id="myStarUserHeroesNumberDiv" class="flex">
+                                                            <img id="myStarsImage" src="/client/assets/images/icons/star.png" alt="">
+                                                            <h3 id="myStarUserStarsNumber">0</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="myStarUserHeroBtnDiv" class="flex">
+                                                <button class="myStarUserHeroBtn"><h3 id="myStarUserHeroH3">See Profile</h3></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </div>
+                                    
+                                <div id="myTimeResults" class="myTimeResults">
+
+                                </div>
+                            </div>
+                        </div>
+                        </form>
                     </div>
                     <div id="myInfoDiv" class="myInfoDiv">
                         <div id="myInfoOverlay"></div>
@@ -411,5 +618,9 @@
     </div>
     <script type="module" src="/client/assets/js/main/main.js" defer></script>
     <script type="module" src="/client/assets/js/main/newApp.js" defer></script>
+    <script type="module" src="/client/assets/js/main/myNetworkingForm.js" defer></script>
+    <script type="module" src="/client/assets/js/main/myNetworkingSubspaces.js" defer></script>
+    <script type="module" src="/client/assets/js/main/searchUsersResult.js" defer></script>
+    <script type="module" src="/client/assets/js/main/friendRequests/friendRequest.js" defer></script>
 </body>
 </html>

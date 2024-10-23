@@ -53,14 +53,15 @@
     width: 100%;
     height: 15%;
     justify-content: space-around;
-    background: var(--Main-test-5);
+    background: var(--Main-test-1);
+    border-bottom: 1px solid var(--white-color);
 }
 
 #myStarsUserResultsBtn, #myStarsAppResultsBtn {
     width: 8em;
     height: 2em;
     background: var(--white-color);
-    box-shadow: 2px 2px var(--Main-color);
+    box-shadow: 2px 2px var(--Main-test-4);
     border: none;
 }
 

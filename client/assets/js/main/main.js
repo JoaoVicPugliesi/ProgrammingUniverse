@@ -10,6 +10,16 @@ import { usersResults } from "./fetchUsersResults.js";
 import { friendsResults } from "./fetchFriendsResults.js";
 import { usersAppsStars } from "./fetchUsersAppsStars.js";
 import { timeResults } from "./fetchTimeResults.js";
+import { friendRequest } from "./friendRequests/friendRequest.js";
+import { searchUsersResults } from "./searchUsersResult.js";
+import { notifications } from "./friendRequests/notifications.js";
+import { accept } from "./friendRequests/accept.js";
+import { decline } from "./friendRequests/decline.js";
+import { check } from "./friendRequests/check.js";
+import { none } from "./friendRequests/none.js";
+import { newApp } from "./newApp.js";
+import { myTinyFeatures } from "./weather/myTinyFeatures.js";
+
 
 document.addEventListener('DOMContentLoaded', function() {
     onload();
@@ -18,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     logoutDisplay();
     myNavBar();
     myMenuFeaturesDisplay();
+    myTinyFeatures();
+    newApp();
     upload();
     deleteApp();
     usersMedal();
@@ -25,6 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
     friendsResults();
     timeResults();
     usersAppsStars();
+    friendRequest();
+    searchUsersResults();
+    notifications();
+    accept();
+    decline();
+    check();
+    none();
 })
 
 

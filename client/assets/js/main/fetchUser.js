@@ -1,3 +1,5 @@
+import { checkWeather } from "./weather/weatherApi.js";
+
 export function fetchUser() {
 
     const userIdMain = document.getElementById('userIdMain');
@@ -19,6 +21,7 @@ export function fetchUser() {
     const myNumberOfFriends = document.getElementById('myNumberOfFriends');
     const mySelfNotificationH3 = document.getElementById('mySelfNotificationH3');
     const myEditStarDivNumbers = document.getElementById('myEditStarDivNumbers');
+    const myWorldPlaces = document.getElementById('myWorldPlaces');
 
 
     const payLoad = new URLSearchParams({userId : userIdMain.value});
@@ -41,6 +44,7 @@ export function fetchUser() {
             localStorage.setItem('friends', data.user.friends_count);
             localStorage.setItem('notifications', data.user.notifications_count);
             localStorage.setItem('stars', data.user.total_stars);
+            localStorage.setItem('place', data.user.user_place)
             myProfileName.textContent = localStorage.getItem('username');
             mySelfH3.textContent = localStorage.getItem('username');
             myUsername.value = localStorage.getItem('username');
@@ -59,8 +63,16 @@ export function fetchUser() {
             mySelfNotificationH3.textContent = localStorage.getItem('notifications');
             myNumberOfFriends.textContent = localStorage.getItem('friends');
             myEditStarDivNumbers.textContent = localStorage.getItem('stars');
-           
-        } else {
+
+            const place = localStorage.getItem('place');
+
+            if(place != 'undefined') {
+                myWorldPlaces.classList.remove('display');
+            }
+
+            checkWeather(localStorage.getItem('place'));
+                     
+        } else {    
             console.log('Error');
         }
     })

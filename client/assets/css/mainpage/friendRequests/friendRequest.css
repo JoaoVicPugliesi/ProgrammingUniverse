@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Main-color: #4294FF;
+    --Second-color: #333333;
+    --success-color: #7CDF4E;
+    --Main-color-second: #3c31dd;
+    --Second-color-second: #0f0f10;
+    --Third-color-main-red: #dd3f31;
+    --Main-color-pink: #ff0066;
+    --white-color: #ffffff;
+    --Main-test-1: #0b2e70;
+    --Main-test-2: #d18d70;
+    --Main-test-3: #010326;
+    --Main-test-4: #e35a7e;
+    --Main-test-5: #743583;
+    --Main-test-6: #1c71a6;
+}
+
+::-webkit-input-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-moz-placeholder { color: white; }
+
+
+.myFriendRequestFeedback {
+    background: var(--Main-color);
+    width: 28%;
+    height: 5.5%;
+    position: absolute;
+    top: 3%;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    right: 0%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    transition: opacity .4s ease, visibility .4s ease;
+}
+
+.myFriendRequestFeedback.display {
+    opacity: 1;
+    visibility: visible;
+}
+
+#myFriendRequestFeedbackBtn {
+    width: 4em;
+    background: var(--white-color);
+    height: 1.5em;
+    box-shadow: 2px 2px var(--Main-test-4);
+    border: none;
+    cursor: pointer;
+}
+
+#myFriendRequestFeedbackBtnH3 {
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+    font-size: 0.8em;
+}
+
+#myFriendRequestFeedbackP {
+    font-size: 0.85em;
+    width: 15.8em;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#myFriendRequestFeedbackH3Div, #myFriendRequestFeedbackPDiv, #myFriendRequestFeedbackBtnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+

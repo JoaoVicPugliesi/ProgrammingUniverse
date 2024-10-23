@@ -18,11 +18,23 @@ export function updateUser() {
         })
         .then(res => res.json())
         .then(data => {
+
+            const myFriendRequestFeedback = document.getElementById('myFriendRequestFeedback');
+            const myFriendRequestFeedbackH3 = document.getElementById('myFriendRequestFeedbackH3');
+            const myFriendRequestFeedbackP = document.getElementById('myFriendRequestFeedbackP');
+            const myFriendRequestFeedbackBtn = document.getElementById('myFriendRequestFeedbackBtn');
+
             if(data.success) {
                 fetchUser();
                 console.log('success');
             } else {
-                console.log(data.error);
+                myFriendRequestFeedback.classList.add('display');
+                myFriendRequestFeedbackH3.textContent = 'Oops!';
+                myFriendRequestFeedbackP.textContent = data.error;
+                myFriendRequestFeedbackBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    myFriendRequestFeedback.classList.remove('display');
+                }) 
             }
         }) .catch(error => console.log('error', error));
     })

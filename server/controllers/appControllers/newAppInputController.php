@@ -7,6 +7,7 @@
         private $pdo;
 
         public function __construct($appName, $appDescription, $appURL, $pdo) {
+            
             $this->appName = $appName;
             $this->appDescription = $appDescription;
             $this->appURL = $appURL;
@@ -34,13 +35,14 @@
         }
 
         public function appName() {
-            if(strlen($this->appName) > 50) {
-                $this->setError('Please, the app cannot exceed 50 characters');
+           
+            if(!preg_match("/^[a-zA-Z0-9^~´ ]+$/i", $this->appName)) {
+                $this->setError("App name must contain only letters numbers");
                 return false;
             }
 
-            if(!preg_match("/^[a-zA-Z0-9^~´ ]+$/i", $this->appName)) {
-                $this->setError("App name must contain only letters numbers");
+            if(strlen($this->appName) < 0 || strlen($this->appName) > 50) {
+                $this->setError('App name must containt between 1 and 50 characters');
                 return false;
             }
 
@@ -67,14 +69,26 @@
         }
 
         public function appUrl() {
+
            if(!filter_var($this->appURL, FILTER_VALIDATE_URL)) {
                 $this->setError('Invalid URL');
                 return false;
            }
+
+           if(!isset($this->appURL)) {
+                $this->setError('Please, the URL is demanded');
+                return false;
+            }
+
            return true;
         }
 
         public function appLogo() {
+
+            if ($_FILES['appLogo']["size"] === 0) {
+                $this->setError("The App needs to have a logo, name, url and chosen visibility");
+                return false;
+            }
 
             if ($_FILES['appLogo']['error'] !== UPLOAD_ERR_OK) {
                 $this->setError('Upload error: ' . $_FILES['appLogo']['error']);

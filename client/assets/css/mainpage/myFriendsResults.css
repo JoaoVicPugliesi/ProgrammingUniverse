@@ -108,7 +108,7 @@
 }
 
 #myFriendsOnlineResultsDisplayImage, #myFriendsOfflineResultsDisplayImage {
-    width: 1em;
+    width: 0.8em;
     margin: 0px 0px 0px 5px;
 }
 
@@ -128,6 +128,8 @@
     width: 100%;
     height: 3.5em;
     border-bottom: var(--white-color) 2px solid;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -197,6 +199,7 @@
     border: none;
     justify-content: center;
     cursor: pointer;
+    align-self: center;
 }
 
 #myFriendOnlineChat, #myFriendOfflineChat {

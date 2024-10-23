@@ -1,4 +1,5 @@
 import { usersResults } from "./fetchUsersResults.js";
+import { friendRequest } from "./friendRequests/friendRequest.js";
 
 export function searchUsersResults() {
 
@@ -49,7 +50,13 @@ export function searchUsersResults() {
                                     </div>
                                     <div id="myUserResultRequestDiv" class="flex">
                                     <h3>+</h3>
-                                    <button class="myUserResultAddFriendBtn" data-receiver-id=${user.user_id}><img class="myUserResultAddFriendImageBtn" src="/client/assets/images/request.png" alt=""></button>
+                                   <form class="myUserResultAddFriendForm">
+                                        <input id="myUserResultSenderId" type="hidden" name="sender_id" value="${localStorage.getItem('user_id')}">
+                                        <input id="myUserResultReceiverId" type="hidden" name="receiver_id" value="${user.user_id}">
+                                        <button type="submit" class="myUserResultAddFriendBtn">
+                                            <img class="myUserResultAddFriendImageBtn" src="/client/assets/images/request.png" alt="myUserResult">
+                                        </button>
+                                    </form>
                                     </div>
                             </div>
                             </div>
@@ -60,8 +67,10 @@ export function searchUsersResults() {
                     myUsers.appendChild(myUser);
                 })
 
+                friendRequest();
+
             } else {
-                console.log('error');
+                console.log('');
             }
         })
         .catch(error => console.log('Error', error));

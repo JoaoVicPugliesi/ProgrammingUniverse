@@ -1,5 +1,10 @@
 import { fetchUser } from "./fetchUser.js";
 import { fetchUserApps } from "./fetchUserApps.js";
+import { acceptNotifications } from "./friendRequests/acceptNofitications.js";
+import { declineNotifications } from "./friendRequests/declineNotifications.js";
+import { friends } from "./friendRequests/friends.js";
+import { pendingRequests } from "./friendRequests/pendingRequests.js";
+
 
 export function onload() {
 
@@ -27,10 +32,16 @@ export function onload() {
                 myLoad.classList.remove('display');
             }, 2000)
         })
+
+        
+        pendingRequests();
+        acceptNotifications();
+        declineNotifications();
         const fetchedUserId = localStorage.getItem('user_id');
         userIdMain.value = fetchedUserId;
         fetchUser();
         fetchUserApps();
+        friends();
         if(localStorage.getItem('display')) {
         setTimeout(() => {
         myFlashMessageOverlay.style.display = 'block';

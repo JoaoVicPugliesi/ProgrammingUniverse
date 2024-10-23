@@ -1,5 +1,4 @@
 export function timeResults() {
-    console.log('time');
     const myNetworkingHallOfFameResults = document.getElementById('myNetworkingHallOfFameResults');
     const myStarsResults = document.getElementById('myStarsResults');
     const myMedalResults = document.getElementById('myMedalResults');

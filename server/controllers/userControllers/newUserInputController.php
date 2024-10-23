@@ -45,13 +45,13 @@
         }
 
         public function usernameController() {
-            if(strlen($this->username) < 6) {
-                $this->setError("Username must contain at least 6 characters");
+            if(strlen($this->username) < 3 || strlen($this->username) > 20) {
+                $this->setError("Username must contain between 6 and 20 characters");
                 return false;
             }
 
             if(!preg_match("/^[a-zA-Z0-9^~´`_]+$/i", $this->username)) {
-                $this->setError("Username must contain only letters, numbers and no empty spaces");
+                $this->setError("Username must contain letters, numbers and no spaces");
                 return false;
             }
 
@@ -66,7 +66,7 @@
             }
         
             if (!preg_match("/^[a-zA-Z0-9\s.,!?'^~\"´áéíóúãõâêîôûçÇ]*$/", $description)) {
-                $this->setError("Description can only contain letters, numbers, spaces, and basic punctuation.");
+                $this->setError("Description cannot contain special characters.");
                 return false;
             }
         

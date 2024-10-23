@@ -26,6 +26,11 @@
                 $appURL = filter_input(INPUT_POST, 'appURL', FILTER_SANITIZE_URL);
                 $appVisibility = filter_input(INPUT_POST, 'appVisibility', FILTER_SANITIZE_SPECIAL_CHARS);
 
+                if(empty($appName) || empty($appURL) || empty($appVisibility)) {
+                    echo json_encode(['success' => false, 'error' => 'The App needs to have a logo, name, url and chosen visibility']);
+                    return;
+                }
+
                 $newAppInputController = new NewAppInputController($appName, $appDescription, $appURL, $this->pdo);
 
                 $appURLValidation = $newAppInputController->appURL();

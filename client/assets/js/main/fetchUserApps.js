@@ -31,7 +31,6 @@ export function fetchUserApps () {
                      </button>
                 `;
 
-
                 myAppContainer.addEventListener('click', (e) => {
 
                     e.preventDefault();

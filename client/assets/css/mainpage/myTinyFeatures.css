@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Main-color: #4294FF;
+    --Second-color: #333333;
+    --success-color: #7CDF4E;
+    --Main-color-second: #3c31dd;
+    --Second-color-second: #0f0f10;
+    --Third-color-main-red: #dd3f31;
+    --Main-color-pink: #ff0066;
+    --white-color: #ffffff;
+    --Main-test-1: #0b2e70;
+    --Main-test-2: #d18d70;
+    --Main-test-3: #010326;
+    --Main-test-4: #e35a7e;
+    --Main-test-5: #743583;
+    --Main-test-6: #1c71a6;
+}
+
+::-webkit-input-placeholder { color: white; }
+:-ms-input-placeholder { color: white; }
+::-moz-placeholder { color: white; }
+:-moz-placeholder { color: white; }
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#myTinyFeatures {
+    height: 8em;
+    width: 10em;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#myWeatherIllustration {
+    width: 3em;
+}
+
+#myWeather {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    height: 20%;
+    margin-top: 20px;
+}
+
+#myDayOfWeekAndTemperature {
+    justify-content: center;
+    flex-direction: column;
+}
+
+#myDayOfWeek {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+}
+
+#myPlaceNameDiv {
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+#myPlaceName {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--Main-test-4);
+    font-size: 1em;
+    white-space: normal; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    width: max-content;
+}
+
+#myChangePlaceBtn {
+    justify-content: center;
+    background: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#myChangePlaceBtnImage {
+    width: 1.2em;
+}
+
+#myHowMuchWeather {
+    font-size: 1.2em;
+    font-family: 'Cabin', sans-serif;
+    align-self: center;
+    margin-top: 2px;
+    color: #ffcc33;
+}
+
+#myDayAndHourDiv {
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+    height: 30%;
+}
+
+#myHour, #myDay {
+    font-family: 'Cabin', sans-serif;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+}
+
+.myWorldPlaces {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    opacity: 0;
+    visibility: hidden;
+    background: var(--Main-test-1);
+    transition: opacity 0.4s ease visibility 0.4s ease;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    top: 0%;
+    gap: 5px;
+}
+
+.myWorldPlaces.display {
+    opacity: 1;
+    visibility: visible;
+}
+
+#myWorldPlace {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#myWorldPlaceSearchBar {
+    width: 80%;
+    height: 2em;
+    background: var(--Main-color);
+    border: none;
+    color: var(--white-color);
+    border-bottom: var(--white-color) solid 2px;
+    padding: 2px 5px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    font-size: 0.8em;
+}
+
+#myWorldPlaceCloseBtn {
+    justify-content: center;
+    background: var(--Main-test-4);
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+#myWorldPlaceSearchBarBtn {
+    background: var(--Main-color);
+    justify-content: center;
+    border: none;
+    border-radius: 1px;
+    height: 1.9em;
+    width: 2em;
+    cursor: pointer;
+}
+
+#myWorldPlaceCloseBtnImage {
+    width: 1.2em;
+}
+
+#myWorldPlaceSearchBarBtnImage {
+    width: 1.5em;
+}
+

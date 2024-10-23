@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="../client/assets/css/mainpage/myFriendsResults.css">
     <link rel="stylesheet" href="../client//assets/css/mainpage/myStarsResults.css">
     <link rel="stylesheet" href="../client//assets/css/mainpage/myTimeResults.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/friendRequests/friendRequest.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/friendRequests/myNotifications.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/myTinyFeatures.css">
     <title>Programming Universe</title>
 </head>
 <body id="myBody" class="myBody">
@@ -50,6 +53,40 @@
             <button id="myDeleteAppNoBtn">No</button>
         </div>
     </form>
+    <div id="myFriendRequestFeedback" class="myFriendRequestFeedback">
+        <div id="myFriendRequestFeedbackH3Div">
+        <h3 id="myFriendRequestFeedbackH3">Oops!</h3>
+        </div>
+        <div id="myFriendRequestFeedbackPDiv">
+        <p id="myFriendRequestFeedbackP">A friend request is already pending between you two</p>
+        </div>
+        <div id="myFriendRequestFeedbackBtnDiv">
+        <button id="myFriendRequestFeedbackBtn"><h3 id="myFriendRequestFeedbackBtnH3">Ok</h3></button>
+        </div>
+    </div>
+    <div id="myNotifications" class="myNotifications">
+        <div id="myNotificationsClose" class="flex">
+            <button id="myNotificationsCloseBtn" class="flex"><img id="myNotificationsCloseBtnImage" src="/client/assets/images/icons/close.png" alt=""></button>
+        </div>
+        <div id="myNotificationsImgH3">
+            <img id="myNotificationsImg" src="/client/assets/images/icons/bell.png" alt="">
+            <h3 id="myNotificationsH3">My Notifications</h3>
+        </div>
+        <div id="myNotificationsSpace">
+           <div id="myFriendRequestsSpace">
+               
+           </div>
+           <div id="myAcceptRequestsSpace">
+               
+           </div>
+           <div id="myDeclineRequestsSpace">
+                
+           </div>
+           <div id="myMessageRequestsSpace">
+                
+           </div>
+        </div>
+    </div>
     <div id="myBackgroundOverlay"></div>
     <div id="myNewsBar" class="flex">
         <div id="myRankingDiv" class="flex">
@@ -303,12 +340,12 @@
                                 <h3>App Logo</h3>
                                 </div>
                                 <div id="myAddNameDescription" class="flex">
-                                    <input id="myAddAppName" type="text" name="appName" placeholder="name" autocomplete="off" maxlength="50" spellcheck="false" required>
+                                    <input id="myAddAppName" type="text" name="appName" placeholder="name" autocomplete="off" maxlength="50" spellcheck="false">
                                     <textarea id="myAddAppDescription" placeholder="Description" name="appDescription" maxlength="255" autocomplete="off" spellcheck="false"></textarea>
                                 </div>
                             </div>
                             <div id="myAddAppLinkVisibility" class="flex">
-                                <input id="myAppLink" type="url" name="appURL" maxlength="255" placeholder="URL" autocomplete="off" required>
+                                <input id="myAppLink" type="url" name="appURL" maxlength="255" placeholder="URL" autocomplete="off">
                                 <div id="myAppVisibilityDiv" class="flex">
                                     <input type="radio" id="myPublicApp" name="appVisibility" value="public" hidden>
                                     <label for="myPublicApp" id="myAppVisibilityLabel">
@@ -381,52 +418,18 @@
                                 <div id="myFriendsResults" class="myFriendsResults">
                                     <div id="myFriendsOnlineResults" class="flex">
                                         <div id="myFriendsOnlineResultsDisplay" class="flex">
-                                            <button id="myFriendsOnlineResultsDisplayImageBtn" class="flex"><img id="myFriendsOnlineResultsDisplayImage" src="/client/assets/images/icons/arrow.png" alt=""></button>
+                                            <img id="myFriendsOnlineResultsDisplayImage" src="/client/assets/images/icons/arrow.png" alt="">
                                             <h3 id="myFriendsOnlineResultsDisplayH3">Friends Online</h3>
                                         </div>
                                         <div id="myFriendsOnlineResult" class="flex">
-                                            <div id="myFriendOnline" class="flex">
-                                                <div id="myFriendOnlineImageNameLastSeen" class="flex">
-                                                    <img id="myFriendOnlineImage" src="/client/assets/images/icon_images/sophisticated.png" alt="">
-                                                    <div id="myFriendOnlineNameLastSeenMessage" class="flex">
-                                                        <h3 id="myFriendOnlineName">nandalisboa</h3>
-                                                        <div id="myFriendOnlineLastSeenMessage" class="flex">
-                                                        <h3 id="myFriendOnlineLastSeen" class="flex">Online <div id="myFriendOnlineStatus"></div></h3>
-                                                        <button id="myFriendOnlineChatBtn" class="flex"><img id="myFriendOnlineChat" src="/client/assets/images/icons/chat.png" alt=""></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="myFriendOnlineBtnDiv" class="flex">
-                                                    <button id="myFriendOnlineBtn"><h3 id="myFriendOnlineBtnH3">See Profile</h3></button>
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </div>
                                     <div id="myFriendsOfflineResults" class="flex">
                                         <div id="myFriendsOfflineResultsDisplay" class="flex">
-                                            <button id="myFriendsOfflineResultsDisplayImageBtn" class="flex"><img id="myFriendsOfflineResultsDisplayImage" src="/client/assets/images/icons/arrow.png" alt=""></button>
+                                            <img id="myFriendsOfflineResultsDisplayImage" src="/client/assets/images/icons/arrow.png" alt="">
                                             <h3 id="myFriendsOfflineResultsDisplayH3">Friends Offline</h3>
                                         </div>
-                                        <div id="myFriendsOfflineResult" class="flex">
-                                            <div id="myFriendOffline" class="flex">
-                                                <div id="myFriendOfflineImageNameLastSeen" class="flex">
-                                                    <img id="myFriendOfflineImage" src="/client/assets/images/icon_images/fly.png" alt="">
-                                                    <div id="myFriendOfflineNameLastSeenMessage" class="flex">
-                                                        <h3 id="myFriendOfflineName">kraken19</h3>
-                                                        <div id="myFriendOfflineLastSeenMessage" class="flex">
-                                                        <h3 id="myFriendOfflineLastSeen" class="flex">Offline <div id="myFriendOfflineStatus"></div></h3>
-                                                        <button id="myFriendOfflineChatBtn" class="flex"><img id="myFriendOfflineChat" src="/client/assets/images/icons/chat.png" alt=""></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="myFriendOnlineBtnDiv" class="flex">
-                                                    <button id="myFriendOnlineBtn"><h3 id="myFriendOnlineBtnH3">See Profile</h3></button>
-                                                </div>
-                                            </div>
-                                            <div id="myFriendOffline" class="flex"></div>
-                                            <div id="myFriendOffline"></div>
-                                            
+                                        <div id="myFriendsOfflineResult" class="flex">     
                                         </div>
                                     </div>
                                 </div>
@@ -438,7 +441,7 @@
                                     <div id="myUsersDiv">
                                         <div id="mySelfUser">
                                             <div id="mySelfUserDisplay" class="flex">
-                                                <button id="mySelfUserDisplayArrowImageBtn" class="flex"><img id="mySelfUserDisplayArrowImage" src="/client/assets/images/icons/arrow.png" alt=""></button>
+                                                <img id="mySelfUserDisplayArrowImage" src="/client/assets/images/icons/arrow.png" alt="">
                                                 <h3 id="mySelfUserDisplayArrowH3">Your Profile</h3>
                                             </div>
                                             <div id="mySelf">
@@ -450,7 +453,7 @@
                                                     <div id="mySelfStatus"></div>
                                                     </div>
                                                     <div id="mySelfNotificationDiv" class="flex">
-                                                        <img id="mySelfNotificationImage" src="/client/assets/images/icons/notification.png" alt="">
+                                                        <button id="mySelfNotificationBtn" class="flex"><img id="mySelfNotificationImage" src="/client/assets/images/icons/notification.png" alt=""></button>
                                                         <h3 id="mySelfNotificationH3">N/A</h3>
                                                     </div>
                                                     </div>
@@ -468,6 +471,7 @@
                                             
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div id="myNetworkingHallOfFameResults" class="myNetworkingHallOfFameResults">
@@ -491,23 +495,6 @@
                                         <button id="myStarsAppResultsBtn"><h3 id="myStarsAppResultsH3">Apps</h3></button>
                                     </div>
                                     <div id="myStarsHeroesDiv" class="myMedalHeroesDiv">
-
-                                        <div id="myStarUserHero" class="flex">
-                                            <div id="myStarUser" class="flex">
-                                                <h3 class="myHeroPosition">1</h3>
-                                                <img id="myStarUserHeroImage" src="/server/controllers/appControllers/uploads/" alt="">
-                                                <div id="myStarUserHeroStars" class="flex">
-                                                    <h3 id="myStarUserHeroName">Johnpugliesi10</h3>
-                                                    <div id="myStarUserHeroesNumberDiv" class="flex">
-                                                            <img id="myStarsImage" src="/client/assets/images/icons/star.png" alt="">
-                                                            <h3 id="myStarUserStarsNumber">0</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="myStarUserHeroBtnDiv" class="flex">
-                                                <button class="myStarUserHeroBtn"><h3 id="myStarUserHeroH3">See Profile</h3></button>
-                                            </div>
-                                        </div>
 
                                     </div>
                                     </div>
@@ -613,14 +600,36 @@
             <button id="myMenuBtn" class="myMenuBtn"><img id="myMenu" src="/client/assets/images/programmer.png" alt="programmer"></button>
             <h3>Menu</h3>
         </div>
-        <div id="myTinyFeatures"></div>
+        <div id="myTinyFeatures" class="flex">
+                
+                <div id="myWeather" class="flex">
+                <img id="myWeatherIllustration" src="" alt="">
+                <div id="myDayOfWeekAndTemperature" class="flex">
+                <h3 id="myDayOfWeek"></h3>
+                <h3 id="myHowMuchWeather"></h3>
+                </div>
+                </div>
+                <div id="myPlaceNameDiv" class="flex">
+                <h3 id="myPlaceName">Your Place</h3>
+                <button id="myChangePlaceBtn" class="flex"><img id="myChangePlaceBtnImage" src="/client/assets/images/icons/change.png" alt=""></button>
+                </div>
+                <div id="myDayAndHourDiv" class="flex">
+                    <h3 id="myHour">17:46</h3>
+                    <h3 id="myDay">21/10/2024</h3>
+                </div>
+                <div id="myWorldPlaces" class="myWorldPlaces display">
+                    <button id="myWorldPlaceCloseBtn" class="flex"><img id="myWorldPlaceCloseBtnImage" src="/client/assets/images/icons/close.png" alt=""></button>
+                    <div id="myWorldPlace">
+                    <input type="hidden" id="myPlaceUserId" name="user_id">
+                    <input id="myWorldPlaceSearchBar" placeholder="Search Your Place" name="user_place" type="text" spellcheck="false" maxlength="100" autocomplete="off">
+                    <button id="myWorldPlaceSearchBarBtn" class="flex"><img id="myWorldPlaceSearchBarBtnImage" src="/client/assets/images/icons/search.png" alt=""></button>
+                    </div>
+                </div>
+        </div>
     </div>
     </div>
     <script type="module" src="/client/assets/js/main/main.js" defer></script>
-    <script type="module" src="/client/assets/js/main/newApp.js" defer></script>
     <script type="module" src="/client/assets/js/main/myNetworkingForm.js" defer></script>
     <script type="module" src="/client/assets/js/main/myNetworkingSubspaces.js" defer></script>
-    <script type="module" src="/client/assets/js/main/searchUsersResult.js" defer></script>
-    <script type="module" src="/client/assets/js/main/friendRequests/friendRequest.js" defer></script>
 </body>
 </html>

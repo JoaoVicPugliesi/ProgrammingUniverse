@@ -212,7 +212,7 @@
     justify-content: center;
 }
 
-#myFriendOnlineBtn, #myFriendOfflineBtn {
+.myFriendOnlineBtn, .myFriendOfflineBtn {
     background: var(--white-color);
     border: none;
     box-shadow: 2px 2px var(--Main-test-4);

@@ -17,16 +17,32 @@
 
         public function getUserApps() {
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
 
-                $newFetchUserAppsModel = new FetchUserAppsModel($userId, $this->pdo);
-                $userApps = $newFetchUserAppsModel->setUserApps();
+                if($_POST["userId"] && $_POST["loggedUserId"]) {
+                    $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
+                    $loggedUserId = filter_input(INPUT_POST, 'loggedUserId', FILTER_SANITIZE_NUMBER_INT);
 
-                if($userApps) {
-                    echo json_encode(['success' => true, 'userApps' => $userApps]);
+                    $newFetchUserAppsModel = new FetchUserAppsModel($userId, $this->pdo);
+                    $userApps = $newFetchUserAppsModel->setUserAppsIfFriend($loggedUserId);
+
+                    if($userApps) {
+                        echo json_encode(['success' => true, 'userApps' => $userApps]);
+                    } else {
+                        echo json_encode(['success' => false]);
+                    }
                 } else {
-                    echo json_encode(['success' => false]);
+                    $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
+
+                    $newFetchUserAppsModel = new FetchUserAppsModel($userId, $this->pdo);
+                    $userApps = $newFetchUserAppsModel->setUserApps();
+
+                    if($userApps) {
+                        echo json_encode(['success' => true, 'userApps' => $userApps]);
+                    } else {
+                        echo json_encode(['success' => false]);
+                    }
                 }
+                
             }
         }
 

@@ -1,4 +1,5 @@
 import { friendRequest } from "./friendRequests/friendRequest.js";
+import { seeProfileDisplay } from "./seeProfileDisplay.js";
 
 export function usersResults() {
 
@@ -41,14 +42,31 @@ export function usersResults() {
                                     </div>
                             </div>
                             </div>
-                            <div id="mySeeProfileBtnDiv" class="flex">
-                                <button type="button" id="mySeeProfileBtn" data-user-id=${user.user_id}><h3 id="mySeeProfileBtnH3">See Profile</h3></button>
+                            <div class="mySeeProfileBtnDiv">
+                                <button class="mySeeProfileBtn" data-user-id="${user.user_id}"><h3 id="mySeeProfileBtnH3">See Profile</h3></button>
                             </div>
                     `;
                     myUsers.appendChild(myUser);
                 })
 
-                friendRequest();
+
+                const myProfileAddSectionBtnDiv = document.querySelector('.myProfileAddSectionBtnDiv');
+                const myProfileRemoveSectionBtnDiv = document.querySelector('.myProfileRemoveSectionBtnDiv');
+                const myProfileAddSectionBtn = document.querySelector('.myProfileAddSectionBtn');
+                const myUserResultAddFriendForm = document.querySelectorAll('.myUserResultAddFriendForm');
+                const mySeeProfileNameBtnDiv = document.getElementById('mySeeProfileNameBtnDiv');
+
+                myProfileAddSectionBtnDiv.classList.remove('remove');
+                myProfileRemoveSectionBtnDiv.classList.remove('display');
+                mySeeProfileNameBtnDiv.classList.remove('display');
+
+                friendRequest(myUserResultAddFriendForm, myProfileAddSectionBtn);
+
+                const mySeeProfileBtn = document.querySelectorAll('.mySeeProfileBtn');
+                
+                seeProfileDisplay(mySeeProfileBtn);
+               
+
 
             } else {
                 console.log('Error');
@@ -57,18 +75,18 @@ export function usersResults() {
         .catch(error => console.log('Error', error));
 }
 
-const myNetworkingUsersBtn = document.getElementById('myNetworkingUsersBtn');
-const myUsersResults = document.getElementById('myUsersResults');
-const myFriendsResults = document.getElementById('myFriendsResults');
-const myNetworkingUsersResults = document.getElementById('myNetworkingUsersResults');
+        const myNetworkingUsersBtn = document.getElementById('myNetworkingUsersBtn');
+        const myUsersResults = document.getElementById('myUsersResults');
+        const myFriendsResults = document.getElementById('myFriendsResults');
+        const myNetworkingUsersResults = document.getElementById('myNetworkingUsersResults');
 
-myNetworkingUsersBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    usersResults();
+        myNetworkingUsersBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            usersResults();
 
-        myNetworkingUsersResults.classList.add('display');
-        myFriendsResults.classList.remove('display');
-        myUsersResults.classList.add('display');
+                myNetworkingUsersResults.classList.add('display');
+                myFriendsResults.classList.remove('display');
+                myUsersResults.classList.add('display');
 
-})
+        })
 

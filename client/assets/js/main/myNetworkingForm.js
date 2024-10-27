@@ -1,4 +1,4 @@
-export function myNetworkingForm() {
+export function myNetworkingForm() { 
     const myAddAppExplainOverlay = document.getElementById('myAddAppExplainOverlay');
     const myAddAppExplain = document.getElementById('myAddAppExplain');
     const myAddAppExplainBtn = document.getElementById('myAddAppExplainBtn');
@@ -9,13 +9,12 @@ export function myNetworkingForm() {
     const myNetworkingForm = document.getElementById('myNetworkingForm');
 
     function myExplainDisplay(btn, element1, element2, form) {
-        
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             element1.classList.add('none');
             element2.classList.add('none');
             form.classList.add('display');
-        })
+        });
     }
 
     myExplainDisplay(myAddAppExplainBtn, myAddAppExplain, myAddAppExplainOverlay, myAddAppForm);
@@ -79,9 +78,6 @@ export function myNetworkingForm() {
         myNetworkingHallOfFameResults, 
         myNetworkingUsersResults
     );
-
-
 }
 
 myNetworkingForm();
-

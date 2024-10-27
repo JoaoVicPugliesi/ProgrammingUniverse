@@ -31,5 +31,10 @@
         }
     }
 
-    $newDeleteAppController = new DeleteAppController($pdo);
-    $newDeleteAppController->getDelete();
+    try {
+        $newDeleteAppController = new DeleteAppController($pdo);
+        $newDeleteAppController->getDelete();
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+        exit;
+    }

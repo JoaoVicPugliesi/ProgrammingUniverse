@@ -52,7 +52,6 @@
                 $_SESSION['error'] = 'The app name does not match';
             }
         }
-
             return false;
     }
 }

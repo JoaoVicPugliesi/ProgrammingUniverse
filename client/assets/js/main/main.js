@@ -17,9 +17,13 @@ import { accept } from "./friendRequests/accept.js";
 import { decline } from "./friendRequests/decline.js";
 import { check } from "./friendRequests/check.js";
 import { none } from "./friendRequests/none.js";
-import { newApp } from "./newApp.js";
+import { newApp } from "./appsJs/newApp.js";
 import { myTinyFeatures } from "./weather/myTinyFeatures.js";
-
+import { seeProfile } from "./seeProfile.js";
+import { removeFriend } from "./friendRequests/removeFriend.js";
+import { shortcuts } from "./shortcuts.js";
+import { updateStar } from "./appsJs/updateStar.js";
+import { searchApps } from "./appsJs/searchApps.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     onload();
@@ -44,6 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
     decline();
     check();
     none();
+    seeProfile();
+    removeFriend();
+    shortcuts();
+    updateStar();
+    searchApps();
 })
 
 

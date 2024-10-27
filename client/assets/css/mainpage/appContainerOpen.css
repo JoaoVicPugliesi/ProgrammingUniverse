@@ -27,10 +27,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    overflow: none;
 }
 
-.myAppContainerOpen {
+.myAppContainerOpen, .myForeignAppContainerOpen {
     background: var(--Main-test-1);
     position: absolute;
     z-index: 800;
@@ -47,14 +46,15 @@
     opacity: 1;
     visibility: visible;
     transition: opacity 0.4s ease, visibility 0.4s ease, width 0.4s ease, height 0.4s ease;
-    -webkit-user-drag: element;
+    -webkit-user-drag: none;
 }
 
-.myAppContainerOpen.display {
+
+.myAppContainerOpen.display, .myForeignAppContainerOpen.display {
     display: flex; 
 }
 
-.myAppContainerOpen.maximize {
+.myAppContainerOpen.maximize, .myForeignAppContainerOpen.maximize {
     width: 100vw;
     height: 100vh; 
     top: 0;
@@ -62,19 +62,19 @@
     transform: none; 
 }
 
-.myAppContainerOpen.minimize {
+.myAppContainerOpen.minimize, .myForeignAppContainerOpen.minimize {
     opacity: 0;
     visibility: hidden;
 }
 
-#myAppContainerOpenIcons {
+#myAppContainerOpenIcons, #myForeignAppContainerOpenIcons {
     justify-content: flex-end;
     width: 100%;
     height: 2em;
-    background: var(--Main-test-4);
+    background: var(--Main-test-3);
 }
 
-#myAppContainerMinimizeBtn, #myAppContainerDimensionBtn, #myAppContainerDimensionBtn2, #myAppContainerCloseBtn {
+#myAppContainerMinimizeBtn, #myAppContainerDimensionBtn, #myAppContainerDimensionBtn2, #myAppContainerCloseBtn, #myForeignAppContainerMinimizeBtn, #myForeignAppContainerDimensionBtn, #myForeignAppContainerDimensionBtn2, #myForeignAppContainerCloseBtn {
     border: none;
     background: none;
     cursor: pointer;
@@ -88,51 +88,271 @@
     width: 2.5em;  
 }
 
-#myAppContainerDimensionBtn2 {
+#myAppContainerDimensionBtn2, #myForeignAppContainerDimensionBtn2 {
     display: none;
 }
 
-#myAppContainerMinimizeBtn:hover, #myAppContainerDimensionBtn:hover, #myAppContainerDimensionBtn2:hover, #myAppContainerWindowsBtn:hover {
+#myAppContainerMinimizeBtn:hover, #myAppContainerDimensionBtn:hover, #myAppContainerDimensionBtn2:hover, #myAppContainerWindowsBtn:hover, #myForeignAppContainerMinimizeBtn:hover, #myForeignAppContainerDimensionBtn:hover, #myForeignAppContainerDimensionBtn2:hover, #myForeignAppContainerWindowsBtn:hover {
     background: rgb(255, 255, 255, 0.1);
 }
 
-#myAppContainerCloseBtn:hover {
+#myAppContainerCloseBtn:hover, #myForeignAppContainerCloseBtn:hover  {
     background: var(--Third-color-main-red);
 }
 
-#myAppContainerMinimizeImageBtn {
+#myAppContainerMinimizeImageBtn, #myForeignAppContainerMinimizeImageBtn {
     width: 2em;
     cursor: pointer;
 }
 
-#myAppContainerDimensionImageBtn {
+#myAppContainerDimensionImageBtn, #myForeignAppContainerDimensionImageBtn {
     width: 1.2em;
     cursor: pointer;
 }
 
-#myAppContainerDimensionImageBtn2 {
+#myAppContainerDimensionImageBtn2, #myForeignAppContainerDimensionImageBtn2 {
     width: 1.2em;
     cursor: pointer;
 }
 
-#myAppContainerCloseImageBtn {
+#myAppContainerCloseImageBtn, #myForeignAppContainerCloseImageBtn {
     width: 1.5em;
     cursor: pointer;
 }
 
-#myAppContainerInfo {
+#myAppContainerInfoForm, #myForeignAppContainerInfo {
     background: var(--Main-test-1);
     height: 18em;
     width: 100%;
     flex-direction: column;
 }
 
-#myAppContainerInfoBanner {
-    background: white;
+
+#myAppContainerInfoBanner, #myForeignAppContainerInfoBanner {
     width: 100%;
-    height: 50%;
+    height: 100%; 
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     position: relative;
 }
 
+#myAppContainerInfoBannerImgName, #myForeignAppContainerInfoBannerImgName {
+    justify-content: center;
+    padding: 5px;
+    width: 100%;
+    height: 30%;
+    margin: 5px;
+    gap: 10px;
+}
+
+#myAppContainerInfoBannerImgLabel {
+    cursor: pointer;
+}
+
+#myAppContainerInfoBannerImg, #myForeignAppContainerInfoBannerImg {
+    width: 5em;
+    -webkit-user-drag: none;
+}
+
+#myAppContainerInfoBannerNameDiv, 
+#myForeignAppContainerInfoBannerNameDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+}
+
+#myAppContainerInfoBannerName, #myForeignAppContainerInfoBannerName {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--white-color);
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--white-color);
+    padding: 2px 5px;
+    outline: none;
+}
+
+#myAppContainerInfoBannerAuthorStars, #myForeignAppContainerInfoBannerAuthorStars {
+    width: 100%;
+    height: 20%;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#myAppContainerInfoBannerAuthorDiv, #myAppContainerInfoBannerStarsDiv, #myAppContainerInfoBannerLinkDiv, #myAppContainerInfoBannerVisibilityDiv,
+#myForeignAppContainerInfoBannerAuthorDiv, #myForeignAppContainerInfoBannerStarsDiv, #myForeignAppContainerInfoBannerLinkDiv, #myForeignAppContainerInfoBannerVisibilityDiv {
+    justify-content: center;
+    gap: 5px;
+    height: 2.5em;
+}
+
+#myAppContainerInfoBannerVisibilityDiv, #myForeignAppContainerInfoBannerVisibilityDiv {
+    gap: 10px;
+}
+
+#myAppContainerInfoBannerStarsDiv, #myForeignAppContainerInfoBannerStarsDiv {
+    gap: 10px;
+}
+
+#myAppContainerInfoBannerAuthorImage, #myForeignAppContainerInfoBannerAuthorImage {
+    width: 2em;
+}
+
+#myAppContainerInfoBannerAuthorName, #myForeignAppContainerInfoBannerAuthorName {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white-color);
+    font-size: 1em;
+}
+
+.myForeignAppContainerInfoBannerStarsBtn, .myForeignAppContainerInfoBannerEmptyStarsBtn {
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+}
+
+.myForeignAppContainerInfoBannerEmptyStarsBtn {
+    display: none;
+}
+
+.myForeignAppContainerInfoBannerStarsImageBtn.display, .myForeignAppContainerInfoBannerEmptyStarsImageBtn.display {
+    display: flex;
+}
 
 
+#myAppContainerInfoBannerStarsImage, #myForeignAppContainerInfoBannerStarsImage, #myForeignAppContainerInfoBannerEmptyStarsImage {
+    width: 1.5em;
+}
+
+#myForeignAppContainerInfoBannerEmptyStarsImage, #myForeignAppContainerInfoBannerStarsImage {
+    width: 1.8em;
+}
+
+#myAppContainerInfoBannerVisibility, #myForeignAppContainerInfoBannerVisibility {
+    color: var(--white-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+}
+
+#myAppContainerInfoBannerVisibilityImage, 
+#myForeignAppContainerInfoBannerVisibilityImage {
+    width: 1.5em;
+}
+
+#myAppContainerInfoBannerStarsNumber, #myForeignAppContainerInfoBannerStarsNumber {
+    font-family: 'Cabin', sans-serif;
+    color: var(--white-color);
+}
+
+#myAppContainerInfoBannerLinkImage, #myForeignAppContainerInfoBannerLinkImage  {
+    width: 1.5em;
+}
+
+#myAppContainerInfoBannerLinkSave, #myForeignAppContainerInfoBannerLinkSave {
+    background: var(--Main-color);
+    width: 100%;
+    height: 20%;
+    align-self: flex-end;
+    justify-content: space-around;
+}
+
+#myAppContainerInfoBannerLink, #myForeignAppContainerInfoBannerLink {
+    width: 15em;
+    padding: 2px 5px;
+    background: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    color: var(--white-color);
+    outline: none;
+    border-bottom: var(--white-color) 2px solid;
+}
+
+#myForeignAppContainerInfoBannerLink {
+    font-size: .8em;
+    font-weight: 500;
+}
+
+#myForeignAppContainerInfoBannerSearchDiv {
+    height: 2em;
+    width: 9em;
+    background: var(--white-color);
+    border: none;
+    box-shadow: 5px 5px var(--Main-test-4);
+    cursor: pointer;
+    justify-content: center;
+}
+
+#myForeignAppContainerInfoBannerSearchLink {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#myAppContainerInfoBannerSaveBtn {
+    height: 2.5em;
+    width: 10em;
+    background: var(--white-color);
+    border: none;
+    box-shadow: 5px 5px var(--Main-test-4);
+    cursor: pointer;
+}
+
+#myAppContainerInfoBannerSaveH3, #myForeignAppContainerInfoBannerSearchH3 {
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--Main-test-3);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+#myForeignAppContainerInfoBannerSearchH3 {
+    font-size: 0.8em;
+}
+
+#myAppContainerInfoBannerDescriptionDiv, #myForeignAppContainerInfoBannerDescriptionDiv {
+    width: 100%;
+    height: 50%;
+}
+
+#myAppContainerInfoBannerDescription, #myForeignAppContainerInfoBannerDescription {
+    resize: none;
+    width: 100%;
+    height: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--white-color);
+    font-family: 'Poppins', sans-serif;
+    padding: 2px 10px;
+    overflow-y: scroll;
+    text-align: left;
+    cursor: auto;
+    text-wrap: wrap;
+    border-bottom: 2px solid var(--white-color);
+}
+
+#myForeignAppContainerInfoBannerDescription {
+    font-size: 0.9em;
+}
+
+#myAppContainerInfoBannerDescription::-webkit-scrollbar, #myForeignAppContainerInfoBannerDescription::-webkit-scrollbar {
+    width: 15px;
+}
+    
+#myAppContainerInfoBannerDescription::-webkit-scrollbar-track, #myForeignAppContainerInfoBannerDescription::-webkit-scrollbar-track {
+    background: var(--Main-test-1);
+}
+    
+#myAppContainerInfoBannerDescription::-webkit-scrollbar-thumb, #myForeignAppContainerInfoBannerDescription::-webkit-scrollbar-thumb {
+    background: var(--Main-test-4);
+}

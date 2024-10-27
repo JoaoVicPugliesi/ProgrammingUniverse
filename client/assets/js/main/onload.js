@@ -2,9 +2,10 @@ import { fetchUser } from "./fetchUser.js";
 import { fetchUserApps } from "./fetchUserApps.js";
 import { acceptNotifications } from "./friendRequests/acceptNofitications.js";
 import { declineNotifications } from "./friendRequests/declineNotifications.js";
+import { starNotifications } from "./appsJs/starNotification.js";
 import { friends } from "./friendRequests/friends.js";
 import { pendingRequests } from "./friendRequests/pendingRequests.js";
-
+import { favoriteApps } from "./appsJs/favoriteApps.js";
 
 export function onload() {
 
@@ -42,6 +43,8 @@ export function onload() {
         fetchUser();
         fetchUserApps();
         friends();
+        starNotifications();
+        favoriteApps();
         if(localStorage.getItem('display')) {
         setTimeout(() => {
         myFlashMessageOverlay.style.display = 'block';

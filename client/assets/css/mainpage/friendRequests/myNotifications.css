@@ -76,6 +76,7 @@
     gap: 10px;
     width: 100%;
     border-bottom: 1px solid var(--white-color);
+    user-select: none;
 }
 
 #myNotificationsImg {
@@ -96,7 +97,7 @@
     scroll-behavior: smooth;
 }
 
-#myFriendRequestsSpace, #myAcceptRequestsSpace, #myDeclineRequestsSpace, #myMessageRequestsSpace {
+#myFriendRequestsSpace, #myAcceptRequestsSpace, #myDeclineRequestsSpace, #myMessageRequestsSpace, #myStarsRequestsSpace {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -116,14 +117,14 @@
     background: var(--white-color);
 }
 
-#myFriendRequestNotification, #myMessageNotification, #myAcceptNotification, #myDeclineNotification  {
+#myFriendRequestNotification, #myMessageNotification, #myAcceptNotification, #myStarNotification, #myDeclineNotification  {
     width: 100%;
     height: 4em;
     border-bottom: 1px solid var(--white-color);
     display: flex;
 }
 
-#myFriendRequestNotificationTypeDiv, #myFriendMessageTypeDiv, #myAcceptTypeDiv, #myDeclineTypeDiv {
+#myFriendRequestNotificationTypeDiv, #myFriendMessageTypeDiv, #myAcceptTypeDiv, #myDeclineTypeDiv, #myStarTypeDiv {
     height: 100%;
     width: 18%;
     color: var(--white-color);
@@ -131,7 +132,7 @@
     gap: 5px;
 }
 
-#myFriendMessageTypeDiv, #myAcceptTypeDiv, #myDeclineTypeDiv {
+#myFriendMessageTypeDiv, #myAcceptTypeDiv, #myDeclineTypeDiv, #myStarTypeDiv {
     justify-content: center;
 }
 
@@ -141,11 +142,11 @@
     margin-left: 5px;
 }
 
-#myFriendRequestNotificationType, #myMessageNotificationType, #myAcceptNotificationType, #myDeclineNotificationType {
+#myFriendRequestNotificationType, #myMessageNotificationType, #myAcceptNotificationType, #myDeclineNotificationType, #myStarNotificationType {
     width: 1.5em;
 }
 
-#myFriendRequestSenderInformations, #myMessageSenderInformations, #myAcceptSenderInformations, #myDeclineSenderInformations {
+#myFriendRequestSenderInformations, #myMessageSenderInformations, #myAcceptSenderInformations, #myDeclineSenderInformations, #myStarSenderInformations {
     height: 100%;
     width: 62%;
     display: flex;
@@ -155,35 +156,56 @@
     gap: 5px;
 }
 
-#myFriendRequestSenderImageDiv, #myMessageSenderImageDiv, #myAcceptSenderImageDiv, #myDeclineSenderImageDiv  {
+#myFriendRequestSenderImageDiv, #myMessageSenderImageDiv, #myAcceptSenderImageDiv, #myDeclineSenderImageDiv, #myStarSenderImageDiv  {
     justify-content: center;
 }
 
-#myFriendRequestSenderImage, #myMessageSenderImage, #myAcceptSenderImage, #myDeclineSenderImage {
+#myFriendRequestSenderImage, #myMessageSenderImage, #myAcceptSenderImage, #myDeclineSenderImage, #myStarAppImage {
     width: 3.5em;
     border-radius: 5px;
     border: 2px solid var(--Main-color);
 }
 
-#myFriendRequestSenderNamePBtnDiv, #myMessageSenderNamePInsightDiv, #myAcceptSenderNamePInsightDiv, #myDeclineSenderNamePInsightDiv {
+#myStarAppImage {
+    border: none;
+}
+
+#myFriendRequestSenderNamePBtnDiv, #myMessageSenderNamePInsightDiv, #myAcceptSenderNamePInsightDiv, #myDeclineSenderNamePInsightDiv, #myStarSenderNamePInsightDiv {
     height: 100%;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
     gap: 2px;
 }
 
-#myFriendRequestSenderName, #myMessageSenderName, #myAcceptSenderName, #myDeclineSenderName {
+#myFriendRequestSenderName, #myMessageSenderName, #myAcceptSenderName, #myDeclineSenderName, #myStarAppReceiverName, #myStarSenderName {
     color: var(--white-color);
     font-size: 0.8em;
     align-self: flex-start;
-
+    user-select: none;
 }
 
-#myFriendRequestSenderP, #myMessageSenderP, #myAcceptSenderP, #myDeclineSenderP {
+#myStarSenderNameBtn {
+    width: 100%;
+    text-align: start;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#myStarSenderName {
+    font-size: .9em;
+    user-select: none;
+    color: var(--Main-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+#myFriendRequestSenderP, #myMessageSenderP, #myAcceptSenderP, #myDeclineSenderP, #myStarAppReceiverP {
     font-size: .62em;
     font-weight: 600;
     color: white;
     align-self: flex-start;
+    user-select: none;
 }
 
 #myMessageSenderInsight {
@@ -214,7 +236,7 @@
     letter-spacing: 1px;
 }
 
-.myFriendRequestReceiverResponse, #myMessageReceiverResponse, #myAcceptReceiverResponse, #myDeclineReceiverResponse {
+.myFriendRequestReceiverResponse, #myMessageReceiverResponse, #myAcceptReceiverResponse, #myDeclineReceiverResponse, #myStarReceiverResponse {
     height: 100%;
     width: 20%;
     display: flex;
@@ -231,7 +253,7 @@
     gap: 5px;
 }
 
-.myFriendRequestReceiverFormAcceptResponse, .myFriendRequestReceiverFormDeclineResponse, .myDeclineReceiverResponseForm, .myAcceptReceiverResponseForm {
+.myFriendRequestReceiverFormAcceptResponse, .myFriendRequestReceiverFormDeclineResponse, .myDeclineReceiverResponseForm, .myAcceptReceiverResponseForm, .myStarReceiverResponseForm {
     width: 100%;
     height: max-content;
     display: flex;
@@ -239,13 +261,14 @@
     align-items: center;
 }
 
-.myDeclineReceiverResponseForm, .myAcceptReceiverResponseForm {
+.myDeclineReceiverResponseForm, .myAcceptReceiverResponseForm, .myStarReceiverResponseForm {
     height: 100%;
     border-radius: 2px;
     padding: 2px;
+    
 }
 
-.myFriendRequestReceiverAcceptResponseBtn, .myFriendRequestReceiverDeclineResponseBtn, .myMessageReceiverResponseBtn, .myAcceptReceiverResponseBtn, .myDeclineReceiverResponseBtn {
+.myFriendRequestReceiverAcceptResponseBtn, .myFriendRequestReceiverDeclineResponseBtn, .myMessageReceiverResponseBtn, .myAcceptReceiverResponseBtn, .myDeclineReceiverResponseBtn, .myStarReceiverResponseBtn {
     background: var(--Main-color);
     border: none;
     height: 40%;
@@ -265,15 +288,15 @@
     background: var(--Main-test-4);
 }
 
-.myMessageReceiverResponseBtn, .myAcceptReceiverResponseBtn, .myDeclineReceiverResponseBtn {
+.myMessageReceiverResponseBtn, .myAcceptReceiverResponseBtn, .myDeclineReceiverResponseBtn, .myStarReceiverResponseBtn {
     height: 60%;
 }
 
-.myAcceptReceiverResponseBtn, .myDeclineReceiverResponseBtn {
+.myAcceptReceiverResponseBtn, .myDeclineReceiverResponseBtn,.myStarReceiverResponseBtn {
     height: 40%;
 }
 
-#myAcceptReceiverResponseH3, #myDeclineReceiverResponseH3 {
+#myAcceptReceiverResponseH3, #myDeclineReceiverResponseH3, #myStarReceiverResponseH3 {
     font-family: 'Cabin', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -281,6 +304,6 @@
     color: var(--white-color);
 }
 
-#myFriendRequestReceiverResponseImage, #myMessageReceiverResponseImage {
+#myFriendRequestReceiverResponseImage, #myMessageReceiverResponseImage, #myStarReceiverResponseImage {
     width: 2em;
 }

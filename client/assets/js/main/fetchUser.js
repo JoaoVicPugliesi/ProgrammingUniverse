@@ -70,7 +70,7 @@ export function fetchUser() {
                 myWorldPlaces.classList.remove('display');
             }
 
-            checkWeather(localStorage.getItem('place'));
+            checkWeather(place);
                      
         } else {    
             console.log('Error');

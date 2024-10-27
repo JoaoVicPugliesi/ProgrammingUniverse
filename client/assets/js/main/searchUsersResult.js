@@ -1,5 +1,6 @@
 import { usersResults } from "./fetchUsersResults.js";
 import { friendRequest } from "./friendRequests/friendRequest.js";
+import { seeProfileDisplay } from "./seeProfileDisplay.js";
 
 export function searchUsersResults() {
 
@@ -60,14 +61,26 @@ export function searchUsersResults() {
                                     </div>
                             </div>
                             </div>
-                            <div id="mySeeProfileBtnDiv" class="flex">
-                                <button id="mySeeProfileBtn" data-user-id=${user.user_id}><h3 id="mySeeProfileBtnH3">See Profile</h3></button>
+                            <div class="mySeeProfileBtnDiv">
+                                <button class="mySeeProfileBtn" data-user-id=${user.user_id}><h3 id="mySeeProfileBtnH3">See Profile</h3></button>
                             </div>
                     `;
                     myUsers.appendChild(myUser);
                 })
 
-                friendRequest();
+                const myProfileAddSectionBtnDiv = document.querySelector('.myProfileAddSectionBtnDiv');
+                const myProfileRemoveSectionBtnDiv = document.querySelector('.myProfileRemoveSectionBtnDiv');
+                const myProfileAddSectionBtn = document.querySelector('.myProfileAddSectionBtn');
+                const myUserResultAddFriendForm = document.querySelectorAll('.myUserResultAddFriendForm');
+
+                myProfileAddSectionBtnDiv.classList.remove('remove');
+                myProfileRemoveSectionBtnDiv.classList.remove('display');
+
+                friendRequest(myUserResultAddFriendForm, myProfileAddSectionBtn);
+
+                const mySeeProfileBtn = document.querySelectorAll('.mySeeProfileBtn');
+                
+                seeProfileDisplay(mySeeProfileBtn);
 
             } else {
                 console.log('');

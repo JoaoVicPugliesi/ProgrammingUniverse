@@ -7,14 +7,7 @@ export function usersMedal() {
     const myMedalHeroesDiv = document.getElementById('myMedalHeroesDiv');
     const myTimeResults = document.getElementById('myTimeResults');
 
-    myNetworkingHallOfFameMedalsBtn.addEventListener('click', (e) => {
-
-            myTimeResults.classList.remove('display');
-            myStarsResults.classList.remove('display');
-            myNetworkingHallOfFameResults.classList.add('display');
-            myMedalResults.classList.add('display');
-        
-        e.preventDefault();
+   
         fetch('http://localhost/WindowsUniverse/server/controllers/userControllers/fetchUsersMedalsController.php')
         .then(res => res.json())
         .then(data => {
@@ -47,7 +40,9 @@ export function usersMedal() {
                     myMedalHero.innerHTML = `
                         <div class="myMedalHero">
                             <div id="myMedalHeroUser" class="flex">
+                            <div id="myMedalHeroPositionDiv">
                             <h3 class="myHeroPosition" style="color: ${color};">${index + 1}</h3>
+                            </div>
                             <img id="myMedalHeroImage" src="${medal.user_icon}" alt="">
                             <div id="myMedalHeroMedals" class="flex">
                                 <h3 id="myMedalHeroName">${medal.username}</h3>
@@ -57,7 +52,11 @@ export function usersMedal() {
                                 </div>
                             </div>
                             </div>
-                            <button id="mySeeProfileBtn" class="flex"><h3 id="mySeeProfileBtnH3">See Profile</h3></button>
+
+                            <div id="myStarUserHeroBtnDiv" class="flex">
+
+                            </div>
+                            
                         </div>
                     `;
 
@@ -69,7 +68,26 @@ export function usersMedal() {
             }
         })
         .catch(error => console.log('Error', error));
+
+        myNetworkingHallOfFameMedalsBtn.addEventListener('click', (e) => {
+
+            myTimeResults.classList.remove('display');
+            myStarsResults.classList.remove('display');
+            myNetworkingHallOfFameResults.classList.add('display');
+            myMedalResults.classList.add('display');
+        
+            e.preventDefault();
+            usersMedal();
         })
 }
 
 usersMedal();
+
+
+/*
+      ${
+            medal.user_id != localStorage.getItem('user_id') ?
+            `<button class="myMedalUserHeroBtn" data-user-id=${medal.user_id}><h3 id="mySeeProfileBtnH3">See Profile</h3></button>`
+            : '<button class="mySelfMedalBtn"><h3 id="mySelfBtnH3">Edit Profile</h3></button>'
+      }
+*/

@@ -32,7 +32,9 @@ export function usersAppsStars() {
                     myStarUserHero.id = 'myStarUserHero'; 
                     myStarUserHero.innerHTML = `
                         <div id="myStarUser" class="flex">
-                            <h3 class="myHeroPosition">${index + 1}</h3> <!-- Display position dynamically -->
+                            <div id="myStarHeroPositionDiv">
+                            <h3 class="myHeroPosition">${index + 1}</h3>
+                            </div>
                             <img id="myStarUserHeroImage" src="${star.user_icon}" alt="">
                             <div id="myStarUserHeroStars" class="flex">
                                 <h3 id="myStarUserHeroName">${star.username}</h3>
@@ -43,15 +45,12 @@ export function usersAppsStars() {
                             </div>
                         </div>
                         <div id="myStarUserHeroBtnDiv" class="flex">
-                            <button class="myStarUserHeroBtn" data-user-id="${star.user_id}">
-                                <h3 id="myStarUserHeroH3">See Profile</h3>
-                            </button>
+        
                         </div>
                     `;
     
                     myStarsHeroesDiv.appendChild(myStarUserHero);
                 });
-               
     
             } else {
                 console.log('error');
@@ -75,12 +74,14 @@ export function usersAppsStars() {
                 myStarsHeroesDiv.innerHTML = ''; 
 
                 data.stars.forEach((star, index) => {
-                    
+
                     const myStarAppHero = document.createElement('div');
                     myStarAppHero.id = 'myStarAppHero'; 
                     myStarAppHero.innerHTML = `
                         <div id="myStarApp" class="flex">
-                            <h3 class="myHeroPosition">${index + 1}</h3> <!-- Display position dynamically -->
+                            <div id="myStarAppPositionDiv">
+                            <h3 class="myHeroPosition">${index + 1}</h3> 
+                            </div>
                             <img id="myStarAppHeroImage" src="/server/controllers/appControllers/uploads/${star.app_logo}" alt="">
                             <div id="myStarAppHeroStars" class="flex">
                                 <h3 id="myStarAppHeroName">${star.app_name}</h3>
@@ -91,9 +92,7 @@ export function usersAppsStars() {
                             </div>
                         </div>
                         <div id="myStarAppHeroBtnDiv" class="flex">
-                            <button class="myStarAppHeroBtn" data-app-id="${star.app_id}">
-                                <h3 id="myStarAppHeroH3">See App</h3>
-                            </button>
+                           
                         </div>
                     `;
     
@@ -128,4 +127,16 @@ usersAppsStars();
                                                 <button id="myStarAppHeroBtn"><h3 id="myStarAppHeroH3">See App</h3></button>
                                             </div>
                                         </div>
+*/
+
+/*
+
+    ${
+        star.user_id != localStorage.getItem('user_id') ?
+        `<button class="myStarUserHeroBtn" data-user-id="${star.user_id}">
+        <h3 id="myStarUserHeroH3">See Profile</h3>
+        </button>`
+        : '<button class="mySelfStarBtn"><h3 id="mySelfBtnH3">Edit Profile</h3></button>'
+    }                                
+
 */

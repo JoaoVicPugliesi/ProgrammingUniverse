@@ -17,7 +17,6 @@ export function notifications() {
         } else {
             myNotifications.classList.add('display');
         }
-
     })
 
     mySelfNotificationBtn.addEventListener('click', (e) => {
@@ -29,10 +28,50 @@ export function notifications() {
         }
     })
 
-    
+    let isDragging = false;
+    let startX, startY, initialX, initialY;
+
+    myNotifications.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        if (e.target.closest('#myNotifications')) {  
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+
+            initialX = myNotifications.offsetLeft;
+            initialY = myNotifications.offsetTop;
+
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', stopDrag);
+        }
+    });
+
+    function drag(e) {
+        if (isDragging) {
+            e.preventDefault();
+
+            const deltaX = e.clientX - startX;
+            const deltaY = e.clientY - startY;
+
+            myNotifications.style.left = `${initialX + deltaX}px`;
+            myNotifications.style.top = `${initialY + deltaY}px`;
+        }
+    }
+
+    function stopDrag(e) {
+        if (isDragging) {
+            e.preventDefault();
+            isDragging = false;
+
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', stopDrag);
+        }
+    }
+
 }
 
 notifications();
+
 
 /*
     <div id="myMessageNotification">

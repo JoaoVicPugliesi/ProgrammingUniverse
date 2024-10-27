@@ -17,7 +17,7 @@
 
         public function getApp() {
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $appId = filter_input(INPUT_POST, 'appId', FILTER_SANITIZE_NUMBER_INT);
+                $appId = filter_input(INPUT_POST, 'app_id', FILTER_SANITIZE_NUMBER_INT);
 
                 $newOpenAppModel = new OpenAppModel($appId, $this->pdo);
                 $app = $newOpenAppModel->setApp();

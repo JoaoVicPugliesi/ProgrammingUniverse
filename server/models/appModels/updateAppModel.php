@@ -1,29 +1,33 @@
 <?php
 
-    class NewAppModel {
+    class UpdateAppModel {
+        private $appId;
         private $appName;
-        private $appLink;
+        private $appDescription;
+        private $appURL;
         private $appLogo;
         private $pdo;
 
-        public function __construct($appName, $appLink, $appLogo, $appCreation, $userId, $pdo) {
+        public function __construct($appId, $appName, $appDescription, $appURL, $appLogo, $pdo) {
+            $this->appId = $appId;
             $this->appName = $appName;
-            $this->appLink = $appLink;
+            $this->appDescription = $appDescription;
+            $this->appURL = $appURL;
             $this->appLogo = $appLogo;
-            $this->appCreation = $appCreation;
-            $this->userId = $userId;
             $this->pdo = $pdo;
         }
 
-        public function setApp() {
-            $sql = 'INSERT INTO App (app_name, app_link, app_logo, app_creation, user_id) VALUES (:app_name, :app_link, :app_logo, :app_creation, :user_id)';
+        public function setUpdateApp() {
+            $sql = 'UPDATE App
+                    SET app_name = :app_name, app_description = :app_description, app_url = :app_url, app_logo = :app_logo
+                    WHERE app_id = :app_id';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
+                ':app_id' => $this->appId,
                 ':app_name' => $this->appName,
-                ':app_link' => $this->appLink,
+                ':app_description' => $this->appDescription,
+                ':app_url' => $this->appURL,
                 ':app_logo' => $this->appLogo,
-                ':app_creation' => $this->appCreation,
-                ':user_id' => $this->userId,
             ]);
         }
     }

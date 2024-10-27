@@ -154,15 +154,29 @@
     width: 90%;
     height: 4em;
     border-radius: 5px;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 25px;
+    padding: 10px;
     border: var(--Main-test-4) 2px solid;
 }
 
 #myFavoriteApp {
-    background: #F5F5F5;
     height: 3em;
     width: 3em;
     border-radius: 5px;
+}
+
+.myFavoriteAppBtn {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#myFavoriteAppBtnImage {
+    width: 100%;
+    height: 100%;
 }
 
 #myFeatureLogo {

@@ -1,3 +1,5 @@
+import { seeProfileDisplay } from "../seeProfileDisplay.js";
+
 export function friends() {
     console.log('friends');
     const userId = localStorage.getItem('user_id');
@@ -36,7 +38,7 @@ export function friends() {
                             </div>
                         </div>
                         <div id="myFriendOnlineBtnDiv" class="flex">
-                                    <button id="myFriendOnlineBtn"><h3 id="myFriendOnlineBtnH3">See Profile</h3></button>
+                                <button class="myFriendOnlineBtn" data-user-id=${friend.user_id}><h3 id="myFriendOnlineBtnH3">See Profile</h3></button>
                         </div>
                     `;
 
@@ -59,13 +61,37 @@ export function friends() {
                             </div>
                         </div>
                         <div id="myFriendOfflineBtnDiv" class="flex">
-                                <button id="myFriendOfflineBtn"><h3 id="myFriendOfflineBtnH3">See Profile</h3></button>
+                                <button class="myFriendOfflineBtn" data-user-id=${friend.user_id}><h3 id="myFriendOfflineBtnH3">See Profile</h3></button>
                         </div>
                     `;
 
                     myFriendsOfflineResult.appendChild(myFriendOffline);
                 }
            })
+
+
+           const myProfileAddSectionBtnDiv = document.querySelector('.myProfileAddSectionBtnDiv');
+           const myProfileRemoveSectionBtnDiv = document.querySelector('.myProfileRemoveSectionBtnDiv');
+           const myFriendOnlineBtn = document.querySelectorAll('.myFriendOnlineBtn');
+           const myFriendOfflineBtn = document.querySelectorAll('.myFriendOfflineBtn');
+           const mySeeProfileNameBtnDiv = document.getElementById('mySeeProfileNameBtnDiv');
+
+           function btnsdisplay (btns)  {
+                btns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        myProfileAddSectionBtnDiv.classList.add('remove');
+                        myProfileRemoveSectionBtnDiv.classList.add('display');
+                        mySeeProfileNameBtnDiv.classList.add('display');
+                    })
+                })
+           }
+
+           btnsdisplay(myFriendOnlineBtn);
+           btnsdisplay(myFriendOfflineBtn);
+
+           seeProfileDisplay(myFriendOnlineBtn);
+           seeProfileDisplay(myFriendOfflineBtn);
 
         } else {
             console.log('error');
@@ -74,3 +100,4 @@ export function friends() {
     .catch(error => console.log('Error', error));
 }
 
+friends();

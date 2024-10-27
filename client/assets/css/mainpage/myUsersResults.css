@@ -32,6 +32,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
 }
 
 .myUsersResults.display {
@@ -153,7 +154,7 @@
     justify-content: center;
 }
 
-#mySelfBtn {
+#mySelfBtn, .mySelfStarBtn, .mySelfMedalBtn {
     background: var(--white-color);
     border: none;
     box-shadow: 2px 2px var(--Main-color);
@@ -294,7 +295,9 @@
     font-size: 0.7em;
 }
 
-#mySeeProfileBtnDiv {
+.mySeeProfileBtnDiv {
+    display: flex;
+    align-items: center;
     justify-content: center;
     width: 40%;
     height: 100%;

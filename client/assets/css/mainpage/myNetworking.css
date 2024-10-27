@@ -317,10 +317,16 @@
     gap: 10px;
 }
 
+#myMedalHeroPositionDiv, #myStarHeroPositionDiv, #myStarAppPositionDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .myHeroPosition {
     font-family: 'Cabin', sans-serif;
     font-size: 1em;
-    width: .7em;
 }
 
 #myMedalHeroImage {
@@ -338,7 +344,7 @@
     text-overflow: ellipsis;
 }
 
-#mySeeProfileBtn {
+.mySeeProfileBtn, .myMedalUserHeroBtn {
     background: var(--white-color);
     border: none;
     box-shadow: 2px 2px var(--Main-test-4);

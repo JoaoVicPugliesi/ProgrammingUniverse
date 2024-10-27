@@ -26,6 +26,13 @@
 
             if($request) {
 
+                $status = 'checked';
+
+                if($request['request_status'] == $status) {
+                    $_SESSION['error'] = 'You guys are already friends';
+                    return false;
+                }
+
                 $status = 'accepted';
 
                 if($request['request_status'] == $status) {

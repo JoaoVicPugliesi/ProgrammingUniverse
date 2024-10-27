@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../client/assets/css/mainpage/friendRequests/friendRequest.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/friendRequests/myNotifications.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/myTinyFeatures.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/seeProfile.css">
     <title>Programming Universe</title>
 </head>
 <body id="myBody" class="myBody">
@@ -64,6 +65,89 @@
         <button id="myFriendRequestFeedbackBtn"><h3 id="myFriendRequestFeedbackBtnH3">Ok</h3></button>
         </div>
     </div>
+    <div id="mySeeProfile" class="mySeeProfile">
+        <div id="myProfileIconNameScores">
+            <div id="myProfileIconDiv">
+                <img id="myProfileIcon" src="/client/assets/images/icon_images/missionImpossible.png" alt="">
+            </div>
+
+            <div id="myProfileNameScoresDiv">
+                <div id="mySeeProfileNameDiv">
+                <h3 id="mySeeProfileName">Johnpugliesi10</h3>
+                <div id="mySeeProfileNameBtnDiv" class="mySeeProfileNameBtnDiv">
+                    <button id="mySeeProfileSendMessageBtn"><img id="mySeeProfileSendMessageBtnImage" src="/client/assets/images/icons/chat.png" alt=""></button>
+                    <h3>send a message</h3>
+                </div>
+                </div>
+                <div id="mySeeProfileScores">
+                    <div id="mySeeProfileMedalScores" class="flex">
+                        <img id="mySeeProfileMedalScoresImage" src="/client/assets/images/icons/medal.png" alt="">
+                        <h3 id="mySeeProfileMedalScoresNumber">0</h3>
+                    </div>
+                    <div id="mySeeProfileStarScores" class="flex">
+                        <img id="mySeeProfileStarScoresImage" src="/client/assets/images/icons/star.png" alt="">
+                        <h3 id="mySeeProfileStarScoresNumber">0</h3>
+                    </div>
+                    <div id="mySeeProfileTimeScores" class="flex">
+                        <img id="mySeeProfileTimeScoresImage" src="/client/assets/images/icons/time.png" alt="">
+                        <h3 id="mySeeProfileTimeScoresNumber">0</h3>
+                    </div>
+                </div>
+            </div>
+            <div id="myProfileCloseBtnDiv">
+                <button id="myProfileCloseBtn"><img id="myProfileCloseBtnImage" src="/client/assets/images/icons/close.png" alt=""></button>
+            </div>
+        </div>
+        <div id="myProfileSectionsBtns">
+            <div id="myProfileDescriptionSectionBtnDiv">
+                <button id="myProfileDescriptionSectionBtn">
+                    <img id="myProfileDescriptionSectionBtnImage" src="/client/assets/images/description.png" alt="">
+                    <h3 id="myProfileDescriptionSectionH3">Description</h3>
+                </button>
+            </div>
+            <div id="myProfileAppsSectionBtnDiv">
+                <button id="myProfileAppsSectionBtn">
+                    <img id="myProfileAppsSectionBtnImage" src="/client/assets/images/application.png" alt="">
+                    <h3 id="myProfileAppsSectionH3">Apps</h3>
+                </button>
+            </div>
+            <div class="myProfileAddSectionBtnDiv">
+                <input type="hidden" id="myProfileAddSectionSenderId" name="sender_id">
+                <input type="hidden" id="myProfileAddSectionReceiverId" name="receiver_id">
+                <button class="myProfileAddSectionBtn">
+                    <div id="myProfileAddSectionBtnImageDiv">
+                    <h3>+</h3>
+                    <img id="myProfileAddSectionBtnImage" src="/client/assets/images/request.png" alt="">
+                    </div>
+                    <h3 id="myProfileAddSectionH3">New Friend</h3>
+                </button>
+            </div>
+            <div class="myProfileRemoveSectionBtnDiv">
+                <input type="hidden" id="myProfileRemoveSectionSenderId" name="sender_id">
+                <input type="hidden" id="myProfileRemoveSectionReceiverId" name="receiver_id">
+                <button class="myProfileRemoveSectionBtn">
+                    <div id="myProfileRemoveSectionBtnImageDiv">
+                    <h3>-</h3>
+                    <img id="myProfileRemoveSectionBtnImage" src="/client/assets/images/request.png" alt="">
+                    </div>
+                    <h3 id="myProfileRemoveSectionH3">Remove Friend</h3>
+                </button>
+            </div>
+        </div>
+        <div id="myProfileDescriptionOrApps" class="flex">
+            <div id="myProfileDescriptionDiv" class="myProfileDescriptionDiv display">  
+                <p id="myProfileDescription">Hi, my name is John and i like the beauty of imagination. That is why i created this website based on the idea of uniting people. Also as you guys can see i love web. PHP specially. i mean the server side. </p>
+            </div>
+            <div id="mySeeProfileApps" class="mySeeProfileApps">
+                <div class="mySeeProfileAppsPublic">
+
+                </div>
+                <div class="mySeeProfileAppsPrivate">
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="myNotifications" class="myNotifications">
         <div id="myNotificationsClose" class="flex">
             <button id="myNotificationsCloseBtn" class="flex"><img id="myNotificationsCloseBtnImage" src="/client/assets/images/icons/close.png" alt=""></button>
@@ -81,6 +165,9 @@
            </div>
            <div id="myDeclineRequestsSpace">
                 
+           </div>
+           <div id="myStarsRequestsSpace">
+        
            </div>
            <div id="myMessageRequestsSpace">
                 
@@ -118,20 +205,102 @@
         </div>
         </div>
     </div>
-    <div id="myAppContainerOverlay" class="myAppContainerOverlay"></div>
     <div id="myAppContainerOpen" class="myAppContainerOpen">
         <div id="myAppContainerOpenIcons" class="flex">
             <input type="hidden" id="myOpenAppId" name="appId">
             <button id="myAppContainerMinimizeBtn" class="flex"><img id="myAppContainerMinimizeImageBtn" src="/client/assets/images/icons/minus.png" alt=""></button>
-            <button id="myAppContainerDimensionBtn" class="flex"><img id="myAppContainerDimensionImageBtn" src="/client/assets/images/icons/maximize.png" alt=""></button>
-            <button id="myAppContainerDimensionBtn2" class="flex"><img id="myAppContainerDimensionImageBtn2" src="/client/assets/images/icons/maximizeWhite.png" alt=""></button>
             <button id="myAppContainerCloseBtn" class="flex"><img id="myAppContainerCloseImageBtn" src="/client/assets/images/icons/close.png" alt=""></button>
         </div>
-        <div id="myAppContainerInfo" class="flex">
-            <div id="myAppContainerInfoBanner">
-                <div id="">
-
+        <form id="myAppContainerInfoForm" class="flex">
+            <input type="hidden" id="myAppContainerInfoFormId" name="app_id">
+            <div id="myAppContainerInfoBanner" class="flex">
+                <div id="myAppContainerInfoBannerImgName" class="flex">
+                    <input type="file" name="app_logo" id="myAppContainerInfoBannerAppLogo" hidden>
+                    <label id="myAppContainerInfoBannerImgLabel" for="myAppContainerInfoBannerAppLogo">
+                    <img id="myAppContainerInfoBannerImg" src="" alt="">
+                    </label>
+                    <div id="myAppContainerInfoBannerNameDiv">
+                    <input type="text" name="app_name" id="myAppContainerInfoBannerName">
+                    <div id="myAppContainerInfoBannerAuthorStars" class="flex">
+                    
+                        <div id="myAppContainerInfoBannerStarsDiv" class="flex">
+                            <img id="myAppContainerInfoBannerStarsImage" src="/client/assets/images/icons/star.png" alt="">
+                            <h3 id="myAppContainerInfoBannerStarsNumber">0</h3>
+                        </div>
+                        <div id="myAppContainerInfoBannerAuthorDiv" class="flex">
+                            <img id="myAppContainerInfoBannerAuthorImage" src="/client/assets/images/icons/authorBlue.png" alt="">
+                            <h3 id="myAppContainerInfoBannerAuthorName">Johnpugliesi10</h3>
+                        </div>
+                        <div id="myAppContainerInfoBannerVisibilityDiv" class="flex">
+                            <img id="myAppContainerInfoBannerVisibilityImage" src="/client/assets/images/icons/visibility.png" alt="">
+                            <h3 id="myAppContainerInfoBannerVisibility">N/A</h3>
+                        </div>
+                    </div>
+                    </div>
                 </div>
+                <div id="myAppContainerInfoBannerDescriptionDiv">
+                    <textarea name="AppDescription" name="app_description" id="myAppContainerInfoBannerDescription" autocomplete="off" maxlength="255" spellcheck="false">Google is cool</textarea>
+                </div>
+                <div id="myAppContainerInfoBannerLinkSave" class="flex">
+                <div id="myAppContainerInfoBannerLinkDiv" class="flex">
+                    <img id="myAppContainerInfoBannerLinkImage" src="/client/assets/images/icons/hyperlink.png" alt="">
+                    <input id="myAppContainerInfoBannerLink" name="app_url" type="text" value="https://www.google.com/">
+                </div>
+                <div id="myAppContainerInfoBannerSaveDiv">
+                    <button type="submit" id="myAppContainerInfoBannerSaveBtn"><h3 id="myAppContainerInfoBannerSaveH3">Save</h3></button>
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="myForeignAppContainerOpen" class="myForeignAppContainerOpen">
+        <div id="myForeignAppContainerOpenIcons" class="flex">
+            <input type="hidden" id="myOpenForeignAppId" name="appId">
+            <button id="myForeignAppContainerMinimizeBtn" class="flex"><img id="myForeignAppContainerMinimizeImageBtn" src="/client/assets/images/icons/minus.png" alt=""></button>
+            <button id="myForeignAppContainerCloseBtn" class="flex"><img id="myForeignAppContainerCloseImageBtn" src="/client/assets/images/icons/close.png" alt=""></button>
+        </div>
+        <div id="myForeignAppContainerInfo" class="flex">
+            <div id="myForeignAppContainerInfoBanner">
+                
+
+                <div id="myForeignAppContainerInfoBannerImgName" class="flex">
+                    <input type="file" id="myForeignAppContainerInfoBannerAppLogo" hidden>
+                    <label id="myForeignAppContainerInfoBannerImgLabel" for="myAppContainerInfoBannerAppLogo">
+                    <img id="myForeignAppContainerInfoBannerImg" src="" alt="">
+                    </label>
+                    <div id="myForeignAppContainerInfoBannerNameDiv">
+                    <input type="text" id="myForeignAppContainerInfoBannerName" value="Chrome">
+                    <div id="myForeignAppContainerInfoBannerAuthorStars" class="flex">
+                    
+                        <div id="myForeignAppContainerInfoBannerStarsDiv" class="flex">
+                            <button class="myForeignAppContainerInfoBannerStarsBtn"><img id="myForeignAppContainerInfoBannerStarsImage" src="/client/assets/images/icons/star.png" alt=""></button>
+                            <button class="myForeignAppContainerInfoBannerEmptyStarsBtn"><img id="myForeignAppContainerInfoBannerEmptyStarsImage" src="/client/assets/images/icons/emptyStar.png" alt=""></button>
+                            <h3 id="myForeignAppContainerInfoBannerStarsNumber">0</h3>
+                        </div>
+                        <div id="myForeignAppContainerInfoBannerAuthorDiv" class="flex">
+                            <img id="myForeignAppContainerInfoBannerAuthorImage" src="/client/assets/images/icons/authorBlue.png" alt="">
+                            <h3 id="myForeignAppContainerInfoBannerAuthorName">Johnpugliesi10</h3>
+                        </div>
+                        <div id="myForeignAppContainerInfoBannerVisibilityDiv" class="flex">
+                            <img id="myForeignAppContainerInfoBannerVisibilityImage" src="/client/assets/images/icons/visibility.png" alt="">
+                            <h3 id="myForeignAppContainerInfoBannerVisibility">N/A</h3>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div id="myAppContainerInfoBannerDescriptionDiv">
+                    <p id="myForeignAppContainerInfoBannerDescription" autocomplete="off" maxlength="255" spellcheck="false">Google is cool</p>
+                </div>
+                <div id="myForeignAppContainerInfoBannerLinkSave" class="flex">
+                <div id="myForeignAppContainerInfoBannerLinkDiv" class="flex">
+                    <img id="myForeignAppContainerInfoBannerLinkImage" src="/client/assets/images/icons/hyperlink.png" alt="">
+                    <h3 id="myForeignAppContainerInfoBannerLink">N/A</h3>
+                </div>
+                <div id="myForeignAppContainerInfoBannerSearchDiv" class="flex">
+                    <a id="myForeignAppContainerInfoBannerSearchLink" href=""><h3 id="myForeignAppContainerInfoBannerSearchH3">Search</h3></a>
+                </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -459,7 +628,7 @@
                                                     </div>
                                                     </div>
                                                 <div id="mySelfBtnDiv" class="flex">
-                                                    <button id="mySelfBtn"><h3 id="mySelfBtnH3">See Profile</h3></button>
+                                                    <button id="mySelfBtn"><h3 id="mySelfBtnH3">Edit Profile</h3></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -513,25 +682,11 @@
                         <div id="myConfigOverlay"></div>
                     </div>
                     <div id="myMenuSearchBar">
-                        <input id="myMenuSearchBarInput" placeholder="Search Apps" maxlength="50" autocomplete="off" type="text">
+                        <input id="myMenuSearchBarInput" placeholder="Search Apps" maxlength="50" autocomplete="off" type="text" spellcheck="false">
                     </div>
-                    <h3 id="myMenuTopicFavoriteApps">Favorite Apps</h3>
+                    <h3 id="myMenuTopicFavoriteApps">Your Favorite Apps</h3>
                     <div id="myMenuFavoriteApps" class="flex">
-                        <div id="myFavoriteApp">
-
-                        </div>
-                        <div id="myFavoriteApp">
-                            
-                        </div>
-                        <div id="myFavoriteApp">
-                            
-                        </div>
-                        <div id="myFavoriteApp">
-                            
-                        </div>
-                        <div id="myFavoriteApp">
-                            
-                        </div>
+                        
                     </div>
                     <h3 id="myMenuMessagesTopic">User's Messages</h3>
                     <div id="myMenuMessagesDiv" class="flex">
@@ -605,8 +760,8 @@
                 <div id="myWeather" class="flex">
                 <img id="myWeatherIllustration" src="" alt="">
                 <div id="myDayOfWeekAndTemperature" class="flex">
-                <h3 id="myDayOfWeek"></h3>
-                <h3 id="myHowMuchWeather"></h3>
+                <h3 id="myDayOfWeek">N/A</h3>
+                <h3 id="myHowMuchWeather">N/A</h3>
                 </div>
                 </div>
                 <div id="myPlaceNameDiv" class="flex">
@@ -614,8 +769,8 @@
                 <button id="myChangePlaceBtn" class="flex"><img id="myChangePlaceBtnImage" src="/client/assets/images/icons/change.png" alt=""></button>
                 </div>
                 <div id="myDayAndHourDiv" class="flex">
-                    <h3 id="myHour">17:46</h3>
-                    <h3 id="myDay">21/10/2024</h3>
+                    <h3 id="myHour">N/A</h3>
+                    <h3 id="myDay">N/A</h3>
                 </div>
                 <div id="myWorldPlaces" class="myWorldPlaces display">
                     <button id="myWorldPlaceCloseBtn" class="flex"><img id="myWorldPlaceCloseBtnImage" src="/client/assets/images/icons/close.png" alt=""></button>

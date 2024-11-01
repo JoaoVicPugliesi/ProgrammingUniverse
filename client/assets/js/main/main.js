@@ -24,6 +24,7 @@ import { removeFriend } from "./friendRequests/removeFriend.js";
 import { shortcuts } from "./shortcuts.js";
 import { updateStar } from "./appsJs/updateStar.js";
 import { searchApps } from "./appsJs/searchApps.js";
+import { chat } from "./messages/chat.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     onload();
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     shortcuts();
     updateStar();
     searchApps();
+    chat();
 })
 
 

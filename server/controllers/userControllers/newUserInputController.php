@@ -69,6 +69,7 @@
                 $this->setError("Description cannot contain special characters.");
                 return false;
             }
+            
         
             if (stripos($description, '<script>') !== false) {
                 $this->setError("Description contains invalid content.");

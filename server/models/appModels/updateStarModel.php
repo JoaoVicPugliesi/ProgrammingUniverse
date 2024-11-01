@@ -24,7 +24,5 @@
                 ':app_id' => $this->appId,
                 ':user_id' => $this->userId
             ]);
-
-            
         }
     }

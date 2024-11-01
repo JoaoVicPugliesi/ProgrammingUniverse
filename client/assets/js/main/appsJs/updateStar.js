@@ -9,15 +9,13 @@ export function updateStar() {
         if(e.target.matches('.myStarReceiverResponseForm')) {
 
             e.preventDefault();
-            console.log("App ID:", e.target.querySelector('input[name="app_id"]').value);
-            console.log("User ID:", e.target.querySelector('input[name="user_id"]').value);
             const prePayLoad = new FormData(e.target);
             const payLoad = new URLSearchParams(prePayLoad);
 
             fetch('http://localhost/WindowsUniverse/server/controllers/appControllers/updateStarController.php', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-url-encoded',
+                    'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: payLoad,
             })

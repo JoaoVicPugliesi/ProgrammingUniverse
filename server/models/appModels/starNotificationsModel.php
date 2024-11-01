@@ -11,7 +11,7 @@
 
         public function setStarNotifications() {
             $sql = 'SELECT r.app_id,
-                           r.user_id AS rater_user_id,
+                           r.user_id,
                            p.app_id,
                            p.app_logo,
                            p.app_name,

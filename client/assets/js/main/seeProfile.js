@@ -1,4 +1,5 @@
 import { favoriteApps } from "./appsJs/favoriteApps.js";
+import { fetchAppContainer } from "./appsJs/fetchAppsContainer.js";
 import { openAppContainer } from "./appsJs/openAppContainer.js";
 
 export function seeProfile() {
@@ -166,45 +167,16 @@ export function seeProfile() {
 
                 const mySeeProfileAppBtn = document.querySelectorAll('.mySeeProfileAppBtn');
 
-                mySeeProfileAppBtn.forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const appId = btn.getAttribute('data-app-id');
-                        
-                        const payLoad = new URLSearchParams({app_id: appId});
+                const myForeignAppContainerInfoBannerImg = document.getElementById('myForeignAppContainerInfoBannerImg');
+                const myForeignAppContainerInfoBannerName = document.getElementById('myForeignAppContainerInfoBannerName');
+                const myForeignAppContainerInfoBannerStarsNumber = document.getElementById('myForeignAppContainerInfoBannerStarsNumber');
+                const myForeignAppContainerInfoBannerAuthorName = document.getElementById('myForeignAppContainerInfoBannerAuthorName');
+                const myForeignAppContainerInfoBannerDescription = document.getElementById('myForeignAppContainerInfoBannerDescription');
+                const myForeignAppContainerInfoBannerLink = document.getElementById('myForeignAppContainerInfoBannerLink');
+                const myForeignAppContainerInfoBannerVisibility = document.getElementById('myForeignAppContainerInfoBannerVisibility');
+                const myForeignAppContainerInfoBannerSearchLink = document.getElementById('myForeignAppContainerInfoBannerSearchLink');
 
-                        fetch('http://localhost/WindowsUniverse/server/controllers/appControllers/openAppController.php', {
-                            method: 'POST',
-                            body: payLoad,
-                        })
-                        .then(res => res.json())
-                        .then(data => {
-
-                            const myForeignAppContainerInfoBannerImg = document.getElementById('myForeignAppContainerInfoBannerImg');
-                            const myForeignAppContainerInfoBannerName = document.getElementById('myForeignAppContainerInfoBannerName');
-                            const myForeignAppContainerInfoBannerStarsNumber = document.getElementById('myForeignAppContainerInfoBannerStarsNumber');
-                            const myForeignAppContainerInfoBannerAuthorName = document.getElementById('myForeignAppContainerInfoBannerAuthorName');
-                            const myForeignAppContainerInfoBannerDescription = document.getElementById('myForeignAppContainerInfoBannerDescription');
-                            const myForeignAppContainerInfoBannerLink = document.getElementById('myForeignAppContainerInfoBannerLink');
-                            const myForeignAppContainerInfoBannerVisibility = document.getElementById('myForeignAppContainerInfoBannerVisibility');
-                            const myForeignAppContainerInfoBannerSearchLink = document.getElementById('myForeignAppContainerInfoBannerSearchLink');
-
-                            if(data.success) {
-                                myForeignAppContainerInfoBannerImg.src = `/server/controllers/appControllers/uploads/${data.app.app_logo}`;
-                                myForeignAppContainerInfoBannerName.value = data.app.app_name;
-                                myForeignAppContainerInfoBannerStarsNumber.innerHTML = data.app.stars_count;
-                                myForeignAppContainerInfoBannerAuthorName.innerHTML = data.app.app_author;
-                                myForeignAppContainerInfoBannerDescription.innerHTML = data.app.app_description;
-                                myForeignAppContainerInfoBannerLink.innerHTML = data.app.app_url;
-                                myForeignAppContainerInfoBannerVisibility.innerHTML = data.app.app_visibility;
-                                myForeignAppContainerInfoBannerSearchLink.href = data.app.app_url;
-                            } else {
-                                console.log('error');
-                            }
-                        })
-                        .catch(error => console.log('error', error));
-                    })
-                })
+                fetchAppContainer(mySeeProfileAppBtn, myForeignAppContainerInfoBannerImg, myForeignAppContainerInfoBannerName, myForeignAppContainerInfoBannerStarsNumber, myForeignAppContainerInfoBannerAuthorName, myForeignAppContainerInfoBannerDescription, myForeignAppContainerInfoBannerLink, myForeignAppContainerInfoBannerVisibility, myForeignAppContainerInfoBannerSearchLink);
                 
             } else {
                 console.log('error');

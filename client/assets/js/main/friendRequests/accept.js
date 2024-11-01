@@ -22,7 +22,7 @@ export function accept() {
             .then(data => {
                 if (data.success) {
                     const senderId = prePayLoad.get('sender_id'); 
-                    const requestElement = document.querySelector(`[data-sender-id="${senderId}"]`).closest('#myFriendRequestNotification');
+                    const requestElement = document.querySelector(`[data-sender-id="${senderId}"]`).closest('.myFriendRequestNotification');
                     
                     if (requestElement) {
                         requestElement.remove(); 

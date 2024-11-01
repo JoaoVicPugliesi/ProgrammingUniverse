@@ -1,4 +1,7 @@
 import { favoriteApps } from "./favoriteApps.js";
+import { fetchAppContainer } from "./fetchAppsContainer.js";
+import { openAppContainer } from "./openAppContainer.js";
+
 
 export function searchApps() {
     const myMenuSearchBarInput = document.getElementById('myMenuSearchBarInput');
@@ -50,6 +53,26 @@ export function searchApps() {
                     `;
                     myMenuFavoriteApps.appendChild(myFavoriteApp);
                 })
+
+
+                const myFavoriteAppBtn = document.querySelectorAll('.myFavoriteAppBtn');
+                const myForeignAppContainerOpen = document.getElementById('myForeignAppContainerOpen');
+                const myForeignAppContainerMinimizeBtn = document.getElementById('myForeignAppContainerMinimizeBtn');
+                const myForeignAppContainerCloseBtn = document.getElementById('myForeignAppContainerCloseBtn');
+    
+                openAppContainer(myFavoriteAppBtn, myForeignAppContainerOpen, myForeignAppContainerMinimizeBtn, myForeignAppContainerCloseBtn);
+    
+                const myForeignAppContainerInfoBannerImg = document.getElementById('myForeignAppContainerInfoBannerImg');
+                const myForeignAppContainerInfoBannerName = document.getElementById('myForeignAppContainerInfoBannerName');
+                const myForeignAppContainerInfoBannerStarsNumber = document.getElementById('myForeignAppContainerInfoBannerStarsNumber');
+                const myForeignAppContainerInfoBannerAuthorName = document.getElementById('myForeignAppContainerInfoBannerAuthorName');
+                const myForeignAppContainerInfoBannerDescription = document.getElementById('myForeignAppContainerInfoBannerDescription');
+                const myForeignAppContainerInfoBannerLink = document.getElementById('myForeignAppContainerInfoBannerLink');
+                const myForeignAppContainerInfoBannerVisibility = document.getElementById('myForeignAppContainerInfoBannerVisibility');
+                const myForeignAppContainerInfoBannerSearchLink = document.getElementById('myForeignAppContainerInfoBannerSearchLink');
+
+                fetchAppContainer(myFavoriteAppBtn, myForeignAppContainerInfoBannerImg, myForeignAppContainerInfoBannerName, myForeignAppContainerInfoBannerStarsNumber, myForeignAppContainerInfoBannerAuthorName, myForeignAppContainerInfoBannerDescription, myForeignAppContainerInfoBannerLink, myForeignAppContainerInfoBannerVisibility, myForeignAppContainerInfoBannerSearchLink);
+                   
                 
             } else {
                 console.log('Error');

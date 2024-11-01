@@ -22,7 +22,9 @@ export function fetchUser() {
     const mySelfNotificationH3 = document.getElementById('mySelfNotificationH3');
     const myEditStarDivNumbers = document.getElementById('myEditStarDivNumbers');
     const myWorldPlaces = document.getElementById('myWorldPlaces');
-
+    const myChatProfileImage = document.getElementById('myChatProfileImage');
+    const myChatProfileUsername = document.getElementById('myChatProfileUsername');
+    const myGroupChatConversationUserid = document.getElementById('myGroupChatConversationUserid');
 
     const payLoad = new URLSearchParams({userId : userIdMain.value});
 
@@ -47,13 +49,16 @@ export function fetchUser() {
             localStorage.setItem('place', data.user.user_place)
             myProfileName.textContent = localStorage.getItem('username');
             mySelfH3.textContent = localStorage.getItem('username');
+            myChatProfileUsername.textContent = localStorage.getItem('username');
             myUsername.value = localStorage.getItem('username');
             appAuthor.value = localStorage.getItem('username');
             myEmail.value = localStorage.getItem('email');
             myDescription.value = localStorage.getItem('description');
             userIdUpdate.value = localStorage.getItem('user_id');
+            myGroupChatConversationUserid.value = localStorage.getItem('user_id');
             userIdApp.value = localStorage.getItem('user_id');
             myProfileImage.src = localStorage.getItem('user_icon');
+            myChatProfileImage.src = localStorage.getItem('user_icon');
             mySelfImage.src = localStorage.getItem('user_icon');
             myProfileBackgroundImage.src = localStorage.getItem('user_icon');
             myIcon.value = localStorage.getItem('user_icon');

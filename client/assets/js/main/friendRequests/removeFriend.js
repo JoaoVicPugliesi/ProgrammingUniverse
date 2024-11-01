@@ -9,7 +9,14 @@ export function removeFriend() {
     myProfileRemoveSectionBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const payLoad = new URLSearchParams({ sender_id: senderId.value, receiver_id: receiverId.value});
+        const senderIdValue = senderId.value;
+        const receiverIdValue = receiverId.value;
+    
+        console.log('Sender ID:', senderIdValue);
+        console.log('Receiver ID:', receiverIdValue);
+    
+        const payLoad = new URLSearchParams({ sender_id: senderIdValue, receiver_id: receiverIdValue });
+    
 
         fetch('http://localhost/WindowsUniverse/server/controllers/friendshipControllers/removeFriendController.php', {
             method: 'POST',

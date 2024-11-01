@@ -38,7 +38,11 @@ export function starNotifications() {
                             </div>
                         </div>
                         <div id="myStarReceiverResponse">
-                            
+                            <form class="myStarReceiverResponseForm">
+                            <input type="hidden" name="app_id" value="${star.app_id}">
+                            <input type="hidden" name="user_id" value="${star.user_id}">
+                            <button type="submit" class="myStarReceiverResponseBtn"><h3 id="myStarReceiverResponseH3">Cool!</h3></button>
+                            </form>
                         </div>
 
                 `;

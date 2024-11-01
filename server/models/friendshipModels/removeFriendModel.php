@@ -13,10 +13,9 @@
 
         public function setRemoveFriend() {
             $sql = 'DELETE FROM Friendships
-                    WHERE (sender_id = :sender_id AND receiver_id = :receiver_id)
-                    OR (sender_id = :receiver_id AND receiver_id = :sender_id)
-                    AND request_status = :accepted
-                    OR request_status = :checked;';
+                    WHERE ((sender_id = :sender_id AND receiver_id = :receiver_id)
+                    OR (sender_id = :receiver_id AND receiver_id = :sender_id))
+                    AND request_status IN (:accepted, :checked)';
             $stmt = $this->pdo->prepare($sql);
             $accepted = 'accepted';
             $checked = 'checked';

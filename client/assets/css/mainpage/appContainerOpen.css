@@ -175,6 +175,10 @@
     outline: none;
 }
 
+#myForeignAppContainerInfoBannerName {
+    font-size: 0.8em;
+}
+
 #myAppContainerInfoBannerAuthorStars, #myForeignAppContainerInfoBannerAuthorStars {
     width: 100%;
     height: 20%;

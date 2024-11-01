@@ -15,6 +15,13 @@ export function usersResults() {
         .then(data => {
             if(data.success) {
 
+                const myGroupChatConversationReceiverMembersH3 = document.getElementById('myGroupChatConversationReceiverMembersH3');
+                const myGroupChatConversationReceiverMembersOnlineH3 = document.getElementById('myGroupChatConversationReceiverMembersOnlineH3');
+                const users = data.users;
+                const onlineUsers = users.filter(user => user.is_online === 1);
+                myGroupChatConversationReceiverMembersH3.innerHTML = `${users.length + 1} members ` ;
+                myGroupChatConversationReceiverMembersOnlineH3.innerHTML = `${onlineUsers.length + 1} online`;
+
                 const myUsers = document.getElementById('myUsers');
 
                 myUsers.innerHTML = '';

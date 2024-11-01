@@ -1,3 +1,5 @@
+import { seeProfileDisplay } from "../seeProfileDisplay.js";
+
 export function pendingRequests() {
     const userId = localStorage.getItem('user_id');
 
@@ -19,7 +21,7 @@ export function pendingRequests() {
 
             data.requests.forEach(request => {
                 const myFriendRequestNotification = document.createElement('div');
-                myFriendRequestNotification.id = 'myFriendRequestNotification';
+                myFriendRequestNotification.className = 'myFriendRequestNotification';
                 myFriendRequestNotification.innerHTML = `
 
                         <div id="myFriendRequestNotificationTypeDiv" class="flex">
@@ -33,25 +35,29 @@ export function pendingRequests() {
                             <div id="myFriendRequestSenderNamePBtnDiv" class="flex">
                                 <h3 id="myFriendRequestSenderName">${request.username}</h3>
                                 <p id="myFriendRequestSenderP">Wants to be your friend</p>
-                                <button id="myFriendRequestSenderBtn" data-sender-id="${request.sender_id}"><h3 id="myFriendRequestSenderH3">See Profile</h3></button>
+                                <button class="myFriendRequestSenderBtn" data-user-id="${request.sender_id}"><h3 id="myFriendRequestSenderH3">See Profile</h3></button>
                             </div>
                         </div>
                         <div class="myFriendRequestReceiverResponse">
                             <form class="myFriendRequestReceiverFormAcceptResponse">
                             <input type="hidden" name="receiver_id" value="${userId}">
                             <input type="hidden" name="sender_id" value="${request.sender_id}">
-                            <button type="submit" class="myFriendRequestReceiverAcceptResponseBtn"><img id="myFriendRequestReceiverResponseImage" src="/client/assets/images/icons/check.png" alt=""></button>
+                            <button type="submit" class="myFriendRequestReceiverAcceptResponseBtn" data-sender-id="${request.sender_id}"><img id="myFriendRequestReceiverResponseImage" src="/client/assets/images/icons/check.png" alt=""></button>
                             </form>
                             <form class="myFriendRequestReceiverFormDeclineResponse">
                             <input type="hidden" name="receiver_id" value="${userId}">
                             <input type="hidden" name="sender_id" value="${request.sender_id}">
-                            <button type="submit" class="myFriendRequestReceiverDeclineResponseBtn"><img id="myFriendRequestReceiverResponseImage" src="/client/assets/images/icons/close.png" alt=""></button>
+                            <button type="submit" class="myFriendRequestReceiverDeclineResponseBtn" data-sender-id="${request.sender_id}"><img id="myFriendRequestReceiverResponseImage" src="/client/assets/images/icons/close.png" alt=""></button>
                             </form>
                         </div>
                     
                 `;
                 myFriendRequestsSpace.appendChild(myFriendRequestNotification);
             })
+
+            const myFriendRequestSenderBtn = document.querySelectorAll('.myFriendRequestSenderBtn');
+
+            seeProfileDisplay(myFriendRequestSenderBtn);
         } 
     })
     .catch(error => console.log('Error', error));

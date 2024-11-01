@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="../client/assets/css/mainpage/friendRequests/myNotifications.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/myTinyFeatures.css">
     <link rel="stylesheet" href="../client/assets/css/mainpage/seeProfile.css">
+    <link rel="stylesheet" href="../client/assets/css/mainpage/chat.css">
     <title>Programming Universe</title>
 </head>
 <body id="myBody" class="myBody">
@@ -63,6 +64,161 @@
         </div>
         <div id="myFriendRequestFeedbackBtnDiv">
         <button id="myFriendRequestFeedbackBtn"><h3 id="myFriendRequestFeedbackBtnH3">Ok</h3></button>
+        </div>
+    </div>
+    <div id="myChat" class="myChat">
+        <div id="myChatExit">
+            <div id="myChatProfile">
+                <img id="myChatProfileImage" src="/client/assets/images/icon_images/missionImpossible.png" alt="">
+                <h3 id="myChatProfileUsername">Johnpugliesi10</h3>
+            </div>
+            <div id="myChatButtonsDiv">
+                <button id="myChatRulesBtn">
+                    <img id="myChatRulesBtnImage" src="/client/assets/images/icons/rules.png" alt="">
+                    <h3 id="myChatRulesH3">Chat Rules</h3>
+                </button>
+                <button id="myChatExitButtonBtn"><img id="myChatExitButtonBtnImage" src="/client/assets/images/icons/close.png" alt=""></button>
+            </div>
+        </div>
+        <div id="myChats">
+            <div id="myChatsHeader">
+                <h3 id="myChatsHeaderH3">Chats</h3>
+                <button id="myChatsHeaderBtn"><img id="myChatsHeaderBtnImage" src="/client/assets/images/icons/plus-icon.png" alt=""></button>
+            </div>
+            <div id="myChatsBody">
+                <div id="myChatsBodyGroupMessages">
+                    <h3 id="myChatsBodyGroupMessagesh3">Group</h3>
+                    <div id="myGroupMessages">
+                        
+                    </div>
+                </div>
+                <div id="myChatsBodyIndividualMessages">
+                    <h3 id="myChatsBodyFriendMessagesh3">Friends</h3>
+                    <div id="myFriendMessages">
+                        <button id="myFriendMessagesBtn">
+                            <img id="myFriendMessagesBtnUserImage" src="/client/assets/images/icon_images/boredom.png" alt="">
+                            <div id="myFriendMessagesBtnNameMessage">
+                                <h3 id="myFriendMessagesBtnName">Johnpugliesi10</h3>
+                                <p id="myFriendMessagesBtnMessage">ablablablablablablablablablablablablablablablabla</p>
+                            </div>
+                            <h3 id="myGroupMessagesBtnFormattedTime">17m</h3>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myGroupChatConversationDiv" class="myGroupChatConversationDiv">
+            <div id="myGroupChatConversationReceiver">
+              <h3 id="myGroupChatConversationReceiverName">Group</h3>
+              <div id="myGroupChatConversationReceiverMembersDiv">
+                <h3 id="myGroupChatConversationReceiverMembersH3">20 members</h3>
+                <h3>|</h3>
+                <h3 id="myGroupChatConversationReceiverMembersOnlineH3">5 online</h3>
+              </div>
+            </div>
+            <form id="myGroupChatConversationForm">
+                <div id="myGroupChatConversationContent">  
+                </div>
+                <div id="myGroupChatConversationTextBarDivImageInputs" class="myGroupChatConversationTextBarDivImageInputs">
+                    <div id="myGroupChatConversationTextBarDivImageInputsMemes">
+
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                        <input type="radio" id="meme1" name="meme" value="/client/assets/images/memes/meme1.jpg" hidden>
+                        <label id="meme1" for="meme1">
+                            <img id="meme1image" src="/client/assets/images/memes/meme1.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme2" name="meme" value="/client/assets/images/memes/meme2.jpg" hidden>
+                            <label id="meme2" for="meme2">
+                                <img id="meme2image" src="/client/assets/images/memes/meme2.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme3" name="meme" value="/client/assets/images/memes/meme3.jpg" hidden>
+                            <label id="meme3" for="meme3">
+                                <img id="meme3image" src="/client/assets/images/memes/meme3.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme4" name="meme" value="/client/assets/images/memes/meme4.jpg" hidden>
+                            <label id="meme4" for="meme4">
+                                <img id="meme4image" src="/client/assets/images/memes/meme4.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme5" name="meme" value="/client/assets/images/memes/meme5.jpg" hidden>
+                            <label id="meme5" for="meme5">
+                                <img id="meme5image" src="/client/assets/images/memes/meme5.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme6" name="meme" value="/client/assets/images/memes/meme6.jpg" hidden>
+                            <label id="meme6" for="meme6">
+                                <img id="meme6image" src="/client/assets/images/memes/meme6.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme7" name="meme" value="/client/assets/images/memes/meme7.jpg" hidden>
+                            <label id="meme7" for="meme7">
+                                <img id="meme7image" src="/client/assets/images/memes/meme7.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme8" name="meme" value="/client/assets/images/memes/meme8.jpg" hidden>
+                            <label id="meme8" for="meme8">
+                                <img id="meme8image" src="/client/assets/images/memes/meme8.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme9" name="meme" value="/client/assets/images/memes/meme9.jpg" hidden>
+                            <label id="meme9" for="meme9">
+                                <img id="meme9image" src="/client/assets/images/memes/meme9.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme10" name="meme" value="/client/assets/images/memes/meme10.jpg" hidden>
+                            <label id="meme10" for="meme10">
+                                <img id="meme10image" src="/client/assets/images/memes/meme10.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme11" name="meme" value="/client/assets/images/memes/meme11.jpg" hidden>
+                            <label id="meme11" for="meme11">
+                                <img id="meme11image" src="/client/assets/images/memes/meme11.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myGroupChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="meme12" name="meme" value="/client/assets/images/memes/meme12.jpg" hidden>
+                            <label id="meme12" for="meme12">
+                                <img id="meme12image" src="/client/assets/images/memes/meme12.jpg" alt="">
+                        </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="myGroupChatConversationTextBarDiv">
+                    <input type="hidden" name="user_id" id="myGroupChatConversationUserid">
+                    <input id="myGroupChatConversationTextBarInput" name="message" type="text" placeholder="Send a message" autocomplete="off" spellcheck="false" maxlength="250">
+                    <div id="myGroupChatConversationTextBarBtnsDiv">
+                    <button type="button" id="myGroupChatConversationImageBtn"><img id="myGroupChatConversationImageBtnImg" src="/client/assets/images/image.png" alt=""></button>
+                    <button type="submit" id="myGroupChatConversationSendBtn"><h3 id="myGroupChatConversationImageBtnH3">Send</h3></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="myChatRulesDiv" class="myChatRulesDiv">
+            <p id="myChatRulesP">
+                In the Universe of Code, we weave our ties, <br>
+                Where lines and logic light the skies. <br>
+                The sea of code, vast and bright, <br>
+                Reflects the sun's eternal light. <br>
+
+                So be kind, extend your hand, <br>
+                No coder sails alone through this land. <br>
+                Embrace the journey, share the thrill, <br>
+                Together we climb each daunting hill.
+            </p>
+            <h3 id="myChatRulesAuthor">Made by: JohnPugliesi10</h3>
         </div>
     </div>
     <div id="mySeeProfile" class="mySeeProfile">
@@ -222,7 +378,6 @@
                     <div id="myAppContainerInfoBannerNameDiv">
                     <input type="text" name="app_name" id="myAppContainerInfoBannerName">
                     <div id="myAppContainerInfoBannerAuthorStars" class="flex">
-                    
                         <div id="myAppContainerInfoBannerStarsDiv" class="flex">
                             <img id="myAppContainerInfoBannerStarsImage" src="/client/assets/images/icons/star.png" alt="">
                             <h3 id="myAppContainerInfoBannerStarsNumber">0</h3>
@@ -261,15 +416,10 @@
         </div>
         <div id="myForeignAppContainerInfo" class="flex">
             <div id="myForeignAppContainerInfoBanner">
-                
-
                 <div id="myForeignAppContainerInfoBannerImgName" class="flex">
-                    <input type="file" id="myForeignAppContainerInfoBannerAppLogo" hidden>
-                    <label id="myForeignAppContainerInfoBannerImgLabel" for="myAppContainerInfoBannerAppLogo">
                     <img id="myForeignAppContainerInfoBannerImg" src="" alt="">
-                    </label>
                     <div id="myForeignAppContainerInfoBannerNameDiv">
-                    <input type="text" id="myForeignAppContainerInfoBannerName" value="Chrome">
+                    <h3 id="myForeignAppContainerInfoBannerName">N/A</h3>
                     <div id="myForeignAppContainerInfoBannerAuthorStars" class="flex">
                     
                         <div id="myForeignAppContainerInfoBannerStarsDiv" class="flex">
@@ -688,64 +838,11 @@
                     <div id="myMenuFavoriteApps" class="flex">
                         
                     </div>
-                    <h3 id="myMenuMessagesTopic">User's Messages</h3>
+                    <h3 id="myMenuMessagesTopic">Group Messages</h3>
                     <div id="myMenuMessagesDiv" class="flex">
-                        <img id="myMaximize" src="/client/assets/images/icons/maximizeWhite.png" alt="maximize">
-                        <div id="myMenuMessageDiv" class="flex">
-                            <div id="myMenuMessageUserDiv">
-                                <img id="myMenuMessageUser" src="/client/assets/images/icon_images/missionImpossible.png" alt="myMenuUser">
-                            </div>
-                            <div id="myMenuMessageContent" class="flex">
-                                <div id="myMenuUserDiv" class="flex">
-                                <h3 id="myMenuUser">Johnpugliesi10</h3>
-                                <div id="myStatusMenuAnswer" class="myStatusAnswer"></div>  
-                                </div>
-                                <p id="myMenuMessage">Hello, Guys... How are you doing in this sunny day?</p>
-                            </div>
-                            <div>
-                            </div>
-                        </div>
-                        <div id="myMenuMessageDiv" class="flex">
-                            <div id="myMenuMessageUserDiv">
-                                <img id="myMenuMessageUser" src="/client/assets/images/icon_images/boredom.png" alt="myMenuUser">
-                            </div>
-                            <div id="myMenuMessageContent" class="flex">
-                                <div id="myMenuUserDiv" class="flex">
-                                <h3 id="myMenuUser">Jesse99</h3>
-                                <div id="myStatusMenuAnswer" class="myStatusAnswer"></div>  
-                                </div>
-                                <p id="myMenuMessage">Hi! My name is Jesse, i love C++ and well Guys, i'm working on an incredible Game nowadays. xd.</p>
-                            </div>
-                            <div>
-                            </div>
-                        </div>
-                        <div id="myMenuMessageDiv" class="flex">
-                            <div id="myMenuMessageUserDiv">
-                                <img id="myMenuMessageUser" src="/client/assets/images/icon_images/hardworker.png" alt="myMenuUser">
-                            </div>
-                            <div id="myMenuMessageContent" class="flex">
-                                <div id="myMenuUserDiv" class="flex">
-                                <h3 id="myMenuUser">Edwards10</h3>
-                                <div id="myStatusMenuAnswer" class="myStatusAnswer"></div>  
-                                </div>
-                                <p id="myMenuMessage">I love Java!</p>
-                            </div>
-                            <div>
-                            </div>
-                        </div>
-                         <div id="myMenuMessageDiv" class="flex">
-                            <div id="myMenuMessageUserDiv">
-                                <img id="myMenuMessageUser" src="/client/assets/images/icon_images/decisions.png" alt="myMenuUser">
-                            </div>
-                            <div id="myMenuMessageContent" class="flex">
-                                <div id="myMenuUserDiv" class="flex">
-                                <h3 id="myMenuUser">Lewishaha</h3>
-                                <div id="myStatusMenuAnswer" class="myStatusAnswer"></div>  
-                                </div>
-                                <p id="myMenuMessage">Java sucks Bro!</p>
-                            </div>
-                            <div>
-                            </div>
+                        <button id="myChatMaximizeBtn"><img id="myMaximize" src="/client/assets/images/icons/maximizeWhite.png" alt="maximize"></button>
+                        <div id="myLastMessages" class="flex">
+                            
                         </div>
                     </div>
                 </div>

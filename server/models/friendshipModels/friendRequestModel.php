@@ -22,29 +22,19 @@
                 ':receiver_id' => $this->receiverId,
             ]);
 
-            $request = $stmt->fetch(PDO::FETCH_ASSOC);
+            $requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            if($request) {
-
-                $status = 'checked';
-
-                if($request['request_status'] == $status) {
-                    $_SESSION['error'] = 'You guys are already friends';
-                    return false;
-                }
-
-                $status = 'accepted';
-
-                if($request['request_status'] == $status) {
-                    $_SESSION['error'] = 'You guys are already friends';
-                    return false;
-                }
-
-                $status = 'pending';
-
-                if($request['request_status'] == $status) {
-                    $_SESSION['error'] = 'A friend request is already pending between you two';
-                    return false;
+            foreach ($requests as $request) {
+                if (in_array(trim($request['request_status']), ['checked', 'accepted', 'pending'], true)) {
+                        switch (trim($request['request_status'])) {
+                        case 'checked':
+                        case 'accepted':
+                            $_SESSION['error'] = 'You guys are already friends';
+                            return false;
+                        case 'pending':
+                            $_SESSION['error'] = 'A friend request is already pending between you two';
+                            return false;
+                    }
                 }
             }
 

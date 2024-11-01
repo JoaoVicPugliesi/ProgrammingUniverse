@@ -10,6 +10,8 @@ export function seeProfileDisplay(btns) {
     const mySeeProfileApps = document.getElementById('mySeeProfileApps');
     const myProfileAddSectionSenderId = document.getElementById('myProfileAddSectionSenderId');
     const myProfileAddSectionReceiverId = document.getElementById('myProfileAddSectionReceiverId');
+    const myProfileRemoveSectionSenderId = document.getElementById('myProfileRemoveSectionSenderId');
+    const myProfileRemoveSectionReceiverId = document.getElementById('myProfileRemoveSectionReceiverId');
     
     btns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -48,6 +50,9 @@ export function seeProfileDisplay(btns) {
                     myProfileAppsSectionBtn.setAttribute('data-user-id', data.user.user_id);
                     myProfileAddSectionSenderId.value = localStorage.getItem('user_id');
                     myProfileAddSectionReceiverId.value = data.user.user_id;
+                    myProfileRemoveSectionSenderId.value = localStorage.getItem('user_id');
+                    myProfileRemoveSectionReceiverId.value = data.user.user_id;
+
                 } else {
                     console.log('error');
                 }

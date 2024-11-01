@@ -6,6 +6,9 @@ import { starNotifications } from "./appsJs/starNotification.js";
 import { friends } from "./friendRequests/friends.js";
 import { pendingRequests } from "./friendRequests/pendingRequests.js";
 import { favoriteApps } from "./appsJs/favoriteApps.js";
+import { lastGroupMessages } from "./messages/lastGroupMessages.js";
+import { usersResults } from "./fetchUsersResults.js";
+import { lastMessageTracker } from "./messages/lastMessageTracker.js";
 
 export function onload() {
 
@@ -45,6 +48,11 @@ export function onload() {
         friends();
         starNotifications();
         favoriteApps();
+        lastGroupMessages();
+        setInterval(() => {
+            lastMessageTracker();
+        }, 5000)
+        usersResults();
         if(localStorage.getItem('display')) {
         setTimeout(() => {
         myFlashMessageOverlay.style.display = 'block';

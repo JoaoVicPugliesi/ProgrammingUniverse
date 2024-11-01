@@ -20,6 +20,9 @@
                 $senderId = filter_input(INPUT_POST, 'sender_id', FILTER_SANITIZE_NUMBER_INT);
                 $receiverId = filter_input(INPUT_POST, 'receiver_id', FILTER_SANITIZE_NUMBER_INT);
 
+                error_log("Sender ID: " . $senderId);
+                error_log("Receiver ID: " . $receiverId);
+
                 $newRemoveFriendModel = new RemoveFriendModel($senderId, $receiverId, $this->pdo);
                 $remove = $newRemoveFriendModel->setRemoveFriend();
 
@@ -32,5 +35,9 @@
         }
     }
 
+    try {
     $newRemoveFriendController = new RemoveFriendController($pdo);
     $newRemoveFriendController->getRemoveFriend();
+    } catch(PDOException $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }

@@ -6,8 +6,8 @@
     import { setupDeleteProfile } from './deleteProfile.js';
     import { setupPasswordToggle } from './togglePassword.js';
     import { handleFlashMessage } from './handleFlashMessage.js';
+    import { updatePassword } from './updatePassword.js';
     
-
     document.addEventListener('DOMContentLoaded', function() {
         onload(); // Moved inside DOMContentLoaded
         
@@ -27,6 +27,8 @@
     
         // Toggle password visibility
         setupPasswordToggle();
+
+        updatePassword();
 
         const mySearch = document.querySelector('.mySearch');
 

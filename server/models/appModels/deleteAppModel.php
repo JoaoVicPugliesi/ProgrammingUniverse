@@ -22,7 +22,7 @@
 
             if ($app) {
 
-                if(strtolower($app['app_name']) == strtolower($this->appName)) {
+                if(trim(strtolower($app['app_name'])) == trim(strtolower($this->appName))) {
 
                 $appLogoFile = $app['app_logo'];
         

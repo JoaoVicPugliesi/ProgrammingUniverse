@@ -18,9 +18,7 @@ export function lastGroupMessages() {
 
             data.messages.forEach(message => {
                 let background = message.is_online == 1 ? '#7CDF4E' : '#dd3f31';
-                const formattedTime = formatTimestamp(message.sent_at);
                
-
                 const myMenuMessageDiv = document.createElement('div');
                 myMenuMessageDiv.id = 'myMenuMessageDiv';
                 myMenuMessageDiv.innerHTML = `
@@ -33,12 +31,10 @@ export function lastGroupMessages() {
                             ${message.user_id != localStorage.getItem('user_id') ? `<h3 id="myMenuUser">${message.username}</h3>` : `<h3 id="myMenuUser">You</h3>`}
                         <div id="myStatusMenuAnswer" class="myStatusAnswer" style="background: ${background}"></div>    
                         </div>
-                   
-                    ${message.message_image != null ? ` <img id="myMenuUserDivImage" src="/client/assets/images/icons/galery.png" alt="">` : ''}
                     <p id="myMenuMessage">${message.message}</p>
                    
                     </div>
-                     <h3 id="myFormattedTime">${formattedTime}</h3>
+                     ${message.message_image != null ? ` <img id="myMenuUserDivImage" src="/client/assets/images/icons/galery.png" alt="">` : ''}
                     <div>
                     </div>                               
                 `;
@@ -66,6 +62,18 @@ export function lastGroupMessages() {
 
                     myGroupMessages.appendChild(myGroupMessagesBtn);
                 });
+
+                const myGroupMessagesBtn = document.getElementById('myGroupMessagesBtn');
+                const myGroupChatConversationDiv = document.getElementById('myGroupChatConversationDiv');
+                const myIndividualChatConversationDiv = document.getElementById('myIndividualChatConversationDiv');
+            
+                myGroupMessagesBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+            
+                    myIndividualChatConversationDiv.classList.remove('display');
+                    myGroupChatConversationDiv.classList.remove('none');
+                })
+                
 
                 const myGroupChatConversationContent = document.getElementById('myGroupChatConversationContent');
                 myGroupChatConversationContent.innerHTML = '';
@@ -142,16 +150,11 @@ export function lastGroupMessages() {
 
                 const btns = document.querySelectorAll('.myOwnMessageSenderHourBtn');
 
-                console.log(localStorage.getItem('messageId'));
-
                 deleteMessage(btns);
 
                 scrollToBottom();
 
             })
-            console.log('success');
-        } else {
-            console.log('error');
         }
     })
     .catch(error => console.error('Error', error));

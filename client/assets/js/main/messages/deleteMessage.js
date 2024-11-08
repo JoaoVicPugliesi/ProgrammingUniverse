@@ -1,3 +1,4 @@
+import { lastFriendsMessages } from "./lastFriendMessages.js";
 import { lastGroupMessages } from "./lastGroupMessages.js";
 
 export function deleteMessage(btns) {
@@ -18,6 +19,7 @@ export function deleteMessage(btns) {
             .then(data => {
                 if(data.success) {
                     lastGroupMessages();
+                    lastFriendsMessages();
                 } else {
                     console.log('error');
                 }

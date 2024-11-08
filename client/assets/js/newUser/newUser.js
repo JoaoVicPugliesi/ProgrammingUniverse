@@ -22,6 +22,7 @@ window.onload = function () {
 const myForm = document.getElementById('myForm');
 
 myForm.addEventListener('submit', function(e) {
+    
     e.preventDefault();
 
     const prePayload = new FormData(myForm);

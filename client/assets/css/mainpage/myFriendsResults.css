@@ -194,7 +194,7 @@
     }
 }
 
-#myFriendOnlineChatBtn, #myFriendOfflineChatBtn {
+.myFriendOnlineChatBtn, .myFriendOfflineChatBtn {
     background: none;
     border: none;
     justify-content: center;

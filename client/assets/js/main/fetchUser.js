@@ -12,7 +12,6 @@ export function fetchUser() {
     const myDescription = document.getElementById('myDescription');
     const myIcon = document.getElementById('myIcon');
     const userIdApp = document.getElementById('userIdApp');
-    const appAuthor = document.getElementById('appAuthor');
     const myNumberOfMedals = document.getElementById('myNumberOfMedals');
     const myEditMedalDivNumbers = document.getElementById('myEditMedalDivNumbers');
     const mySelfImage = document.getElementById('mySelfImage');
@@ -25,6 +24,8 @@ export function fetchUser() {
     const myChatProfileImage = document.getElementById('myChatProfileImage');
     const myChatProfileUsername = document.getElementById('myChatProfileUsername');
     const myGroupChatConversationUserid = document.getElementById('myGroupChatConversationUserid');
+    const myIndividualChatConversationUserid = document.getElementById('myIndividualChatConversationUserid');
+    const myIdiomsUserId = document.getElementById('myIdiomsUserId');
 
     const payLoad = new URLSearchParams({userId : userIdMain.value});
 
@@ -51,11 +52,12 @@ export function fetchUser() {
             mySelfH3.textContent = localStorage.getItem('username');
             myChatProfileUsername.textContent = localStorage.getItem('username');
             myUsername.value = localStorage.getItem('username');
-            appAuthor.value = localStorage.getItem('username');
             myEmail.value = localStorage.getItem('email');
             myDescription.value = localStorage.getItem('description');
             userIdUpdate.value = localStorage.getItem('user_id');
             myGroupChatConversationUserid.value = localStorage.getItem('user_id');
+            myIndividualChatConversationUserid.value = localStorage.getItem('user_id');
+            myIdiomsUserId.value = localStorage.getItem('user_id');
             userIdApp.value = localStorage.getItem('user_id');
             myProfileImage.src = localStorage.getItem('user_icon');
             myChatProfileImage.src = localStorage.getItem('user_icon');

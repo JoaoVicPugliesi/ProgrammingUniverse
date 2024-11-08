@@ -1,6 +1,7 @@
 import { lastGroupMessages } from "./lastGroupMessages.js";
 
 export function lastMessageTracker() {
+
     const messageId = localStorage.getItem('messageId');
 
     const payLoad = new URLSearchParams({message_id: messageId});

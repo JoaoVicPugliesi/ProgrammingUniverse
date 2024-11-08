@@ -32,5 +32,9 @@
         }
     }
 
-    $newAcceptController = new AcceptController($pdo);
-    $newAcceptController->getAccept();
+    try {
+        $newAcceptController = new AcceptController($pdo);
+        $newAcceptController->getAccept();
+    } catch(PDOException $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }

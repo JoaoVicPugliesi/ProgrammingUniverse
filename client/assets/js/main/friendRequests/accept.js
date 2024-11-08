@@ -32,7 +32,7 @@ export function accept() {
                     acceptNotifications();
                     friends();
                 } else {
-                    console.log('error');
+                    console.log(data.error);
                 }
             })
             .catch(error => console.log('Error', error));

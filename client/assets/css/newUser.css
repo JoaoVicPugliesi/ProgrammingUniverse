@@ -71,6 +71,72 @@
     flex-direction: column;
 }
 
+#newUserRulesBtn {
+    position: absolute;
+    display: flex;
+    border: none;
+    justify-content: center;
+    top: 0%;
+    left: 0%;
+    cursor: pointer;
+    background: var(--Main-test-4);
+    padding: 5px;
+    border-top-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    z-index: 6;
+}
+
+.myRulesDiv {
+    background: var(--Main-test-1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    top: 0%;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.myRulesDiv.display {
+    opacity: 1;
+    visibility: visible;
+}
+
+#myUsernameRules, #myEmailRules, #myPasswordRules {
+    height: max-content;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--Main-test-4);
+    padding: 5px 5px;
+}
+
+#myUsernameRules h3, #myEmailRules h3, #myPasswordRules h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white-color);
+    text-transform: lowercase;
+}
+
+#myUsernameRules p, #myEmailRules p, #myPasswordRules p {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white-color);
+    text-transform: lowercase;
+    font-size: 0.9em;
+}
+
+
+#newUserRulesImage {
+    width: 2em;
+}   
+
 #myUsernameAndIconChoice {
     flex-direction: column;
 }
@@ -167,7 +233,8 @@ a #myEditIcon {
     color: #ffffff;
     text-transform: uppercase;
     gap: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
+    position: relative;
 }
 
 #myEmailAndPassword {

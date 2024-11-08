@@ -11,6 +11,7 @@ export function setupLogin() {
     const myBubbleLogin = document.getElementById('myBubbleLogin');
     const myLoginEmail = document.getElementById('myLoginEmail');
     const myLoginPassword = document.getElementById('myLoginPassword');
+    const myNewPasswordUserId = document.getElementById('myNewPasswordUserId');
 
     document.getElementById('userContainer').addEventListener('click', function(e) {
         const enterButton = e.target.closest('.myEnterButton');
@@ -20,7 +21,8 @@ export function setupLogin() {
             myLoginDiv.classList.add('Display');
 
             const enterButton = e.target.closest('.myEnterButton');
-
+            myNewPasswordUserId.value = enterButton.getAttribute('data-user-id');
+            
             const userId = enterButton.getAttribute('data-user-id');
             document.getElementById('myLoginUserId').value = userId;
 

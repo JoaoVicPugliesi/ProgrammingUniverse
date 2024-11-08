@@ -45,8 +45,8 @@
         }
 
         public function usernameController() {
-            if(strlen($this->username) < 3 || strlen($this->username) > 20) {
-                $this->setError("Username must contain between 6 and 20 characters");
+            if(strlen($this->username) < 3 || strlen($this->username) > 16) {
+                $this->setError("Username must contain between 3 and 16 characters");
                 return false;
             }
 

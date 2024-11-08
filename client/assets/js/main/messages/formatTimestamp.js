@@ -17,15 +17,15 @@ export function formatTimestamp(sentAt) {
     } 
     
     if (diffHours < 24) {
-        return `${diffHours} hr${diffHours !== 1 ? 's' : ''}`;
+        return `${diffHours}h`;
     } 
     
     if(diffDays < 30) {
-        return `${diffDays} day${diffDays !== 1 ? 's' : ''}`;
+        return `${diffDays}d`;
     } 
     
     if (diffMonths < 12) {
-        return `${diffMonths} mon${diffMonths !== 1 ? 's' : ''}`;
+        return `${diffMonths}m`;
     } 
     
     return `${diffYears} yr${diffYears !== 1 ? 's' : ''}`;

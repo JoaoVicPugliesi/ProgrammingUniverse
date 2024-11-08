@@ -39,9 +39,24 @@
                 <img id="myIcon" src="../client/assets/images/icon_images/randomUser.png" alt="user">
                 <a rel="prefetch" href="logo.html"><img id="myEditIcon" class="myEditIcon" src="../client/assets/images/icons/edit.png" alt="edit"></a>
                 </div>
-                <input type="text" name="username" id="myUsername" class="myUsername" placeholder="username" autocomplete="off" maxlength="50" oninput="getUsername" spellcheck="false">
+                <input type="text" name="username" id="myUsername" class="myUsername" placeholder="username" autocomplete="off" maxlength="16" oninput="getUsername" spellcheck="false">
             </div>
-            <div id="myEmailAndPasswordChoice" class="flex">  
+            <div id="myEmailAndPasswordChoice" class="flex">
+                <div id="myRulesDiv" class="myRulesDiv">
+                    <div id="myUsernameRules">
+                        <h3>Username</h3>
+                        <p>Username must contain between 3 and 16 characters, no symbols and spaces... only numbers and letters.</p>
+                    </div>
+                    <div id="myEmailRules">
+                        <h3>Email</h3>
+                        <p>Email must contain @. Local part must contain only [a-z0-9_.-]. Domain part must be lowercase.</p>
+                    </div>
+                    <div id="myPasswordRules">
+                        <h3>Password</h3>
+                        <p>Password must contain at least 8 characters, a number, a upper and a lower case letter and a symbol.</p>
+                    </div>
+                </div>
+                <button type="button" id="newUserRulesBtn"><img id="newUserRulesImage" src="../client/assets/images/icons/megaphone.png" alt=""></button> 
                 <h1 id="myWelcome">Create Profile</h1>
                 <div id="myEmailAndPassword" class="flex">
                     <input type="text" name="email" id="myEmail" class="myEmail" placeholder="email" autocomplete="off" maxlength="50" spellcheck="false">
@@ -56,5 +71,6 @@
         </form>
     </div>
     <script type="module" src="../client/assets/js/newUser/newUser.js" defer></script>
+    <script type="module" src="../client/assets/js/newUser/newUserRules.js" defer></script>
 </body>
 </html> 

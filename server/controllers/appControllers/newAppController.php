@@ -21,7 +21,6 @@
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $userIdApp =  filter_input(INPUT_POST, 'userIdApp', FILTER_SANITIZE_NUMBER_INT);
                 $appName = filter_input(INPUT_POST, 'appName', FILTER_SANITIZE_SPECIAL_CHARS);
-                $appAuthor = filter_input(INPUT_POST, 'appAuthor', FILTER_SANITIZE_SPECIAL_CHARS);
                 $appDescription = filter_input(INPUT_POST, 'appDescription', FILTER_SANITIZE_SPECIAL_CHARS);
                 $appURL = filter_input(INPUT_POST, 'appURL', FILTER_SANITIZE_URL);
                 $appVisibility = filter_input(INPUT_POST, 'appVisibility', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -44,7 +43,7 @@
 
                     if($newFileName) {
 
-                    $newAppModel = new NewAppModel($userIdApp, $appName, $appAuthor, $appDescription, $newFileName, $appVisibility, $appURL, $this->pdo);
+                    $newAppModel = new NewAppModel($userIdApp, $appName, $appDescription, $newFileName, $appVisibility, $appURL, $this->pdo);
                     $newApp = $newAppModel->setApp();
 
                     if($newApp) {

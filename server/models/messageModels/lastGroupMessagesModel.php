@@ -11,6 +11,7 @@
             $sql = 'SELECT m.*, u.username, u.user_icon, u.is_online
                     FROM Messages m
                     JOIN User u ON m.user_id = u.user_id
+                    WHERE m.receiver_id IS NULL
                     ORDER BY m.message_id DESC LIMIT 4';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
@@ -20,7 +21,8 @@
         public function setLatestGroupMessage() {
             $sql = 'SELECT m.*, u.username, u.user_icon, u.is_online
                     FROM Messages m
-                    JOIN User u WHERE m.user_id = u.user_id
+                    JOIN User u ON m.user_id = u.user_id
+                    WHERE m.receiver_id IS NULL
                     ORDER BY m.message_id DESC LIMIT 1';
             
             $stmt = $this->pdo->prepare($sql);
@@ -32,6 +34,7 @@
             $sql = ' SELECT m.*, u.username, u.user_icon, u.is_online
                      FROM Messages m
                      JOIN User u ON m.user_id = u.user_id
+                     WHERE m.receiver_id IS NULL
                      ORDER BY m.message_id ASC';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();

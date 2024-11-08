@@ -25,10 +25,23 @@ import { shortcuts } from "./shortcuts.js";
 import { updateStar } from "./appsJs/updateStar.js";
 import { searchApps } from "./appsJs/searchApps.js";
 import { chat } from "./messages/chat.js";
+import { sendIndividualMessage } from "./messages/sendIndividualMessage.js";
+import { myConfig } from "./myConfig.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     onload();
-    logout();
+    const myLogoutForm = document.getElementById('myLogoutForm');
+    myLogoutForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        logout();
+    });
+
+    const logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        logout();
+    })
+
     updateUser();
     logoutDisplay();
     myNavBar();
@@ -53,8 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
     removeFriend();
     shortcuts();
     updateStar();
+    myConfig();
     searchApps();
     chat();
+    sendIndividualMessage();
 })
 
 

@@ -22,7 +22,6 @@
 
                 if(empty($message) && empty($messageImg)) {
                     echo json_encode(['success' => false, 'error' => 'The message needs to have some content']);
-
                     return;
                 }
 

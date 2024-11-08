@@ -58,3 +58,72 @@
     height: 100%;
     border-top-right-radius: 5px;
 }
+
+#myInfoBtnsDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    gap: 10px;
+}
+
+#myInfoBtnsDiv button {
+    width: 12em;
+    height: 2.5em;
+    box-shadow: 3px 3px var(--Main-test-4);
+    background: var(--white-color);
+    border: none;
+}
+
+#myInfoBtnsDiv h3 {
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.myIdiomsForm {
+    height: max-content;
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.myIdiomsForm.display {
+    display: flex;
+}
+
+#myEnglishLanguageLabel, #myPortugueseLanguageLabel {
+    background: var(--Main-test-4);
+    width: 5em;
+    height: 3em;
+    cursor: pointer;
+    padding: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myEnglishLanguage, #myPortugueseLanguage {
+    width: 100%;
+    height: 5em;
+}
+ 
+
+#myIdiomsFormBtn {
+    width: 10em;
+    height: 3em;
+}
+
+#myIdiomsFormBtnH3 {
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+}

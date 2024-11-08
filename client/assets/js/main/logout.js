@@ -1,10 +1,5 @@
 export function logout() {
-    const myLogoutForm = document.getElementById('myLogoutForm');
     const userIdLogout = document.getElementById('userIdLogout');
-
-    myLogoutForm.addEventListener('submit', function(e) {
-
-        e.preventDefault();
 
         const fetchedUserId = localStorage.getItem('user_id');
         if (fetchedUserId) {
@@ -30,6 +25,5 @@ export function logout() {
                 console.log('Error');
             }
         })
-        .catch(error => console.log('Error', error));
-    }); 
+        .catch(error => console.log('Error', error)); 
 }

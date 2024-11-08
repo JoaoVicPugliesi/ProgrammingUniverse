@@ -9,6 +9,9 @@ import { favoriteApps } from "./appsJs/favoriteApps.js";
 import { lastGroupMessages } from "./messages/lastGroupMessages.js";
 import { usersResults } from "./fetchUsersResults.js";
 import { lastMessageTracker } from "./messages/lastMessageTracker.js";
+import { friendMessageNotifications } from "./messages/friendMessageNotifications.js";
+import { friendMessages } from "./messages/friendMessages.js";
+import { dynamicFetchIndividualMessages } from "./messages/dynamicFetchIndividualMessages.js";
 
 export function onload() {
 
@@ -47,11 +50,18 @@ export function onload() {
         fetchUserApps();
         friends();
         starNotifications();
+        friendMessageNotifications();
         favoriteApps();
         lastGroupMessages();
+        friendMessages();
+        dynamicFetchIndividualMessages();
+        setInterval(() => {
+            dynamicFetchIndividualMessages();
+            friendMessages();
+        }, 5000)
         setInterval(() => {
             lastMessageTracker();
-        }, 5000)
+        }, 1000)
         usersResults();
         if(localStorage.getItem('display')) {
         setTimeout(() => {

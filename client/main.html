@@ -36,6 +36,25 @@
         <h3 id="myLoadContent">Loading...</h3>
         <div class="loader"></div>
      </div>
+     <div id="myConfigDiv" class="myConfigDiv">
+        <div id="myConfigBtnsDiv">
+        <button id="continueBtn"><h3>Continue</h3></button>
+        <button id="myIdiomsBtn"><h3>Idiom</h3></button>
+        <form id="myIdiomsForm" class="myIdiomsForm">
+            <input type="hidden" id="myIdiomsUserId" name="userId">
+            <input type="hidden" id="myEnglishLanguage" name="language" value="english">
+            <label id="myEnglishLanguageLabel" for="myEnglishLanguage">
+                <img id="myEnglishLanguage" src="/client/assets/images/countries/english.png" alt="">
+            </label>
+            <input type="hidden" id="myPortugueseLanguage" name="language" value="portuguese">
+            <label id="myPortugueseLanguageLabel" for="myPortugueseLanguage">
+                <img id="myPortugueseLanguage" src="/client/assets/images/countries/portuguese.png" alt="">
+            </label>
+            <button type="submit" id="myIdiomsFormBtn" ><h3 id="myIdiomsFormBtnH3">Choose</h3></button>
+        </form>
+        <button id="logoutBtn"><h3>Logout</h3></button>
+        </div>
+    </div>
     <input type="hidden" id="userIdMain" name="userId" value="">
     <div id="myFlashMessageOverlay"></div>
     <div id="myFlashMessage" class="myFlashMessage">
@@ -95,14 +114,7 @@
                 <div id="myChatsBodyIndividualMessages">
                     <h3 id="myChatsBodyFriendMessagesh3">Friends</h3>
                     <div id="myFriendMessages">
-                        <button id="myFriendMessagesBtn">
-                            <img id="myFriendMessagesBtnUserImage" src="/client/assets/images/icon_images/boredom.png" alt="">
-                            <div id="myFriendMessagesBtnNameMessage">
-                                <h3 id="myFriendMessagesBtnName">Johnpugliesi10</h3>
-                                <p id="myFriendMessagesBtnMessage">ablablablablablablablablablablablablablablablabla</p>
-                            </div>
-                            <h3 id="myGroupMessagesBtnFormattedTime">17m</h3>
-                        </button>
+
                     </div>
                 </div>
             </div>
@@ -202,6 +214,109 @@
                     <div id="myGroupChatConversationTextBarBtnsDiv">
                     <button type="button" id="myGroupChatConversationImageBtn"><img id="myGroupChatConversationImageBtnImg" src="/client/assets/images/image.png" alt=""></button>
                     <button type="submit" id="myGroupChatConversationSendBtn"><h3 id="myGroupChatConversationImageBtnH3">Send</h3></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="myIndividualChatConversationDiv" class="myIndividualChatConversationDiv">
+            <div id="myIndividualChatConversationReceiver">
+                <img id="myIndividualChatConversationReceiverImage" src="/client/assets/images/icon_images/missionImpossible.png" alt="">
+                <div id="myIndividualChatConversationReceiverNameStatus">
+                    <h3 id="myIndividualChatConversationReceiverName">JohnPugliesi10</h3>
+                    <div id="myIndividualChatConversationReceiverStatusDiv">
+                        <div id="myIndividualChatConversationReceiverStatus"></div>
+                        <h3 id="myIndividualChatConversationReceiverStatusH3">Online</h3>
+                    </div>
+                </div>
+            </div>
+            <form id="myIndividualChatConversationForm">
+                <div id="myIndividualChatConversationContent">  
+                    
+                </div>
+                <div id="myIndividualChatConversationTextBarDivImageInputs" class="myIndividualChatConversationTextBarDivImageInputs">
+                    <div id="myIndividualChatConversationTextBarDivImageInputsMemes">
+
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                        <input type="radio" id="memeI1" name="meme" value="/client/assets/images/memes/meme1.jpg" hidden>
+                        <label id="meme1" for="memeI1">
+                            <img id="memeI1image" src="/client/assets/images/memes/meme1.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI2" name="meme" value="/client/assets/images/memes/meme2.jpg" hidden>
+                            <label id="meme2" for="memeI2">
+                                <img id="memeI2image" src="/client/assets/images/memes/meme2.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI3" name="meme" value="/client/assets/images/memes/meme3.jpg" hidden>
+                            <label id="meme3" for="memeI3">
+                                <img id="memeI3image" src="/client/assets/images/memes/meme3.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI4" name="meme" value="/client/assets/images/memes/meme4.jpg" hidden>
+                            <label id="meme4" for="memeI4">
+                                <img id="memeI4image" src="/client/assets/images/memes/meme4.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI5" name="meme" value="/client/assets/images/memes/meme5.jpg" hidden>
+                            <label id="meme5" for="memeI5">
+                                <img id="memeI5image" src="/client/assets/images/memes/meme5.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI6" name="meme" value="/client/assets/images/memes/meme6.jpg" hidden>
+                            <label id="meme6" for="memeI6">
+                                <img id="memeI6image" src="/client/assets/images/memes/meme6.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI7" name="meme" value="/client/assets/images/memes/meme7.jpg" hidden>
+                            <label id="meme7" for="memeI7">
+                                <img id="memeI7image" src="/client/assets/images/memes/meme7.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI8" name="meme" value="/client/assets/images/memes/meme8.jpg" hidden>
+                            <label id="meme8" for="memeI8">
+                                <img id="memeI8image" src="/client/assets/images/memes/meme8.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI9" name="meme" value="/client/assets/images/memes/meme9.jpg" hidden>
+                            <label id="meme9" for="memeI9">
+                                <img id="memeI9image" src="/client/assets/images/memes/meme9.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI10" name="meme" value="/client/assets/images/memes/meme10.jpg" hidden>
+                            <label id="meme10" for="memeI10">
+                                <img id="memeI10image" src="/client/assets/images/memes/meme10.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI11" name="meme" value="/client/assets/images/memes/meme11.jpg" hidden>
+                            <label id="memeI11" for="memeI11">
+                                <img id="meme11image" src="/client/assets/images/memes/meme11.jpg" alt="">
+                        </label>
+                        </div>
+                        <div class="myIndividualChatConversationTextBarDivImageInputsMeme">
+                            <input type="radio" id="memeI12" name="meme" value="/client/assets/images/memes/meme12.jpg" hidden>
+                            <label id="memeI12" for="memeI12">
+                                <img id="meme12image" src="/client/assets/images/memes/meme12.jpg" alt="">
+                        </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="myIndividualChatConversationTextBarDiv">
+                    <input type="hidden" name="user_id" id="myIndividualChatConversationUserid">
+                    <input type="hidden" name="receiver_id" id="myIndividualChatConversationReceiverid"> 
+                    <input id="myIndividualChatConversationTextBarInput" name="message" type="text" placeholder="Send a message" autocomplete="off" spellcheck="false" maxlength="250">
+                    <div id="myIndividualChatConversationTextBarBtnsDiv">
+                    <button type="button" id="myIndividualChatConversationImageBtn"><img id="myIndividualChatConversationImageBtnImg" src="/client/assets/images/image.png" alt=""></button>
+                    <button type="submit" id="myIndividualChatConversationSendBtn"><h3 id="myIndividualChatConversationImageBtnH3">Send</h3></button>
                     </div>
                 </div>
             </form>
@@ -326,7 +441,6 @@
         
            </div>
            <div id="myMessageRequestsSpace">
-                
            </div>
         </div>
     </div>
@@ -648,7 +762,6 @@
                         </div>
                         <form id="myAddAppForm" class="myAddAppForm" enctype="multipart/form-data">
                             <input type="hidden" id="userIdApp" name="userIdApp">
-                            <input type="hidden" id="appAuthor" name="appAuthor">
                             <div id="myAddAppLogoNameDescription" class="flex">
                                 <div id="myAddAppLogoDiv" class="flex">
                                     <input type="file" name="appLogo" id="myAddAppLogo" hidden>
@@ -827,9 +940,10 @@
                     </div>
                     <div id="myInfoDiv" class="myInfoDiv">
                         <div id="myInfoOverlay"></div>
-                    </div>
-                    <div id="myConfigDiv" class="myConfigDiv">
-                        <div id="myConfigOverlay"></div>
+                        <div id="myInfoBtnsDiv">
+                        <button id="myInfoLoreBtn"><h3>Lore</h3></button>
+                        <button id="myInfoArticleBtn"><h3 id="myInfoLoreBtnH3">Article</h3></button>
+                        </div>
                     </div>
                     <div id="myMenuSearchBar">
                         <input id="myMenuSearchBarInput" placeholder="Search Apps" maxlength="50" autocomplete="off" type="text" spellcheck="false">

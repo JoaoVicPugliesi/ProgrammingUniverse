@@ -31,8 +31,22 @@
                 </div>
                 <input id="myLoginUserId" type="hidden" name="userId" value="">
             </div>
+            <button id="myForgotPasswordBtn"><h3 id="myForgotPasswordBtnH3">Forgot Password?</h3></button>
             <button type="submit" id="myLoginBtn">Login</button>
         </form>
+        <div id="myNewPasswordDiv" class="myNewPasswordDiv">
+            <form id="myNewPasswordForm">
+                <button id="myNewPasswordFormLeftArrowBtn"><img id="myNewPasswordFormLeftArrowBtnImage" src="/client/assets/images/left-arrow.png" alt=""></button>
+                <h3 id="myNewPasswordFormH3">Choose Your New Password</h3>
+                <input type="hidden" id="myNewPasswordUserId" name="userId">
+                <input id="myNewPasswordEmail" type="text" name="email" placeholder="Email" maxlength="100" spellcheck="false" autocomplete="off">
+                <div id="myNewPasswordPasswordDiv">
+                <input id="myNewPasswordPassword" type="password" name="newPassword" placeholder="New password" maxlength="50" spellcheck="false" autocomplete="off">
+                <img id="myNewPasswordView"  src="../client/assets/images/icons/view.png" alt="view">
+                </div>
+                <button id="myNewPasswordBtn" type="submit">Change</button>
+            </form>
+        </div>
     </div>
     <div id="myDeleteFormOverlay" class="myDeleteFormOverlay"></div>
     <div id="myDeleteDiv" class="myDeleteDiv">

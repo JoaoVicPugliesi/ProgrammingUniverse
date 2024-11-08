@@ -1,3 +1,5 @@
+import { friendMessages } from "../messages/friendMessages.js";
+import { lastGroupMessages } from "../messages/lastGroupMessages.js";
 import { seeProfileDisplay } from "../seeProfileDisplay.js";
 
 export function friends() {
@@ -33,7 +35,7 @@ export function friends() {
                                     <h3 id="myFriendOnlineName">${friend.username}</h3>
                                     <div id="myFriendOnlineLastSeenMessage" class="flex">
                                             <h3 id="myFriendOnlineLastSeen" class="flex">Online <div id="myFriendOnlineStatus"></div></h3>
-                                            <button id="myFriendOnlineChatBtn" class="flex"><img id="myFriendOnlineChat" src="/client/assets/images/icons/chat.png" alt=""></button>
+                                            <button class="myFriendOnlineChatBtn" class="flex"><img id="myFriendOnlineChat" src="/client/assets/images/icons/chat.png" alt=""></button>
                                     </div>
                             </div>
                         </div>
@@ -56,7 +58,7 @@ export function friends() {
                                     <h3 id="myFriendOfflineName">${friend.username}</h3>
                                     <div id="myFriendOfflineLastSeenMessage" class="flex">
                                             <h3 id="myFriendOfflineLastSeen" class="flex">Offline <div id="myFriendOfflineStatus"></div></h3>
-                                            <button id="myFriendOfflineChatBtn" class="flex"><img id="myFriendOfflineChat" src="/client/assets/images/icons/chat.png" alt=""></button>
+                                            <button class="myFriendOfflineChatBtn" class="flex"><img id="myFriendOfflineChat" src="/client/assets/images/icons/chat.png" alt=""></button>
                                     </div>
                             </div>
                         </div>
@@ -69,12 +71,28 @@ export function friends() {
                 }
            })
 
-
            const myProfileAddSectionBtnDiv = document.querySelector('.myProfileAddSectionBtnDiv');
            const myProfileRemoveSectionBtnDiv = document.querySelector('.myProfileRemoveSectionBtnDiv');
            const myFriendOnlineBtn = document.querySelectorAll('.myFriendOnlineBtn');
            const myFriendOfflineBtn = document.querySelectorAll('.myFriendOfflineBtn');
            const mySeeProfileNameBtnDiv = document.getElementById('mySeeProfileNameBtnDiv');
+           const myChat = document.getElementById('myChat');
+           const myFriendOfflineChatBtn = document.querySelectorAll('.myFriendOfflineChatBtn');
+           const myFriendOnlineChatBtn = document.querySelectorAll('.myFriendOnlineChatBtn');
+
+           function chatDisplay (btns) {
+                btns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        myChat.classList.add('display');
+                        lastGroupMessages();
+                        friendMessages();
+                    })
+                })
+           }
+
+           chatDisplay(myFriendOnlineChatBtn);
+           chatDisplay(myFriendOfflineChatBtn);
 
            function btnsdisplay (btns)  {
                 btns.forEach(btn => {

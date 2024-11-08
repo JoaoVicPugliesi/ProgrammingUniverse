@@ -30,14 +30,14 @@
 }
 
 .myConfigDiv {
-    background: black;
-    width: 80%;
+    background: var(--Main-test-1);
+    width: 100%;
     height: 100%;
     position: absolute;
     z-index: 900;
     display: none;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     transition: opacity 0.5s ease;
     border-top-right-radius: 5px;
@@ -47,11 +47,29 @@
     display: flex;
 }
 
-#myConfigOverlay {
-    position: absolute;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    border-top-right-radius: 5px;
+#myConfigBtnsDiv {
+    width: 11.5em;
+    height: 15em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.myConfigDiv h3{
+    font-family: 'Cabin', sans-serif;
+    font-size: 2rem;
+    color: var(--Main-test-3);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.myConfigDiv button {
+    background: var(--white-color);
+    border: none;
+    padding: 2px 5px;
+    box-shadow: 5px 5px var(--Main-test-4);
+    cursor: pointer;
 }

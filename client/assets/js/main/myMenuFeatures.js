@@ -8,6 +8,12 @@ const myMenuFeatureConfigBtn = document.getElementById('myMenuFeatureConfigBtn')
 const myConfigDiv = document.getElementById('myConfigDiv');
 const myAddAppLogo = document.getElementById('myAddAppLogo');
 const myAddAppLogoLabel = document.getElementById('myAddAppLogoLabel');
+const continueBtn = document.getElementById('continueBtn');
+
+continueBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    myConfigDiv.classList.remove('display');
+})
 
 export function myMenuFeaturesDisplay(btn, element, element2, element3, element4) {
     

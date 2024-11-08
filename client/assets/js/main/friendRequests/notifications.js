@@ -1,4 +1,4 @@
-export function notifications() {
+export function notifications(element) {
     const myNotificationsBtn = document.getElementById('myNotificationsBtn');
     const mySelfNotificationBtn = document.getElementById('mySelfNotificationBtn');
     const myNotifications = document.getElementById('myNotifications');
@@ -13,7 +13,7 @@ export function notifications() {
         e.preventDefault();
 
         if (myNotifications.classList.contains('display')) {
-            myNotifications.classList.remove('display');
+            myNotifications.myNotifications.classList.remove('display');
         } else {
             myNotifications.classList.add('display');
         }
@@ -31,15 +31,15 @@ export function notifications() {
     let isDragging = false;
     let startX, startY, initialX, initialY;
 
-    myNotifications.addEventListener('mousedown', (e) => {
+    element.addEventListener('mousedown', (e) => {
         e.preventDefault();
-        if (e.target.closest('#myNotifications')) {  
+        if (e.target.closest('#myNotifications') || e.target.closest('#myChatExit')) {  
             isDragging = true;
             startX = e.clientX;
             startY = e.clientY;
 
-            initialX = myNotifications.offsetLeft;
-            initialY = myNotifications.offsetTop;
+            initialX = element.offsetLeft;
+            initialY = element.offsetTop;
 
             document.addEventListener('mousemove', drag);
             document.addEventListener('mouseup', stopDrag);
@@ -53,8 +53,8 @@ export function notifications() {
             const deltaX = e.clientX - startX;
             const deltaY = e.clientY - startY;
 
-            myNotifications.style.left = `${initialX + deltaX}px`;
-            myNotifications.style.top = `${initialY + deltaY}px`;
+            element.style.left = `${initialX + deltaX}px`;
+            element.style.top = `${initialY + deltaY}px`;
         }
     }
 
@@ -70,11 +70,13 @@ export function notifications() {
 
 }
 
-notifications();
+const myNotifications = document.getElementById('myNotifications');
+
+notifications(myNotifications);
 
 
 /*
-    <div id="myMessageNotification">
+            <div id="myMessageNotification">
                 <div id="myFriendMessageTypeDiv" class="flex">
                 <img id="myMessageNotificationType" src="/client/assets/images/icons/chat.png" alt="">
                 </div>

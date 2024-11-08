@@ -89,6 +89,10 @@
 #myMenuUser {
     font-size: 0.63em;
     font-family: 'Poppins', sans-serif;
+    max-width: 70%;
+    text-overflow: ellipsis;
+    white-space: normal; 
+    overflow: hidden; 
 }
 
 #myStatusMenuAnswer {
@@ -123,7 +127,7 @@
     font-size: 0.55em;
     position: absolute;
     right: 3%;
-    bottom: 5%;
+    top: 12%;
 }
 
 #myChatMaximizeBtn {

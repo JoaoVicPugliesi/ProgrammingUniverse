@@ -9,6 +9,16 @@ export function chat() {
     const myChatRulesDiv = document.getElementById('myChatRulesDiv');
     const myGroupChatConversationImageBtn = document.getElementById('myGroupChatConversationImageBtn');
     const myGroupChatConversationTextBarDivImageInputs = document.getElementById('myGroupChatConversationTextBarDivImageInputs');
+    const myIndividualChatConversationImageBtn = document.getElementById('myIndividualChatConversationImageBtn');
+    const myIndividualChatConversationTextBarDivImageInputs = document.getElementById('myIndividualChatConversationTextBarDivImageInputs');
+    const mySeeProfileSendMessageBtn = document.getElementById('mySeeProfileSendMessageBtn');
+
+    mySeeProfileSendMessageBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        myChat.classList.add('display');
+
+        lastGroupMessages();
+    })
 
     myChatMaximizeBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -36,6 +46,12 @@ export function chat() {
         e.preventDefault();
         myGroupChatConversationTextBarDivImageInputs.classList.contains('display') ? 
         myGroupChatConversationTextBarDivImageInputs.classList.remove('display') : myGroupChatConversationTextBarDivImageInputs.classList.add('display');
+    })
+
+    myIndividualChatConversationImageBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        myIndividualChatConversationTextBarDivImageInputs.classList.contains('display') ? 
+        myIndividualChatConversationTextBarDivImageInputs.classList.remove('display') : myIndividualChatConversationTextBarDivImageInputs.classList.add('display');
     })
 
     const form = document.getElementById('myGroupChatConversationForm');

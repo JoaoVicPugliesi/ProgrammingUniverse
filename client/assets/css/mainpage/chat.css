@@ -231,7 +231,7 @@
     height: 70%;
 }
 
-#myGroupMessagesBtn, #myFriendMessagesBtn {
+#myGroupMessagesBtn, .myFriendMessagesBtn {
     width: 100%;
     height: 5em;
     display: flex;
@@ -265,26 +265,30 @@
     position: relative;
 }
 
-#myGroupMessagesBtnNameMessageImage{
+#myGroupMessagesBtnNameMessageImage, #myindividualMessagesBtnNameMessageImage {
     width: 1.5em;
     position: absolute;
     left: 60%;
+    top: 0%;
+}
+
+#myindividualMessagesBtnNameMessageImage {
+    left: 70%;
 }
 
 #myMenuUserDivImage {
     position: absolute;
     width: 1em;
-    right: 0%;
+    top: 6%;
+    right: 2%;
 }
-
-
 
 #myGroupMessagesBtnNameMessage::-webkit-scrollbar, #myGroupMessagesBtnMessage::-webkit-scrollbar, #myFriendMessagesBtnMessage::-webkit-scrollbar {
     width: 0px;
 }
     
 #myGroupMessagesBtnNameMessage::-webkit-scrollbar-track {
-    background: #F3F2ED;
+    background: var(--Main-test-3);
 }
     
 #myGroupMessagesBtnNameMessage::-webkit-scrollbar-thumb {
@@ -295,6 +299,12 @@
 #myGroupMessagesBtnName, #myFriendMessagesBtnName {
     font-family: 'Poppins', sans-serif;
     color: var(--white-color);
+ 
+    max-width: 57%;
+    height: 55%;
+    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: hidden;
 }
 
 #myGroupMessagesBtnStatus {
@@ -344,7 +354,7 @@
 }
     
 #myFriendMessages::-webkit-scrollbar-track {
-    background: #F3F2ED;
+    background: var(--Main-test-3);
 }
     
 #myFriendMessages::-webkit-scrollbar-thumb {
@@ -355,7 +365,7 @@
     height: 5em;
 }
 
-.myGroupChatConversationDiv {
+.myGroupChatConversationDiv, .myIndividualChatConversationDiv {
     width: 50%;
     height: 100%;
     background: #F3F2ED;
@@ -366,11 +376,19 @@
     align-items: center;
 }
 
-.myGroupChatConversationDiv.display {
+.myIndividualChatConversationDiv {
+    display: none;
+}
+
+.myGroupChatConversationDiv.none {
+    display: none;
+}
+
+.myIndividualChatConversationDiv.display {
     display: flex;
 }
 
-#myGroupChatConversationReceiver {
+#myGroupChatConversationReceiver, #myIndividualChatConversationReceiver {
     width: 95%;
     height: 25%;
     border-bottom: 2px solid var(--Main-test-3);
@@ -378,7 +396,70 @@
     justify-content: flex-end;
     align-items: flex-start;
     flex-direction: column;
+    padding: 5px;
 } 
+
+#myIndividualChatConversationReceiver {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+#myIndividualChatConversationReceiverImage {
+    width: 5em;
+    height: 5em;
+    border-radius: 3px;
+    border: solid var(--Main-color) 2px;
+}
+
+#myIndividualChatConversationReceiverNameStatus {
+    height: 73%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0px 0px 0px 5px;
+}
+
+#myIndividualChatConversationReceiverStatusDiv {
+   
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+#myIndividualChatConversationReceiverStatus {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--success-color);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; 
+    }
+    50% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#myIndividualChatConversationReceiverName, #myIndividualChatConversationReceiverStatusH3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--Main-test-3);
+}
+
+#myIndividualChatConversationReceiverStatusH3 {
+    font-size: 1em;
+    color: #8c8b8a;
+}
 
 #myGroupChatConversationReceiverName {
     font-family: 'Montserrat', sans-serif;
@@ -425,18 +506,13 @@
     border: 1px solid var(--Main-color);
 }
 
-#myGroupChatConversationForm {
+#myGroupChatConversationForm, #myIndividualChatConversationForm {
     height: 75%;
     width: 95%;
     position: relative;
 }
 
-#myAlbumPhotoContainer input[type="radio"]:checked + label #myAlbumPhotoShadow {
-    opacity: 1;
-    visibility: visible;
-}
-
-#myGroupChatConversationContent {
+#myGroupChatConversationContent, #myIndividualChatConversationContent {
     height: 80%;
     width: 100%;
     display: flex;
@@ -450,7 +526,7 @@
     position: relative;
 }
 
-#myGroupChatConversationContentDate {
+#myGroupChatConversationContentDate, #myIndividualChatConversationContentDate {
     width: 100px;
     height: 10px;
     background: var(--Main-test-5);
@@ -458,10 +534,21 @@
     color: var(--Main-test-3);
 }
 
-#myGroupChatConversationContent::-webkit-scrollbar {
-    width: 5px;
+
+#myGroupChatConversationContent::-ms-track, #myIndividualChatConversationContent::-ms-track {
+    background: var(--Main-test-4);
+}
+
+#myGroupChatConversationContent::-webkit-scrollbar, #myIndividualChatConversationContent::-webkit-scrollbar {
+    width: 15px;
     height: 5px;
 }
+
+    
+#myGroupChatConversationContent::-webkit-scrollbar-thumb,  #myIndividualChatConversationContent::-webkit-scrollbar-thumb {
+    background: var(--Main-test-3);
+}
+
 
 #myAwayMessageDiv {
     align-self: flex-start;
@@ -539,7 +626,7 @@
 #myOwnMessage {
     align-self: flex-end;
     width: 14em;
-    height: 100%;
+    height: max-content;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -553,7 +640,6 @@
 .myOwnMessageSenderHourBtn {
     display: flex;
     justify-content: center;
-    align-items: center;
     background: none;
     border: none;
     cursor: pointer;
@@ -565,13 +651,13 @@
 }
 
 
-#myGroupChatConversationTextBarDiv {
+#myGroupChatConversationTextBarDiv, #myIndividualChatConversationTextBarDiv {
     height: 20%;
     width: 100%;
 }
 
 
-.myGroupChatConversationTextBarDivImageInputs {
+.myGroupChatConversationTextBarDivImageInputs, .myIndividualChatConversationTextBarDivImageInputs {
     position: absolute;
     width: 100%;
     height: 80%;
@@ -586,12 +672,12 @@
     transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-.myGroupChatConversationTextBarDivImageInputs.display {
+.myGroupChatConversationTextBarDivImageInputs.display, .myIndividualChatConversationTextBarDivImageInputs.display {
     opacity: 1;
     visibility: visible;
 }
 
-#myGroupChatConversationTextBarDivImageInputsMemes {
+#myGroupChatConversationTextBarDivImageInputsMemes, #myIndividualChatConversationTextBarDivImageInputsMemes {
     width: 100%;
     height: 100%;
     display: flex;
@@ -602,7 +688,7 @@
     gap: 10px;
 }
 
-.myGroupChatConversationTextBarDivImageInputsMeme {
+.myGroupChatConversationTextBarDivImageInputsMeme, .myIndividualChatConversationTextBarDivImageInputsMeme {
     width: 5em;
     height: 5em;
     cursor: pointer;
@@ -610,6 +696,26 @@
 }
 
 .myGroupChatConversationTextBarDivImageInputsMeme input[type="radio"]:checked + label::after {
+    content: '✔'; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: var(--white-color); 
+    z-index: 101; 
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+    background: var(--Main-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myIndividualChatConversationTextBarDivImageInputsMeme input[type="radio"]:checked + label::after {
     content: '✔'; 
     position: absolute;
     top: 50%;
@@ -644,7 +750,15 @@
     cursor: pointer;
 }
 
-#myGroupChatConversationTextBarBtnsDiv {
+#memeI1image, #memeI2image, #memeI3image, #memeI4image, #memeI5image, #memeI6image, #memeI7image, #memeI8image, #memeI9image, #memeI10image, #memeI11image, #memeI12image {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    border: 2px solid var(--Main-color);
+    cursor: pointer;
+}
+
+#myGroupChatConversationTextBarBtnsDiv, #myIndividualChatConversationTextBarBtnsDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -652,7 +766,7 @@
     height: 40%;
 }
 
-#myGroupChatConversationTextBarInput {
+#myGroupChatConversationTextBarInput, #myIndividualChatConversationTextBarInput {
     height: 60%;
     width: 100%;
     font-family: 'Poppins', sans-serif;
@@ -667,8 +781,12 @@
 #myGroupChatConversationTextBarInput:-ms-input-placeholder { color: var(--Main-test-3); }
 #myGroupChatConversationTextBarInput::-moz-placeholder { color: var(--Main-test-3); }
 #myGroupChatConversationTextBarInput:-moz-placeholder { color: var(--Main-test-3); }
+#myIndividualChatConversationTextBarInput::-webkit-input-placeholder { color: var(--Main-test-3); }
+#myIndividualChatConversationTextBarInput:-ms-input-placeholder { color: var(--Main-test-3); }
+#myIndividualChatConversationTextBarInput::-moz-placeholder { color: var(--Main-test-3); }
+#myIndividualChatConversationTextBarInput:-moz-placeholder { color: var(--Main-test-3); }
 
-#myGroupChatConversationSendBtn {
+#myGroupChatConversationSendBtn, #myIndividualChatConversationSendBtn {
     width: 20%;
     height: 80%;
     cursor: pointer;
@@ -680,7 +798,7 @@
     align-items: center;
 }
 
-#myGroupChatConversationImageBtn {
+#myGroupChatConversationImageBtn, #myIndividualChatConversationImageBtn {
     border: none;
     outline: none;
     cursor: pointer;
@@ -691,11 +809,11 @@
     align-items: center;
 }
 
-#myGroupChatConversationImageBtnImg {
+#myGroupChatConversationImageBtnImg, #myIndividualChatConversationImageBtnImg {
     width: 2em;
 }
 
-#myGroupChatConversationImageBtnH3 {
+#myGroupChatConversationImageBtnH3, #myIndividualChatConversationImageBtnH3 {
     font-size: 1em;
     font-family: 'Cabin', sans-serif;
     text-transform: uppercase;

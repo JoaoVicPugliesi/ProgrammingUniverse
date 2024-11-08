@@ -34,6 +34,7 @@ export function shortcuts() {
     const myNetworkingUsersSpaceImageBtn = document.getElementById('myNetworkingUsersSpaceImageBtn');
     const myNetworkingHallOfFameImageBtn = document.getElementById('myNetworkingHallOfFameImageBtn');
     const myMenuBtn = document.getElementById('myMenuBtn');
+    const myChatsHeaderBtn = document.getElementById('myChatsHeaderBtn');
 
     function handleButtonState(activeBtn, inactiveBtn) {
         inactiveBtn.classList.remove('active');
@@ -74,6 +75,22 @@ export function shortcuts() {
 
     btns(
         myFriendsBtn, 
+        myNetworkingSubSpacesUserBtnsDiv, 
+        myNetworkingUsersResults, 
+        myFriendsResults, 
+        myNetworkingSubSpacesHallOfFameBtnsDiv,  
+        myNetworkingHallOfFameResults, 
+        myMedalResults,
+        myNetworkingUsersSpaceBtn, 
+        myNetworkingHallOfFameBtn,
+        myNetworkingUsersSpaceImageBtn,
+        myNetworkingHallOfFameImageBtn,
+        '/client/assets/images/icons/groupWhite.png', 
+        '/client/assets/images/icons/ranking.png'
+    );
+
+    btns(
+        myChatsHeaderBtn, 
         myNetworkingSubSpacesUserBtnsDiv, 
         myNetworkingUsersResults, 
         myFriendsResults, 

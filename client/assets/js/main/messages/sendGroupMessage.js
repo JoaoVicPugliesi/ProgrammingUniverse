@@ -25,8 +25,6 @@ export function sendGroupMessage() {
                 lastGroupMessages();
                 console.log("success");
             } else {
-
-
                 console.log(data.error);
             }
         }) 
